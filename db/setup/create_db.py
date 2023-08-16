@@ -1,15 +1,14 @@
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, DateTime, FLOAT, PrimaryKeyConstraint
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import declarative_base, sessionmaker
 import os
 from dotenv import load_dotenv
-
+from urllib.parse import quote_plus
 def main():
     load_dotenv("../db.env")
     user=os.environ['user']
     pw=os.environ['password']
     port=os.environ['port']
-    connector_str='mysql+mysqlconnector://'+user+':'+ pw+ '@localhost:'+ port+'/music-tracker'
+    connector_str='mysql+mysqlconnector://'+user+':'+ quote_plus(pw)+ '@localhost:'+ port+'/tracker'
     engine=create_engine(connector_str)
     base=declarative_base()
 
@@ -40,7 +39,7 @@ def main():
     #listening history, when we know they have heard a song
     class History(base):
         __tablename__='History'
-        user_id = Column(String(50),ForeignKey('Users.id'))
+        user_id = Column(String(50),ForeignKey('User.id'))
         date_recorded=Column(DateTime)
         relative_term=Column(String(30))
         track_id= Column (String(100) , ForeignKey('Library.uri'))
@@ -48,7 +47,7 @@ def main():
     #when we pull from their top tracks 
     class TopTrack(base):
         __tablename__='TopTrack'
-        user_id = Column(String(50),ForeignKey('Users.id'))
+        user_id = Column(String(50),ForeignKey('User.id'))
         date_recorded=Column(DateTime)
         relative_term=Column(String(30))
         track_id= Column (String(100) , ForeignKey('Library.uri'))
@@ -56,7 +55,7 @@ def main():
     #songs they liked in playlists they did not create
     class Liked(base):
         __tablename__='Liked'
-        user_id = Column(String(50),ForeignKey('Users.id'))
+        user_id = Column(String(50),ForeignKey('User.id'))
         track_id= Column (String(100), ForeignKey('Library.uri'))
         source=Column(String(20))
         __table_args__ = (PrimaryKeyConstraint('user_id', 'track_id','source'),)
