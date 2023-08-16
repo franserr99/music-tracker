@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 
 def main():
-    load_dotenv("db.env")
+    load_dotenv("../db.env")
     user=os.environ['user']
     pw=os.environ['password']
     port=os.environ['port']
