@@ -1,14 +1,15 @@
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, DateTime, FLOAT, PrimaryKeyConstraint
-from sqlalchemy.orm import declarative_base, sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 import os
 from dotenv import load_dotenv
-from urllib.parse import quote_plus
+
 def main():
     load_dotenv("../db.env")
     user=os.environ['user']
     pw=os.environ['password']
     port=os.environ['port']
-    connector_str='mysql+mysqlconnector://'+user+':'+ quote_plus(pw)+ '@localhost:'+ port+'/tracker'
+    connector_str='mysql+mysqlconnector://'+user+':'+pw+'@localhost:'+ port+'/music-tracker'
     engine=create_engine(connector_str)
     base=declarative_base()
 

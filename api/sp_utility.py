@@ -1,10 +1,15 @@
-import spotipy, os, sys, json, requests
+import spotipy, os, sys,requests
 import pandas as pd
 from dotenv import load_dotenv
 from spotipy.oauth2 import SpotifyOAuth
 
 scope= "user-library-read user-read-playback-position user-top-read user-read-recently-played playlist-read-private"
-
+#TODO
+#def welcome_user(engine: sqlalchemy.engine.Engine, client:spotipy.Spotify): 
+#    spotipy_id=client.me()['id']
+#    db_sp_id=db_util.user_util.user_id_list(engine=engine)
+#    if spotipy_id not in db_sp_id: 
+#        db_util.user_util.create_user(spotipy_id, engine)
 def setup():
     load_dotenv("sp.env")         
     try: 
@@ -16,7 +21,7 @@ def setup():
         print("one of these were not set as an enviormental variable, needed for successful execution")
         sys.exit(1) #use this instead of exit() bc it speaks to interpreter, not safe in prod env
 def get_tracks(client:spotipy.Spotify, oauth:SpotifyOAuth,  user_playlistIDs:list, with_audio=True):
-    user_tracks_IDX ,user_tracks_names, user_track_artists= extractInfo(client, oauth, user_playlistIDs)
+    user_tracks_IDX ,user_tracks_names, user_track_artists= process_playlists(client, oauth, user_playlistIDs)
     #changing to a df in here 
     user_df=pd.DataFrame({ 'id':user_tracks_IDX, 'track name': user_tracks_names, 'artist':user_track_artists})
     user_df.drop_duplicates(inplace=True)
@@ -27,48 +32,69 @@ def get_tracks(client:spotipy.Spotify, oauth:SpotifyOAuth,  user_playlistIDs:lis
         return user_df_with_features
     else:
         return  user_df
-def extractInfo(client:spotipy.Spotify, oauth:SpotifyOAuth, playlistIDs:list): 
-    all_tracks_IDX=[]
-    all_track_names=[]
-    all_track_artists=[]
+def paginate_results(tracks:dict, idx:list, track_names:list, artist_names:list, oauth,choice):
+
+    token=dict(oauth.get_cached_token())
+    type=token['token_type']
+    access_token=token['access_token']
+
+    while(tracks['next']):
+        tracks= requests.get(tracks['next'], headers={ 'Authorization': type+" "+access_token }).json()
+        if(choice=="t"):
+            more_idx, more_track_names,more_artist_names= get_tracks_info(tracks,"t")
+        elif(choice=="p"):
+            more_idx, more_track_names,more_artist_names= get_tracks_info(tracks,"p")
+        idx.extend(more_idx)
+        track_names.extend(more_track_names)
+        artist_names.extend(more_artist_names)
+def process_playlists(client:spotipy.Spotify, oauth:SpotifyOAuth, playlistIDs:list): 
+    track_idx=[]
+    track_name=[]
+    track_artist=[]
 
     for id in playlistIDs:
         #keep track of counts to make sure it lines up later
-        count_IDX= len(all_tracks_IDX)
-        count_names=len(all_track_names)
-        count_artists=(len(all_track_artists))
+        count_IDX= len(track_idx)
+        count_names=len(track_name)
+        count_artists=(len(track_artist))
         #get first page of tracks
         tracks=client.playlist_tracks(id)
-        tracks_IDX, tracks_name, artist_names=get_tracks_info(tracks)
+        t_idx, t_name, a_name=get_tracks_info(tracks,"p")
         #add to our global lists
-        all_tracks_IDX.extend(tracks_IDX)
-        all_track_names.extend(tracks_name)
-        all_track_artists.extend(artist_names)
-        #go through remaining pages if any exist
-        while(tracks['next']): 
-            token=dict(oauth.get_cached_token())
-            tracks=requests.get(tracks['next'], headers={"Authorization":  token['token_type']+" "+token['access_token']}).json()
-            tracks_IDX, tracks_name, artist_names=get_tracks_info(tracks)
-            all_tracks_IDX.extend(tracks_IDX)
-            all_track_names.extend(tracks_name)
-            all_track_artists.extend(artist_names)
+        track_idx.extend(t_idx)
+        track_name.extend(t_name)
+        track_artist.extend(a_name)
+        paginate_results(tracks=tracks,idx=track_idx,track_names=track_name,artist_names=track_artist,oauth=oauth,choice="p")
         #count check
-        count_IDX_after_playlist= len(all_tracks_IDX)
-        count_names_after_playlist=len(all_track_names)
-        count_artist_after_playlist= len(all_track_artists)
+        count_IDX_after_playlist= len(track_idx)
+        count_names_after_playlist=len(track_name)
+        count_artist_after_playlist= len(track_artist)
+        print(tracks['total'])
+        print(count_IDX_after_playlist - count_IDX)
+        print(count_names_after_playlist - count_names)
+        print(count_artist_after_playlist - count_artists)
+
         assert (tracks['total']==(count_IDX_after_playlist-count_IDX)== (count_names_after_playlist-count_names )== (count_artist_after_playlist-count_artists))
-    return all_tracks_IDX,all_track_names,all_track_artists
-def get_tracks_info(tracks:dict):
+    return track_idx,track_name,track_artist
+def get_tracks_info(tracks:dict,choice):
     tracks_URI=[]
     tracks_name=[]
     artists_name=[]
     for item in tracks['items']:
-        tracks_URI.append(item['track']['uri'])
-        tracks_name.append(item['track']['name'])
-        #get first artist associated with the song in the json obj
-        artists_name.append(item['track']['artists'][0]['name']) 
+        if(choice=="p"):
+            tracks_URI.append(item['track']['uri'])
+            tracks_name.append(item['track']['name'])
+            #get first artist associated with the song in the json obj
+            artists_name.append(item['track']['artists'][0]['name']) 
+        elif(choice=="t"):
+            #different json structure
+            #this is for top monthly tracks
+            tracks_URI.append(item['uri'])
+            tracks_name.append(item['name'])
+            artists_name.append(item['artists'][0]['name']) 
     assert(len(tracks_URI)==len(tracks_name)==len(artists_name))
     return tracks_URI, tracks_name, artists_name
+        
 def get_audio_info( client:spotipy.Spotify, oauth:SpotifyOAuth, parent_df:pd.DataFrame):
     parent_df.reset_index(inplace=True, drop=True)
     partitioned_list=[]
