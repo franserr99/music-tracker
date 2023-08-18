@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String
-from base import base
+from db.base import base
 
 class Library(base):
     __tablename__ = 'Library'

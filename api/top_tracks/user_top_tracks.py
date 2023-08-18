@@ -2,13 +2,18 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from api import sp_utility
 
-#short_term, medium_term,long_term
-def main(artistsOnly=True, term="short_term"): 
+def monthly_tracks():
     sp_utility.setup()
     oauth=SpotifyOAuth(scope=sp_utility.scope)
     sp=spotipy.Spotify(auth_manager=oauth)
-    this_month_tracks=getFullResp(client=sp,term="long_term",oauth=oauth)
-    tracks_artists=this_month_tracks[2]
+    this_month_tracks=begin_build(client=sp,term="long_term",oauth=oauth)
+    print(this_month_tracks)
+    return this_month_tracks
+#short_term, medium_term,long_term
+def main(artistsOnly=True, term="short_term"): 
+    this_month_tracks=monthly_tracks()
+    print(this_month_tracks.columns)
+    tracks_artists=this_month_tracks.iloc[:,2]
     top_artists=top_n_artists(tracks_artists=tracks_artists)
     print(top_artists)
 #logic to filter through and pick the top artists
@@ -44,19 +49,18 @@ def top_n_artists(tracks_artists):
                 break
     return top_artists
 #paginate and process all of the responses
-def getFullResp(term, client, oauth): 
+def begin_build(term, client, oauth): 
     track_dict=client.current_user_top_tracks(20,offset=0,time_range= term )
-    tracks=sp_utility.get_tracks_info(track_dict,"t")
-    if(track_dict['next']): 
-        sp_utility.paginate_results(track_dict, tracks[0], tracks[1], tracks[2],oauth=oauth)
-    return tracks
+    
+    df_with_audio=sp_utility.get_tracks(client=client,oauth=oauth,source=("t",track_dict),with_audio=True)
+    return df_with_audio
 
 def unique_tracks_all_terms():
     #id, name, artist: structure of the tuple returned 
     #init the iterables w/ short-term
-    short_term=getFullResp("short_term")
-    medium_term=getFullResp("medium_term")
-    long_term=getFullResp("long_term")
+    short_term=begin_build("short_term")
+    medium_term=begin_build("medium_term")
+    long_term=begin_build("long_term")
     #set up var
     track_idx=short_term[0][:]
     track_names=short_term[1][:]

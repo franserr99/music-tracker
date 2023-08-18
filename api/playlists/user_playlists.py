@@ -30,7 +30,7 @@ def begin_build(client:spotipy.Spotify, oauth:SpotifyOAuth, user_flag:bool, with
             playlists= requests.get(playlists['next'], headers={ 'Authorization': type+" "+access_token }).json()
             process_page(playlists=playlists,user_flag=user_flag,client=client,playlist_idx=playlists_idx)
 
-    df_with_audio=sp_utility.get_tracks(client, oauth, playlists_idx,True)
+    df_with_audio=sp_utility.get_tracks(client, oauth, ("p",playlists_idx),True)
     return df_with_audio
 def process_page(playlists,user_flag,client,playlist_idx):
     for playlist in playlists['items']:

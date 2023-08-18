@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String, ForeignKey,PrimaryKeyConstraint
-from base import base
+from db.base import base
 
 class Liked(base):
     __tablename__='Liked'

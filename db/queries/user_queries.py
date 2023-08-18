@@ -1,5 +1,5 @@
-from base import ScopedSession
-from models.user import User
+from db.base import ScopedSession
+from db.models.user import User
 
 def create_user(id: str ):
     print("user being created")

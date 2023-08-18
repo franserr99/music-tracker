@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String, ForeignKey,DateTime,PrimaryKeyConstraint
-from base import base
+from db.base import base
 
 class TopTrack(base):
     __tablename__='TopTrack'

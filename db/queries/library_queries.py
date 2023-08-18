@@ -1,32 +1,11 @@
-from base import ScopedSession
-from models.history import History
-from models.library import Library
-from models.features import Features
-from user_queries import user_id_list,create_user
+from db.base import ScopedSession
+from db.models.history import History
+from db.models.library import Library
+from db.models.features import Features
 import pandas as pd
+from db.queries.consts import DANCEABILITY,ENERGY,KEY,LOUDNESS,MODE,SPEECHINESS,ACOUSTICNESS,INSTRUMENTALNESS,LIVENESS,VALENCE,TEMPO
 
-@staticmethod
-def get_fav_songs_uri(user:str):
-    all_users= user_id_list()
-    if user not in all_users:
-        create_user(id=user)
-        print("user not in databse, tracks from history to get ")
-        return
-    try:
-        session=ScopedSession()   
-        user_listening_hist=session.query(History).filter(History.user_id==user).all()
-        unique_track_uri=[]
-        for track_listenened in user_listening_hist:
-            if track_listenened.uri not in unique_track_uri:
-                unique_track_uri.append(track_listenened.uri)
-        return unique_track_uri
-    finally:
-        session.close()
-@staticmethod
-def fav_songs_info( user_id:str):
-    song_uri=get_fav_songs_uri(user=user_id)
-    track_names, track_artist=get_song_info(song_uris=song_uri)
-    return song_uri, track_names, track_artist
+
 @staticmethod
 def get_song_info( song_uris:list):
     track_names=[]
@@ -52,30 +31,31 @@ def add_song( track_uri:str, track_name:str, track_artist:str):
     finally:
         session.close()
         print('an error occured within the add_song method')
+
+#TODO: figure out how you want this implementation 
 @staticmethod
-def add_songs(track_uris: list, track_names:list, track_artists:list, df:pd.DataFrame):
+def add_songs(df:pd.DataFrame):
+    print("adding tracks...")
+    track_idx=df.iloc[0,:].to_list()
+    track_names=df.iloc[1,:].to_list()
+    track_artists=df.iloc[2,:].to_list()
     #PART ONE: add to the track library 
-    if not track_uris or len(track_uris)==0:
+    if not track_idx or len(track_idx)==0:
+        print("no tracks to add")
         return 
     session = ScopedSession()
     db_lib=get_song_uris()
     need_features=[]
     try:    
-        for i, track in enumerate(track_uris):
+        for i, track in enumerate(track_idx):
             if track not in db_lib:
                 need_features.append(track)
                 session.add(Library(uri=track, track_name=track_names[i], track_artists=track_artists[i]))
+                session.add(Features(track_id= track,danceability=df.iloc[i,DANCEABILITY], energy=df.iloc[i,ENERGY],
+                                        key=df.iloc[i,KEY] ,loudness=df.iloc[i,LOUDNESS],  mode=df.iloc[i,MODE],
+                                        speechiness=df.iloc[i,SPEECHINESS],acousticness=df.iloc[i,ACOUSTICNESS],instrumentalness= df.iloc[i,INSTRUMENTALNESS],
+                                        liveness=df.iloc[i,LIVENESS], valence=df.iloc[i,VALENCE],tempo=df.iloc[i,TEMPO]))
         session.commit()        
-    finally:
-        session.close()
-   
-    try:
-        for index, row in df.iterrow():
-            session.add(Features(track_id= row.iloc[-1],danceability=row.iloc[0], energy=row.iloc[1],
-                                        key=row.iloc[2] ,loudness=row.iloc[3],  mode=row.iloc[4],
-                                        speechiness=row.iloc[5],acousticness=row.iloc[6],instrumentalness= row.iloc[7],
-                                        liveness=row[8].iloc, valence=row.iloc[9],tempo=row.iloc[10]))
-        session.commit()    
     finally:
         session.close()
 @staticmethod
@@ -89,35 +69,7 @@ def get_song_uris():
         return song_URIs
     finally:
         session.close()
-@staticmethod
-def get_audio_features(tracks_uri:list):        
-    #returns a 3 -tuple 
-    # one of the three elements may be null (need to check that this is possible in pythoon )
-    if len(tracks_uri)==0:
-        return
-    #get the audiofeatures for a specific song if we have it 
-    session = ScopedSession()
-    songs_features=[]
-    try:
-        for track in tracks_uri:
-            feat=[]
-            features=session.query(Features).filter(Features.track_id==track).first()
-            feat.append(features.danceability)
-            feat.append(features.energy)
-            feat.append(features.key)
-            feat.append(features.loudness)
-            feat.append(features.mode)
-            feat.append(features.speechiness)
-            feat.append(features.acousticness)
-            feat.append(features.instrumentalness)
-            feat.append(features.liveness)
-            feat.append(features.valence)
-            feat.append(features.tempo)
-            feat.append(track)
-            songs_features.append(feat)
-        return songs_features
-    finally:
-        session.close() 
+
 @staticmethod
 def song_in_db( track_uri:str): 
     db_songs= get_song_uris()
@@ -125,3 +77,23 @@ def song_in_db( track_uri:str):
         return False
     else:
         return True
+@staticmethod
+def get_listened_artists(user_id:str ): 
+    all_artists=[]
+    song_names, song_artists= get_song_info()
+    for song_artist in song_artists:
+        artists=song_artist.split(",")
+        for creator in artists:
+            cre=str(creator.strip())
+            if cre not in all_artists: #the list as a value for the key:value pairing does not exist yet
+                all_artists.append(cre)
+    return all_artists
+@staticmethod
+def songs_not_in_db(track_idx):
+    not_in_db=[]
+    db_songs=get_song_uris()
+
+    for track in track_idx:
+        if(track not in db_songs):
+            not_in_db.append(track)
+    return not_in_db

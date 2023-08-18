@@ -20,8 +20,11 @@ def setup():
     except:
         print("one of these were not set as an enviormental variable, needed for successful execution")
         sys.exit(1) #use this instead of exit() bc it speaks to interpreter, not safe in prod env
-def get_tracks(client:spotipy.Spotify, oauth:SpotifyOAuth,  user_playlistIDs:list, with_audio=True):
-    user_tracks_IDX ,user_tracks_names, user_track_artists= process_playlists(client, oauth, user_playlistIDs)
+def get_tracks(client:spotipy.Spotify, oauth:SpotifyOAuth,  source=None, with_audio=True):
+    
+    user_tracks_IDX ,user_tracks_names, user_track_artists= process_source(client, oauth, source)
+    
+
     #changing to a df in here 
     user_df=pd.DataFrame({ 'id':user_tracks_IDX, 'track name': user_tracks_names, 'artist':user_track_artists})
     user_df.drop_duplicates(inplace=True)
@@ -47,34 +50,39 @@ def paginate_results(tracks:dict, idx:list, track_names:list, artist_names:list,
         idx.extend(more_idx)
         track_names.extend(more_track_names)
         artist_names.extend(more_artist_names)
-def process_playlists(client:spotipy.Spotify, oauth:SpotifyOAuth, playlistIDs:list): 
+def process_source(client:spotipy.Spotify, oauth:SpotifyOAuth, source): 
     track_idx=[]
     track_name=[]
     track_artist=[]
 
-    for id in playlistIDs:
-        #keep track of counts to make sure it lines up later
-        count_IDX= len(track_idx)
-        count_names=len(track_name)
-        count_artists=(len(track_artist))
-        #get first page of tracks
-        tracks=client.playlist_tracks(id)
-        t_idx, t_name, a_name=get_tracks_info(tracks,"p")
+    if(source[0]=="p"):
+        for id in source[1]:
+            #keep track of counts to make sure it lines up later
+            count_IDX= len(track_idx)
+            count_names=len(track_name)
+            count_artists=(len(track_artist))
+            #get first page of tracks
+            tracks=client.playlist_tracks(id)
+            t_idx, t_name, a_name=get_tracks_info(tracks,"p")
+            #add to our global lists
+            track_idx.extend(t_idx)
+            track_name.extend(t_name)
+            track_artist.extend(a_name)
+            #page if needed
+            paginate_results(tracks=tracks,idx=track_idx,track_names=track_name,artist_names=track_artist,oauth=oauth,choice="p")
+            #count check
+            count_IDX_after_playlist= len(track_idx)
+            count_names_after_playlist=len(track_name)
+            count_artist_after_playlist= len(track_artist)
+            assert (tracks['total']==(count_IDX_after_playlist-count_IDX)== (count_names_after_playlist-count_names )== (count_artist_after_playlist-count_artists))
+    elif(source[0]=="t"):
+        tracks=get_tracks_info(source[1],"t")
         #add to our global lists
-        track_idx.extend(t_idx)
-        track_name.extend(t_name)
-        track_artist.extend(a_name)
-        paginate_results(tracks=tracks,idx=track_idx,track_names=track_name,artist_names=track_artist,oauth=oauth,choice="p")
-        #count check
-        count_IDX_after_playlist= len(track_idx)
-        count_names_after_playlist=len(track_name)
-        count_artist_after_playlist= len(track_artist)
-        print(tracks['total'])
-        print(count_IDX_after_playlist - count_IDX)
-        print(count_names_after_playlist - count_names)
-        print(count_artist_after_playlist - count_artists)
-
-        assert (tracks['total']==(count_IDX_after_playlist-count_IDX)== (count_names_after_playlist-count_names )== (count_artist_after_playlist-count_artists))
+        track_idx.extend(tracks[0])
+        track_name.extend(tracks[1])
+        track_artist.extend(tracks[2])
+        if(source[1]['next']): 
+            paginate_results(source[1], track_idx, track_name, track_artist,oauth=oauth,choice="t")
     return track_idx,track_name,track_artist
 def get_tracks_info(tracks:dict,choice):
     tracks_URI=[]
@@ -96,6 +104,7 @@ def get_tracks_info(tracks:dict,choice):
     return tracks_URI, tracks_name, artists_name
         
 def get_audio_info( client:spotipy.Spotify, oauth:SpotifyOAuth, parent_df:pd.DataFrame):
+    print(parent_df)
     parent_df.reset_index(inplace=True, drop=True)
     partitioned_list=[]
     trackIDX=parent_df['id'][:]
@@ -103,10 +112,11 @@ def get_audio_info( client:spotipy.Spotify, oauth:SpotifyOAuth, parent_df:pd.Dat
     for i in range (0, len(trackIDX), 100): 
         partitioned_list.append(trackIDX[i:i+100])
     all_features=dict(client.audio_features(partitioned_list[0])[0])
+    #print(all_features.keys())
     #get numerical data
     feature_column_names=list(all_features.keys())[:-7] 
     #keep a copy to make sure data lines up later
-    feature_column_names.append('id') 
+    #feature_column_names.append('id') 
     songs_audio_features=[]
     #account for songs that dont have audio features
     all_bad_indices=[]

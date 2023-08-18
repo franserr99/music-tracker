@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String, FLOAT, ForeignKey
-from base import base
+from db.base import base
 
 class Features(base):
     __tablename__ = 'Features'
