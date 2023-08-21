@@ -5,7 +5,7 @@ from db.queries.consts import SHORT,MEDIUM,LONG,TERM_TO_DAYS
 #this assumes all songs passed to it are not in the db already
 
 
-@staticmethod
+
 def push_history_data(records:tuple, term:str, id:str):
     assert(term== SHORT or term==MEDIUM or term==LONG)
     #recall: the history table has the following fields: user_id, date_recorded, relative_term, track_id
@@ -28,7 +28,7 @@ def push_history_data(records:tuple, term:str, id:str):
         session.commit()    
     finally:
         session.close()   
-@staticmethod
+
 def get_listening_history( music_id:str): 
     session = ScopedSession()
     try:
@@ -36,7 +36,7 @@ def get_listening_history( music_id:str):
         return history
     finally:
         session.close()
-@staticmethod
+
 def get_listening_history_by_term(user_id:str, term:str): 
     assert(term==(SHORT or MEDIUM or LONG ))
     session = ScopedSession()
@@ -46,9 +46,9 @@ def get_listening_history_by_term(user_id:str, term:str):
         return history
     finally:
         session.close()
-@staticmethod
+
 def get_most_recent_history(): 
     pass
-@staticmethod
+
 def get_songs_heard():
     pass

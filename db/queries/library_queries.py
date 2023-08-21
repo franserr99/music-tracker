@@ -6,7 +6,7 @@ import pandas as pd
 from db.queries.consts import DANCEABILITY,ENERGY,KEY,LOUDNESS,MODE,SPEECHINESS,ACOUSTICNESS,INSTRUMENTALNESS,LIVENESS,VALENCE,TEMPO
 
 
-@staticmethod
+
 def get_song_info( song_uris:list):
     track_names=[]
     track_artists=[]
@@ -22,7 +22,7 @@ def get_song_info( song_uris:list):
     finally:
         session.close()
 
-@staticmethod
+
 def add_song( track_uri:str, track_name:str, track_artist:str):
     try: 
         session = ScopedSession()
@@ -33,7 +33,7 @@ def add_song( track_uri:str, track_name:str, track_artist:str):
         print('an error occured within the add_song method')
 
 #TODO: figure out how you want this implementation 
-@staticmethod
+
 def add_songs(df:pd.DataFrame):
     print("adding tracks...")
     track_idx=df.iloc[0,:].to_list()
@@ -58,7 +58,7 @@ def add_songs(df:pd.DataFrame):
         session.commit()        
     finally:
         session.close()
-@staticmethod
+
 def get_song_uris():
     try:
         session = ScopedSession()
@@ -70,14 +70,14 @@ def get_song_uris():
     finally:
         session.close()
 
-@staticmethod
+
 def song_in_db( track_uri:str): 
     db_songs= get_song_uris()
     if track_uri not in db_songs:
         return False
     else:
         return True
-@staticmethod
+
 def get_listened_artists(user_id:str ): 
     all_artists=[]
     song_names, song_artists= get_song_info()
@@ -88,7 +88,7 @@ def get_listened_artists(user_id:str ):
             if cre not in all_artists: #the list as a value for the key:value pairing does not exist yet
                 all_artists.append(cre)
     return all_artists
-@staticmethod
+
 def songs_not_in_db(track_idx):
     not_in_db=[]
     db_songs=get_song_uris()

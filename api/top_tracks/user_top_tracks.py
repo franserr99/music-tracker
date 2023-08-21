@@ -1,6 +1,7 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from api import sp_utility
+import requests
 
 def monthly_tracks():
     sp_utility.setup()
@@ -50,7 +51,13 @@ def top_n_artists(tracks_artists):
     return top_artists
 #paginate and process all of the responses
 def begin_build(term, client, oauth): 
-    track_dict=client.current_user_top_tracks(20,offset=0,time_range= term )
+    try:
+        # Your Spotify API call logic
+        track_dict = client.current_user_top_tracks(20, offset=0, time_range=term)
+    except Exception as e:
+        print("********")
+        print(e.response.text)  # This will print more details about the error
+        raise e
     
     df_with_audio=sp_utility.get_tracks(client=client,oauth=oauth,source=("t",track_dict),with_audio=True)
     return df_with_audio

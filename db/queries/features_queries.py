@@ -1,7 +1,7 @@
 from db.base import ScopedSession
 from db.models.features import Features
 
-@staticmethod
+
 def get_audio_features(tracks_uri:list):        
     #returns a 3 -tuple 
     # one of the three elements may be null (need to check that this is possible in pythoon )

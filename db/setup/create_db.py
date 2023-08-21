@@ -9,7 +9,7 @@ def main():
     user=os.environ['user']
     pw=os.environ['password']
     port=os.environ['port']
-    connector_str='mysql+mysqlconnector://'+user+':'+pw+'@localhost:'+ port+'/music-tracker'
+    connector_str='mysql+mysqlconnector://'+user+':'+pw+'@localhost:'+ port+'/tracker'
     engine=create_engine(connector_str)
     base=declarative_base()
 
