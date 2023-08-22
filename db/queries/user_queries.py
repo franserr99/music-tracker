@@ -15,13 +15,7 @@ def users_list():
     try:
         session=ScopedSession()
         user_list= session.query(User).all()  
-        return user_list
+        return list(user_list)
     finally:
         pass
         session.close()
-def user_id_list():
-    users=users_list()
-    IDs=[]
-    for user in users:
-        IDs.append(user.id)
-    return IDs

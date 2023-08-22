@@ -2,6 +2,6 @@
 
 from flask import Blueprint
 
-feature_blueprint = Blueprint('feature_blueprint', __name__, template_folder='templates')
+feature_blueprint = Blueprint('feature', __name__, template_folder='templates')
 
 from . import routes

@@ -6,23 +6,19 @@ from db.queries.history_queries import get_most_recent_history
 from db.queries.history_queries import get_songs_heard
 from db.queries.history_queries import push_history_data
 
-@history_blueprint.route('/features')
-def listening_history():
-    pass
-@history_blueprint.route('/features')
-def listening_history_by_term():
-    pass
-
-@history_blueprint.route('/features')
+@history_blueprint.route('/get_listening_history')
+def listening_history(user):
+    return get_listening_history(user_id=user)
+@history_blueprint.route('/get_listening_history_by_term')
+def listening_history_by_term(user,term):
+    return get_listening_history_by_term(user_id=user,term=term)
+@history_blueprint.route('/get_most_recent_history')
 def most_recent_history():
-    pass
-
-@history_blueprint.route('/features')
+    return get_most_recent_history()
+@history_blueprint.route('/get_songs_heard')
 def songs_heard():
-    pass
-
-@history_blueprint.route('/features')
-def add_history():
-    pass
-    
-    
+    return get_songs_heard()
+@history_blueprint.route('/push_history_data')
+def add_history(records,term,id):
+    push_history_data(records,term,id)
+    return
