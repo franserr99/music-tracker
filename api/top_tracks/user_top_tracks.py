@@ -1,8 +1,6 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from api import sp_utility
-import requests
-
 def monthly_tracks():
     sp_utility.setup()
     oauth=SpotifyOAuth(scope=sp_utility.scope)

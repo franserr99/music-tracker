@@ -11,6 +11,8 @@ scope= "user-library-read user-read-playback-position user-top-read user-read-re
 #    if spotipy_id not in db_sp_id: 
 #        db_util.user_util.create_user(spotipy_id, engine)
 def setup():
+    if(os.getenv("SPOTIPY_CLIENT_SECRET") and os.getenv("SPOTIPY_CLIENT_ID") and os.getenv("SPOTIPY_REDIRECT_URI")):
+        return
     load_dotenv("sp.env")         
     try: 
         #load_dotenv should load env var, now just check they exist in the enviorment

@@ -13,8 +13,6 @@ def get_engine():
     # Check if db.env exists
     if not env_path.exists():
         raise FileNotFoundError(f"No such file or directory: '{env_path}'")
-
-
     if(load_dotenv(env_path,override=True)):
         print("atleast one set")
     else:

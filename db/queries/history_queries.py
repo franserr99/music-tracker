@@ -29,10 +29,10 @@ def push_history_data(records:tuple, term:str, id:str):
     finally:
         session.close()   
 
-def get_listening_history( music_id:str): 
+def get_listening_history( user_id:str): 
     session = ScopedSession()
     try:
-        history=session.query(History).filter(History.user_id==music_id).all()
+        history=session.query(History).filter(History.user_id==user_id).all()
         return history
     finally:
         session.close()
