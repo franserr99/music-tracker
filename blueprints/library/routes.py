@@ -9,7 +9,6 @@ from db.queries.library_queries import songs_not_in_db
 from typing import List
 import pandas as pd
 
-
 @library_blueprint.route('/listned_artists')
 def listned_artists(user):
     return get_listened_artists(user_id=user)
