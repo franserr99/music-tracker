@@ -93,8 +93,10 @@ class LikedTrack(models.Model):
         }
 #can be created by user or a liked playlist in their library by another user
 class Playlist(models.Model):
-    playlist_id = models.CharField(max_length=50, unique=True, primary_key=True)
+    playlist_id = models.CharField(max_length=50)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    class Meta:
+        constraints=[models.UniqueConstraint(fields=['playlist_id','user_id'],name='playlist_track')]
     def to_json(self):
         return { 
             'user_id':self.user_id,
@@ -106,7 +108,7 @@ class PlaylistTrack(models.Model):
     track_uri = models.ForeignKey(Track, on_delete=models.CASCADE)
 
     class Meta:
-        unique_together = ('playlist_id', 'track_uri')
+        constraints=[models.UniqueConstraint(fields=['playlist_id','track_uri'],name='playlist_track')]
     def to_json(self):
         return { 
             'playlist_id':self.playlist_id,

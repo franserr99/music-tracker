@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INJECTOR_MODULES = [
-    'path.to.Config',
+    'spotify_analyzer.injector_config'
 ]
 # Application definition
 
