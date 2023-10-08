@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'django_injector',
     'spotify_analyzer.apps.MyAppConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
