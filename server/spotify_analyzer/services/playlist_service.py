@@ -1,5 +1,6 @@
 from injector import inject,singleton
-from models import Playlist,PlaylistData
+from models import Playlist
+from service_dtos import PlaylistData
 import logging
 from services import track_service as TrackService
 

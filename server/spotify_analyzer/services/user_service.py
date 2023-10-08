@@ -1,5 +1,6 @@
 from injector import inject,singleton
-from models import User,UserData
+from models import User
+from service_dtos import UserData
 import logging
 
 @singleton

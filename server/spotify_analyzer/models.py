@@ -115,45 +115,5 @@ class PlaylistTrack(models.Model):
             'track_uri':self.track_uri,
         }
 
-#data dictionaries to avoid explicit error checking
 
-class TrackFeaturesData(TypedDict):
-    danceability:float
-    energy : float
-    key : float
-    loudness : float
-    mode : float
-    speechiness : float
-    acousticness : float
-    instrumentalness : float
-    liveness : float
-    valence : float
-    tempo : float
-    
-class TrackData(TypedDict):
-    uri :str
-    track_name : str
-    track_artists :str
-    
-class HistoryData(TypedDict):
-
-    user_id :str
-    date_recorded:datetime
-    relative_term :str
-    track_uri :str
-
-    
-class UserData(TypedDict):
-    user_id:str
-    
-class LikedTrackData(TypedDict):
-    user_id:str
-    track_uri :str
-class PlaylistData(TypedDict):
-    playlist_id:str
-    user_id:str
-    
-class PlaylistTrackData(TypedDict):
-    playlist_id:str
-    track_uri:str
     

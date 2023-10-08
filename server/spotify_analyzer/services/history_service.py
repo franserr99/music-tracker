@@ -1,5 +1,6 @@
 from injector import inject
-from models import History,HistoryData
+from models import History
+from service_dtos import HistoryData
 from services import user_service as UserService,track_service as TrackService
 import logging
 class HistoryService:

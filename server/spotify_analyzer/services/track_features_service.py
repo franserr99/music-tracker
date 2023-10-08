@@ -1,5 +1,6 @@
 from injector import singleton, inject
-from models import TrackFeatures,TrackFeaturesData
+from models import TrackFeatures
+from service_dtos import TrackFeaturesData
 from services import track_service as TrackService
 import logging
 

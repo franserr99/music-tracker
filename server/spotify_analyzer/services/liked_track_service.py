@@ -1,5 +1,6 @@
 from injector import inject
-from models import LikedTrack,LikedTrackData
+from models import LikedTrack
+from service_dtos import LikedTrackData
 from services import liked_track_service as TrackService
 import logging
 

@@ -1,5 +1,6 @@
 from injector import inject
-from models import PlaylistTrack,PlaylistTrackData,PlaylistData,TrackData
+from models import PlaylistTrack
+from service_dtos import PlaylistTrackData,PlaylistData,TrackData
 from services import playlist_service as PlaylistService,track_service as TrackService
 import logging
 from typing import Optional
