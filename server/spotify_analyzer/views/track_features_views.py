@@ -1,7 +1,7 @@
 from django.http import JsonResponse, HttpResponse
 from django.views import View
 from injector import inject
-
+from rest_framework.views import APIView
 from server.spotify_analyzer.services.track_features_service import TrackFeaturesService
 
 #i want CBV but also want DI
@@ -11,7 +11,7 @@ from server.spotify_analyzer.services.track_features_service import TrackFeature
 def create_track_features_view(track_features_service: TrackFeaturesService):
     return TrackFeaturesView.as_view(track_features_service=track_features_service)
 
-class TrackFeaturesView(View):
+class TrackFeaturesView(APIView):
     def __init__(self, track_features_service, *args, **kwargs):
         self.track_features_service = track_features_service
         super().__init__(*args, **kwargs)

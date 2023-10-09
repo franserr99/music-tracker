@@ -1,7 +1,7 @@
 from django.http import JsonResponse, HttpResponse
 from django.views import View
 from injector import inject
-
+from rest_framework.views import APIView
 from server.spotify_analyzer.services.user_service import UserService
 
 
@@ -11,7 +11,7 @@ from server.spotify_analyzer.services.user_service import UserService
 @inject
 def create_user_view(user_service: UserService):
     return UserView.as_view(user_service=user_service)
-class UserView(View):
+class UserView(APIView):
 
     def __init__(self, user_service, *args, **kwargs):
         self.user_service = user_service

@@ -1,8 +1,10 @@
 from injector import inject,singleton
 from models import Playlist
+from server.spotify_analyzer.services.user_service import UserService
 from service_dtos import PlaylistData
 import logging
 from services import track_service as TrackService
+from serializers import PlaylistSerializer
 
 @singleton
 class PlaylistService:
@@ -12,12 +14,14 @@ class PlaylistService:
         self.track_service=track_service
         self.user_service=user_service
         self.logger=logger
-    def create_playlist(self, playlist_data:PlaylistData):
-        payload=playlist_data.copy()
-        user_id=playlist_data['user_id']
+    
+    def create_playlist(self, serializer:PlaylistSerializer):
+        #data validation occurs at the view layer
+        payload=serializer.validated_data.copy()
+        user_id=payload['created_by']
         user=self.user_service.get_user(user_id=user_id)
         if(user):
-            payload['user_id']=user
+            payload['created_by']=user
             self.playlist_model.objects.create(**payload)
         else:
             self.logger.warning("User record does not exist. Check for race conditions or validate your input sources.")
@@ -29,7 +33,7 @@ class PlaylistService:
         try:
             if(user):
                 payload['user_id']=user
-                self.playlist_model.objects.get(**payload)
+                return self.playlist_model.objects.get(**payload)
             else:
                 self.logger.warning("User record does not exist. Check for race conditions or validate your input sources.")
                 self.logger.warning("User: id: %s",user_id," was attempted to be pulled from the db but does not exist")
@@ -51,7 +55,7 @@ class PlaylistService:
         else:
             self.logger.warning("Playlist record does not exist. Check for race conditions or validate your input sources.")
             self.logger.warning("Playlist with playlist_id: %s",playlist['playlist_id']," was attempted to be pulled from the db but does not exist")
-    def get_all_users_playlists(self, user_id:str):
+    def get_user_playlists(self, user_id:str):
         user=self.user_service.get_user(user_id=user_id)
         if(user):
             return self.playlist_model.objects.get(user=user)

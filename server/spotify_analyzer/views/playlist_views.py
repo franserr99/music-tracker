@@ -1,7 +1,7 @@
 from django.http import JsonResponse, HttpResponse
 from django.views import View
 from injector import inject
-
+from rest_framework.views import APIView
 from server.spotify_analyzer.services.playlist_service import PlaylistService
 
 #i want CBV but also want DI
@@ -11,7 +11,7 @@ from server.spotify_analyzer.services.playlist_service import PlaylistService
 def create_playlist_view(playlist_service: PlaylistService):
     return PlaylistView.as_view(playlist_service=playlist_service)
 
-class PlaylistView(View):
+class PlaylistView(APIView):
     def __init__(self, playlist_service, *args, **kwargs):
         self.playlist_service = playlist_service
         super().__init__(*args, **kwargs)

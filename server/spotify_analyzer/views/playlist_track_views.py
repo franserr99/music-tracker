@@ -1,7 +1,7 @@
 from django.http import JsonResponse, HttpResponse
 from django.views import View
 from injector import inject
-
+from rest_framework.views import APIView
 from server.spotify_analyzer.services.playlist_service import PlaylistService
 
 
@@ -12,12 +12,13 @@ from server.spotify_analyzer.services.playlist_service import PlaylistService
 def create_playlist_track_view(playlist_service: PlaylistService):
     return PlaylistTrackView.as_view(playlist_service=playlist_service)
 
-class PlaylistTrackView(View):
+class PlaylistTrackView(APIView):
     def __init__(self, playlist_service, *args, **kwargs):
         self.playlist_service = playlist_service
         super().__init__(*args, **kwargs)
     
     def get(self, request):
+        
         # Handle GET request
         return JsonResponse({"message": "This is a GET request"})
 

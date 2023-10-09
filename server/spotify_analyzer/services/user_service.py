@@ -1,3 +1,4 @@
+from typing import Optional
 from injector import inject,singleton
 from models import User
 from service_dtos import UserData
@@ -11,7 +12,7 @@ class UserService:
         self.logger=logger
     def create_user(self, user_data:UserData):
         self.user_model.objects.create(**user_data)
-    def get_user(self, user_id):
+    def get_user(self, user_id)->Optional[User]:
         try:
             self.user_model.objects.get(user_id=user_id)
         except Exception:
@@ -34,3 +35,6 @@ class UserService:
             self.logger.warning("User with id: %s",user_id," was attempted to be pulled from the db but does not exist")
     def get_all_users(self):
         return self.user_model.objects.all()
+    
+
+    

@@ -1,6 +1,6 @@
 
 from django.http import JsonResponse, HttpResponse
-from django.views import View
+from rest_framework.views import APIView
 from injector import inject
 
 from server.spotify_analyzer.services.liked_track_service import LikedTrackService
@@ -14,7 +14,7 @@ from server.spotify_analyzer.services.liked_track_service import LikedTrackServi
 def create_liked_track_view(liked_track_service: LikedTrackService):
     return LikedTrackView.as_view(liked_track_service=liked_track_service)
 
-class LikedTrackView(View):
+class LikedTrackView(APIView):
     def __init__(self, liked_track_service, *args, **kwargs):
         self.liked_track_service = liked_track_service
         super().__init__(*args, **kwargs)
