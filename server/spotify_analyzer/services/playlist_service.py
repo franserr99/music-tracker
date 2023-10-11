@@ -1,13 +1,28 @@
-from injector import inject,singleton
-from models import Playlist
-from server.spotify_analyzer.services.user_service import UserService
-from service_dtos import PlaylistData
+"""
+    _summary_
+
+    Returns:
+        _type_: _description_
+"""
+from typing import Optional
 import logging
-from services import track_service as TrackService
-from serializers import PlaylistSerializer
+
+from injector import inject,singleton
+
+from ..models import Playlist
+from .user_service import UserService
+from .service_dtos import PlaylistData
+from .track_service import TrackService
+from ..serializers import PlaylistSerializer
+from ..util import log_error
 
 @singleton
 class PlaylistService:
+    """_summary_
+
+    Returns:
+        _type_: _description_
+    """
     @inject
     def __init__(self, playlist_model: Playlist, track_service: TrackService,user_service:UserService,logger: logging.Logger):
         self.playlist_model = playlist_model
@@ -16,49 +31,77 @@ class PlaylistService:
         self.logger=logger
     
     def create_playlist(self, serializer:PlaylistSerializer):
+        """_summary_
+
+        Args:
+            serializer (PlaylistSerializer): _description_
+        """
         #data validation occurs at the view layer
         payload=serializer.validated_data.copy()
         user_id=payload['created_by']
         user=self.user_service.get_user(user_id=user_id)
-        if(user):
+        if user:
             payload['created_by']=user
             self.playlist_model.objects.create(**payload)
         else:
-            self.logger.warning("User record does not exist. Check for race conditions or validate your input sources.")
-            self.logger.warning("User: id: %s",user_id," was attempted to be pulled from the db but does not exist")
-    def get_playlist(self,playlist_data:PlaylistData):
+            log_error(logger=self.logger,entity="User",identifier=user_id)
+    def get_playlist(self,playlist_data:PlaylistData)->Optional[Playlist]:
+        """_summary_
+
+        Args:
+            playlist_data (PlaylistData): _description_
+
+        Returns:
+            Optional[Playlist]: _description_
+        """
         payload=playlist_data.copy()
         user_id=playlist_data['user_id']
         user=self.user_service.get_user(user_id=user_id)
         try:
-            if(user):
+            if user:
                 payload['user_id']=user
                 return self.playlist_model.objects.get(**payload)
-            else:
-                self.logger.warning("User record does not exist. Check for race conditions or validate your input sources.")
-                self.logger.warning("User: id: %s",user_id," was attempted to be pulled from the db but does not exist")
+            log_error(logger=self.logger,entity="User",identifier=user_id)
         except Exception:
             self.logger.exception("An exception occured in get_playlist:")
     def update_playlist(self, old_data:PlaylistData, new_data:PlaylistData):
+        """_summary_
+
+        Args:
+            old_data (PlaylistData): _description_
+            new_data (PlaylistData): _description_
+        """
         playlist=self.get_playlist(self,playlist_data=old_data)
+        playlist_id=old_data['playlist_id']
         if(playlist):
             for key,value in new_data.items():
                 setattr(playlist,key,value)
             playlist.save()
         else:
-            self.logger.warning("Playlist record does not exist. Check for race conditions or validate your input sources.")
-            self.logger.warning("Playlist with playlist_id: %s",old_data['playlist_id']," was attempted to be pulled from the db but does not exist")
+            log_error(logger=self.logger,entity="Playlist",identifier=playlist_id)
     def delete_playlist(self,playlist_data:PlaylistData):
+        """_summary_
+
+        Args:
+            playlist_data (PlaylistData): _description_
+        """
         playlist=self.get_playlist(self,playlist_data=playlist_data)
+        playlist_id=playlist['playlist_id']
         if(playlist):
             playlist.delete()
         else:
-            self.logger.warning("Playlist record does not exist. Check for race conditions or validate your input sources.")
-            self.logger.warning("Playlist with playlist_id: %s",playlist['playlist_id']," was attempted to be pulled from the db but does not exist")
+            log_error(logger=self.logger,entity="Playlist",identifier=playlist_id)
     def get_user_playlists(self, user_id:str):
+        """_summary_
+
+        Args:
+            user_id (str): _description_
+
+        Returns:
+            _type_: _description_
+        """
         user=self.user_service.get_user(user_id=user_id)
         if(user):
             return self.playlist_model.objects.get(user=user)
         else:
-            self.logger.warning("User record does not exist. Check for race conditions or validate your input sources.")
-            self.logger.warning("User: id: %s",user_id," was attempted to be pulled from the db but does not exist")
+            log_error(logger=self.logger,entity="User",identifier=user_id)

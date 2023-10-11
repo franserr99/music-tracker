@@ -1,9 +1,24 @@
-from injector import inject
-from models import History
-from service_dtos import HistoryData
-from services import user_service as UserService,track_service as TrackService
+"""_summary_
+
+    Returns:
+        _type_: _description_
+"""
+from typing import Optional
 import logging
+
+from injector import inject
+
+from ..models import History
+from .service_dtos import HistoryData
+from .user_service import  UserService
+from .track_service import TrackService
+
 class HistoryService:
+    """_summary_
+
+    Returns:
+        _type_: _description_
+    """
     @inject
     def __init__(self, history_model: History,user_service:UserService,track_service: TrackService,logger: logging.Logger):
         self.history_model = history_model
@@ -13,7 +28,7 @@ class HistoryService:
     def create_listening_history(self, history_data:HistoryData):
         self.history_model.objects.create(**history_data)
     #pass the data object, need alot more fields from it 
-    def get_history(self,history_data:HistoryData ):
+    def get_history(self,history_data:HistoryData )->Optional[History]:
         try:
             #history=self.history_model.objects.get(**history_data)
             track=self.track_service.get_track(history_data['track_uri'])
