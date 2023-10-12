@@ -84,10 +84,10 @@ class History(models.Model):
         - relative_term: Some sort of term to relate to.
         - track_uri: The URI of the track in the history.
     """
-    user_id = models.ForeignKey('User', on_delete=models.CASCADE)  
+    user = models.ForeignKey('User', on_delete=models.CASCADE, related_name='listening_history')  
     date_recorded = models.DateTimeField()
     relative_term = models.CharField(max_length=30)
-    track_uri = models.ForeignKey('Track', on_delete=models.CASCADE) 
+    track = models.ForeignKey('Track', on_delete=models.CASCADE, related_name='user_history') 
     class Meta:
         """
         Meta class for History.
@@ -112,6 +112,7 @@ class User(models.Model):
         - liked_tracks: The tracks that the user has liked.
     """
     id = models.CharField(max_length=50, unique=True, primary_key=True)
+    history = models.ManyToManyField('Track', through='History', related_name='listeners')
     liked_tracks=models.ManyToManyField('Track',related_name='liked_by_users')
     class Meta:
         """

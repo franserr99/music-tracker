@@ -80,7 +80,7 @@ class TrackService:
             Optional[Track]: The Track object if found, None otherwise.
         """
         try:
-            print(self.track_model.objects.get(track_uri=track_uri))
+            #print(self.track_model.objects.get(track_uri=track_uri))
             return self.track_model.objects.get(track_uri=track_uri)
         except self.track_model.DoesNotExist:
             self.logger.exception("An exception occured in get_track:")
@@ -134,7 +134,7 @@ class TrackService:
         """Fetches all tracks in the database.
 
         Returns:
-            Optional[List[Track]]: A list of all Track objects if successful, None otherwise.
+            QuerySet: A QuerySet containing all track features or None if an error occurs.
         """
         try:
             return self.track_model.objects.all()

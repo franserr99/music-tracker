@@ -120,7 +120,8 @@ class UserService:
     def get_all_users(self)-> Optional[List[User]]:
         """Fetches all users.   
         Returns:
-        Optional[List[User]]: A list of all User objects if successful, None otherwise.
+        Returns:
+            QuerySet: A QuerySet containing all track features or None if an error occurs.
         """
         try:
             return self.user_model.objects.all()
