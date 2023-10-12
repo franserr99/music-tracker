@@ -1,14 +1,32 @@
-"""_summary_
+"""
+track_service.py
+================
 
-    Returns:
-        _type_: _description_
+This module contains the TrackService class, which provides high-level operations
+for managing tracks in the application. The class includes methods for creating,
+retrieving, updating, and deleting tracks using the Track model as its data interface.
+
+Classes:
+    - TrackService: Manages CRUD operations for tracks.
+
+Usage:
+    from track_service import TrackService
+
+    track_service = TrackService(TrackModel, Logger)
+    track_service.create_track(track_data)
+    track_service.get_track(track_uri)
+    track_service.update_track(track_uri, new_data)
+    track_service.delete_track(track_uri)
+    track_service.get_all_tracks()
 """
 from typing import Optional
 import logging
 
 from injector import singleton, inject
+from django.core.exceptions import ValidationError
+from django.db import IntegrityError, DatabaseError, OperationalError
 
-from..util import log_error
+from..util import log_error,log_error_dependency
 from ..models import Track
 from .service_dtos import TrackData
 
@@ -16,76 +34,110 @@ from .service_dtos import TrackData
 
 @singleton
 class TrackService:
-    """_summary_
+    """Provides services for managing tracks in the database.
 
-    Returns:
-        _type_: _description_
+    This class is responsible for creating, retrieving, updating, and deleting tracks.
+    It interacts with the Track model to perform CRUD operations.
     """
     @inject
     def __init__(self, track_model: Track, logger: logging.Logger):
+        """Initializes the TrackService with a track model and logger.
+
+        Args:
+            track_model (Track): The Track model class to operate on.
+            logger (logging.Logger): Logger instance to log information and errors.
+        """
         self.track_model = track_model
         self.logger = logger
 
     def create_track(self, track_data: TrackData):
-        """_summary_
+        """Creates a new track in the database.
 
         Args:
-            track_data (TrackData): _description_
+            track_data (TrackData): Data required to create a new track.
+
+        Returns:
+            Optional[Track]: The newly created Track object if successful, None otherwise.
         """
-        self.track_model.objects.create(**track_data)
+        
+        try:
+            return self.track_model.objects.create(**track_data)
+        except (IntegrityError,ValidationError,
+                DatabaseError,TypeError,ValueError) as e:
+            #logger will display more info about the error
+            #calling code will know something went wrong, but not the context
+            self.logger.exception(f"An error occurred while creating a track: {e}")
+            return None
     # identifiable by uri so only use it
 
     def get_track(self, track_uri: str) -> Optional[Track]:
-        """_summary_
+        """Fetches a track by its URI.
 
         Args:
-            track_uri (str): _description_
+            track_uri (str): The URI of the track to fetch.
 
         Returns:
-            Optional[Track]: _description_
+            Optional[Track]: The Track object if found, None otherwise.
         """
         try:
             print(self.track_model.objects.get(track_uri=track_uri))
-            track = self.track_model.objects.get(track_uri=track_uri)
-            if track:
-                return track
-            self.logger.error("")
+            return self.track_model.objects.get(track_uri=track_uri)
         except self.track_model.DoesNotExist:
             self.logger.exception("An exception occured in get_track:")
-        except self.track_model.MultipleObjectsReturned:
-            self.logger.exception("More than two objects returned")
+            log_error(logger=self.logger,entity="Track",identifier=track_uri)
+            return None
 
     def update_track(self, track_uri: str, track_data: TrackData):
-        """_summary_
+        """Updates an existing track.
 
         Args:
-            track_uri (str): _description_
-            track_data (TrackData): _description_
+            track_uri (str): The URI of the track to update.
+            track_data (TrackData): New data to update the track.
+
+        Returns:
+            Optional[bool]: True if the update is successful, None otherwise.
         """
         track = self.get_track(track_uri=track_uri)
         if track:
             for key, value in track_data.items():
                 setattr(track, key, value)
-            track.save()
+            
+            try:
+                track.save()
+            except (IntegrityError,ValidationError,
+                    OperationalError,DatabaseError) as e:
+                self.logger.exception(f"An error occurred while updating a track: {e}")
+                return None
         else:
-            log_error(logger=self.logger, entity="Track", identifier=track_uri)
+            log_error_dependency(logger=self.logger,caller="update_track()",entity="Track")
 
     def delete_track(self, track_uri: str):
-        """_summary_
+        """Deletes a track by its URI.
 
         Args:
-            track_uri (str): _description_
+            track_uri (str): The URI of the track to delete.
+
+        Returns:
+            Optional[bool]: True if the deletion is successful, None otherwise.
         """
         track = self.get_track(track_uri=track_uri)
         if track:
-            track.delete()
+            try:
+                track.delete()
+            except (IntegrityError,OperationalError,DatabaseError) as e:
+                self.logger.exception(f"An error occurred while deleting a track: {e}")
+                return None
         else:
-            log_error(logger=self.logger, entity="Track", identifier=track_uri)
+            log_error_dependency(logger=self.logger,caller="delete_track()",entity="Track")
 
     def get_all_tracks(self):
-        """_summary_
+        """Fetches all tracks in the database.
 
         Returns:
-            _type_: _description_
+            Optional[List[Track]]: A list of all Track objects if successful, None otherwise.
         """
-        return self.track_model.objects.all()
+        try:
+            return self.track_model.objects.all()
+        except (OperationalError, DatabaseError) as e:
+            self.logger.exception(f"An error occurred while fetching all tracks: {e}")
+            return None

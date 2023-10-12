@@ -62,8 +62,10 @@ class PlaylistService:
                 payload['user_id']=user
                 return self.playlist_model.objects.get(**payload)
             log_error(logger=self.logger,entity="User",identifier=user_id)
-        except Exception:
+        except self.playlist_model.DoesNotExist:
             self.logger.exception("An exception occured in get_playlist:")
+        except self.playlist_model.MultipleObjectsReturned:
+            self.logger.exception("More than two objects get_playlist")
     def update_playlist(self, old_data:PlaylistData, new_data:PlaylistData):
         """_summary_
 
@@ -71,7 +73,7 @@ class PlaylistService:
             old_data (PlaylistData): _description_
             new_data (PlaylistData): _description_
         """
-        playlist=self.get_playlist(self,playlist_data=old_data)
+        playlist=self.get_playlist(playlist_data=old_data)
         playlist_id=old_data['playlist_id']
         if(playlist):
             for key,value in new_data.items():
@@ -85,7 +87,7 @@ class PlaylistService:
         Args:
             playlist_data (PlaylistData): _description_
         """
-        playlist=self.get_playlist(self,playlist_data=playlist_data)
+        playlist=self.get_playlist(playlist_data=playlist_data)
         playlist_id=playlist['playlist_id']
         if(playlist):
             playlist.delete()
