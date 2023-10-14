@@ -82,8 +82,8 @@ class HistoryService:
             try:
 
                 return self.history_model.objects.get_or_create()[0]
-       
-        self.logger.exception("An exception occured in get_track:")
+            except self.history_model.DoesNotExist:
+                self.logger.exception("An exception occured in get_history:")
     def update_history(self , updated_history_data:HistoryData, prev_history_data:HistoryData):
         """_summary_
 
@@ -104,7 +104,7 @@ class HistoryService:
         Args:
             history_data (HistoryData): _description_
         """
-        history=self.get_history(self,history_data=history_data)
+        history=self.get_history(history_data=history_data)
         if(history is not None):
             history.delete()
         else:

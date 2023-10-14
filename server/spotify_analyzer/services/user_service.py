@@ -112,7 +112,7 @@ class UserService:
         user=self.get_user(user_id=user_id)
         if user:
             try:
-                user.delete()
+                return user.delete()
             except (IntegrityError,OperationalError,DatabaseError) as e:
                 self.logger.exception(f"An error occurred while deleting a user: {e}")
                 return None

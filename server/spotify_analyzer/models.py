@@ -30,7 +30,8 @@ class TrackFeatures(models.Model):
     track = models.OneToOneField(
         'Track', 
         on_delete=models.CASCADE,
-        related_name='features'
+        related_name='features',
+        primary_key=True
     )
     danceability = models.FloatField()
     energy = models.FloatField()
@@ -72,6 +73,7 @@ class Track(models.Model):
             db_table: Specifies the name of the database table.
         """
         db_table='Track'
+
 #tracks/records when a user listened to a given song
 #use: collecting alot of listening data
 class History(models.Model):
@@ -112,7 +114,6 @@ class User(models.Model):
         - liked_tracks: The tracks that the user has liked.
     """
     id = models.CharField(max_length=50, unique=True, primary_key=True)
-    history = models.ManyToManyField('Track', through='History', related_name='listeners')
     liked_tracks=models.ManyToManyField('Track',related_name='liked_by_users')
     class Meta:
         """

@@ -1,35 +1,127 @@
-from django.http import JsonResponse, HttpResponse
-from django.views import View
+"""_summary_
+
+    Returns:
+        _type_: _description_
+"""
+from django.http import JsonResponse#, HttpResponse
 from injector import inject
 from rest_framework.views import APIView
-from server.spotify_analyzer.services.user_service import UserService
+from rest_framework import status
+from django.http import Http404
+
+
+from ..services.user_service import UserService
+from ..serializers import UserSerializer, UserWithTracksSerializer
 
 
 #i want CBV but also want DI
-#best of both worlds is wrapping the creation of a CBV with a 
+#best of both worlds is wrapping the creation of a CBV with a
 #function that gets the service bean injected
 @inject
 def create_user_view(user_service: UserService):
+    """_summary_
+
+    Args:
+        user_service (UserService): _description_
+
+    Returns:
+        _type_: _description_
+    """
     return UserView.as_view(user_service=user_service)
 class UserView(APIView):
+    """_summary_
 
-    def __init__(self, user_service, *args, **kwargs):
+    Args:
+        APIView (_type_): _description_
+    """
+
+    def __init__(self, user_service: UserService, *args, **kwargs):
         self.user_service = user_service
         super().__init__(*args, **kwargs)
     
-    def get(self, request):
-        # Handle GET request
-        return JsonResponse({"message": "This is a GET request"})
+    def get(self, request,user_id):
+        """
+            Retrieve a user by ID.
 
+            Args:
+                request (rest_framework.request.Request): The HTTP request object.
+                user_id (int): The ID of the user to retrieve.
+
+            Returns:
+                rest_framework.response.Response: The HTTP response object.
+        """
+        user=self.user_service.get_user(user_id=user_id)
+        if(user):
+            serializer = UserSerializer(user)
+            return JsonResponse(serializer.data, status=status.HTTP_200_OK)
+        else:
+            raise Http404("User does not exist")
+        # try:
+        #     user = self.user_service.get_user(user_id)
+        # except User.DoesNotExist:  # Or whatever exception your service throws
+        #     raise Http404("User does not exist")
+
+        # serializer = UserSerializer(user)
+        # return JsonResponse(serializer.data, status=status.HTTP_200_OK)
     def post(self, request):
+        """
+            Handle POST request to create a user.
+
+            Args:
+                request (rest_framework.request.Request): The HTTP request object.
+
+            Returns:
+                rest_framework.response.Response: The HTTP response object.
+        """
         # Handle POST request
-        return JsonResponse({"message": "This is a POST request"})
+        serializer=UserSerializer(request.data)
+        if serializer.is_valid():
+            user=self.user_service.create_user(user_data=serializer.validated_data)
+            return JsonResponse(UserSerializer(user).data,status=status.HTTP_201_CREATED)
+        #return JsonResponse({"message": "This is a POST request"})
+        return JsonResponse(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+    def put(self, request, user_id):
+        """
+            Update a user based on user_id and request data
 
-    def put(self, request):
-        # Handle PUT request
-        return JsonResponse({"message": "This is a PUT request"})
+            Args:
+                request (rest_framework.request.Request): HTTP request
+                user_id (int): Identifier for the user to update
 
-    def delete(self, request):
-        # Handle DELETE request
-        return JsonResponse({"message": "This is a DELETE request"})
+            Returns:
+                JsonResponse: HTTP response indicating the outcome of the operation
+        """
+        serializer = UserSerializer(request.data)
+        if serializer.is_valid():
+            user=self.user_service.update_user(user_id=user_id,
+                                                user_data=serializer.validated_data)
+            if user:
+                return JsonResponse(UserSerializer(user).data,status=status.HTTP_200_OK)
+            else:
+                raise Http404("User does not exist")
+        else:
+            return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+    def delete(self, request, user_id):
+        """Delete a user by ID.
+
+        Args:
+            request (rest_framework.request.Request): The HTTP request object.
+            user_id (int): The ID of the user to delete.
+
+        Returns:
+            rest_framework.response.Response: The HTTP response object.
+        """
+        user = self.user_service.delete_user(user_id=user_id)
+
+        if not user:
+            raise Http404("User does not exist")
+        else:
+            return JsonResponse({"message": "User deleted successfully"}, status=status.HTTP_200_OK)
+    def get_user_liked_tracks(self, request, user_id):
+        user=self.user_service.get_user(user_id=user_id)
+        if(user):
+            serializer = UserWithTracksSerializer(user)
+            return JsonResponse(serializer.data, status=status.HTTP_200_OK)
+        else:
+            raise Http404("User does not exist")

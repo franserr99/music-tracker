@@ -1,11 +1,13 @@
 from typing import Type
-from django.http import JsonResponse, HttpResponse
+from django.http import Http404, JsonResponse, HttpResponse
 from django.views import View
 from injector import inject
 from rest_framework.views import APIView
-from server.spotify_analyzer.services.track_service import TrackService
-from server.spotify_analyzer.serializers import TrackDataSerializer
 from rest_framework import status
+
+from ..services.track_service import TrackService
+from ..serializers import TrackSerializer
+
 
 
 #CBV+DI: wrap the creation of a CBV with a 
@@ -21,31 +23,37 @@ class TrackView(APIView):
 
     def get(self, request, **kwargs):
         #track_uri is a URL parameter
-        track_uri = kwargs.get('track_uri')  
+        track_uri = kwargs.get('track_uri')
         #dispatch service obj to get track from db
-        track_data = self.track_service.get_track(track_uri)  
+        track_data = self.track_service.get_track(track_uri=track_uri)
         #check it exists
         if track_data:
-            serializer = TrackDataSerializer(track_data)
+            serializer = TrackSerializer(track_data)
             return JsonResponse(serializer.data, status=status.HTTP_200_OK)
-        return JsonResponse({"error": "Track not found"}, status=status.HTTP_404_NOT_FOUND)
+        else:
+            raise Http404("Track does not exist")
 
     def post(self, request):
-        serializer = TrackDataSerializer(data=request.data)
-
+        serializer=TrackSerializer(request.data)
         if serializer.is_valid():
-            
-            
-            return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
-        
-        return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-       
-        return JsonResponse({"message": "This is a POST request"})
+            track=self.track_service.create_track(track_data=serializer.validated_data)
+            return JsonResponse(TrackSerializer(track).data,status=status.HTTP_201_CREATED)
 
-    def put(self, request):
-        # Handle PUT request
-        return JsonResponse({"message": "This is a PUT request"})
+    def put(self, request,track_uri):
+        serializer = TrackSerializer(request.data)
+        if serializer.is_valid():
+            track=self.track_service.update_track(track_uri=track_uri,track_data=serializer.validated_data)
+            if track:
+                return JsonResponse(TrackSerializer(track).data,status=status.HTTP_200_OK)
+            else:
+                raise Http404("Track does not exist")
+        else:
+            return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def delete(self, request):
-        # Handle DELETE request
-        return JsonResponse({"message": "This is a DELETE request"})
+    def delete(self, request,track_uri):
+        track = self.track_service.delete_track(track_uri=track_uri)
+
+        if not track:
+            raise Http404("Track does not exist")
+        else:
+            return JsonResponse({"message": "Track deleted successfully"}, status=status.HTTP_200_OK)
