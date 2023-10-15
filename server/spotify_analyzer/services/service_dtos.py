@@ -30,3 +30,6 @@ class UserData(TypedDict):
 class PlaylistData(TypedDict):
     playlist_id:str
     created_by:str
+class LikedTrackData(TypedDict):
+    user_id:str
+    track_uri:str

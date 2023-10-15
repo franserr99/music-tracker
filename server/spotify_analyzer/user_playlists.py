@@ -1,6 +1,6 @@
 import spotipy,requests
 from spotipy.oauth2 import SpotifyOAuth
-from .. import sp_utility
+from . import sp_utility
 def main(both=False, user=True):
     sp_utility.setup()
     oauth=SpotifyOAuth(scope=sp_utility.scope)

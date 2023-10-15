@@ -99,7 +99,9 @@ class TrackWithFeaturesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Track
         fields = ['uri', 'track_name', 'track_artists', 'features']
-
+class LikedTrackSerializer(serializers.Serializer):
+    user = serializers.CharField()
+    track = serializers.CharField()
 
 class HistorySerializer(serializers.ModelSerializer):
     """
