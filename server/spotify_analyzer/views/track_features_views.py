@@ -7,11 +7,12 @@ Raises:
 Returns:
     JsonResponse: Returns a JSON representation of track features or an error message.
 """
-from django.http import Http404
+
 from injector import inject
 from rest_framework.generics import RetrieveAPIView
 
 from ..serializers import TrackFeaturesSerializer
+from ..models import TrackFeatures
 from ..services.track_features_service import TrackFeaturesService
 
 @inject
@@ -32,30 +33,7 @@ class TrackFeaturesView(RetrieveAPIView):
     """
     A class-based view for retrieving track features.
     """
+    # Assume TrackFeatures is the name of your model
+    queryset = TrackFeatures.objects.all()  # pylint: disable=no-member
     serializer_class = TrackFeaturesSerializer  # specify the serializer class here
-    
-    def __init__(self, track_features_service: TrackFeaturesService, *args, **kwargs):
-        """
-        Initialize the view with the injected track features service.
-        
-        Args:
-            track_features_service (TrackFeaturesService): Service for handling track features.
-        """
-        self.track_features_service = track_features_service
-        super().__init__(*args, **kwargs)
-
-    def get_object(self):
-        """
-        Retrieve the track features object.
-        
-        Raises:
-            Http404: If the track features do not exist.
-            
-        Returns:
-            dict: Serialized track features.
-        """
-        track_uri = self.kwargs.get('track_uri')
-        track_features = self.track_features_service.get_track_features(track_uri=track_uri)
-        if not track_features:
-            raise Http404("Track's Features do not exist")
-        return track_features
+    lookup_url_kwarg = 'track_uri'  # The keyword argument in the URL that determines the object to retrieve
