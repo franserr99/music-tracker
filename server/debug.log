@@ -1,0 +1,18 @@
+INFO 2023-10-16 19:29:11,847 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-10-16 19:29:11,847 autoreload autoreload.py 668 Watching for file changes with StatReloader
+WARNING 2023-10-16 19:34:21,611 log log.py 241 Not Found: /spotify/auth-code/
+WARNING 2023-10-16 19:34:21,612 log log.py 241 Not Found: /spotify/auth-code/
+WARNING 2023-10-16 19:34:21,611 log log.py 241 Not Found: /spotify/auth-code/
+WARNING 2023-10-16 19:34:21,612 log log.py 241 Not Found: /spotify/auth-code/
+WARNING 2023-10-16 19:36:21,857 log log.py 241 Not Found: /spotify/auth-code/
+WARNING 2023-10-16 19:36:21,857 log log.py 241 Not Found: /spotify/auth-code/
+WARNING 2023-10-16 19:37:54,653 log log.py 241 Not Found: /spotify/auth-code/
+WARNING 2023-10-16 19:37:54,653 log log.py 241 Not Found: /spotify/auth-code/
+WARNING 2023-10-16 19:38:47,435 log log.py 241 Not Found: /spotify/auth-code/
+WARNING 2023-10-16 19:38:47,435 log log.py 241 Not Found: /spotify/auth-code/
+INFO 2023-11-01 19:35:20,534 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-01 19:35:20,534 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-01 20:05:33,535 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/track_service.py changed, reloading.
+INFO 2023-11-01 20:05:33,535 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/track_service.py changed, reloading.
+INFO 2023-11-01 20:05:34,486 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-01 20:05:34,486 autoreload autoreload.py 668 Watching for file changes with StatReloader

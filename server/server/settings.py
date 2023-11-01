@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INJECTOR_MODULES = [
-    'spotify_analyzer.injector_config'
+    'spotify_analyzer.injector_config.Config'
 ]
 # Application definition
 
@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'django_injector',
-    'spotify_analyzer.apps.MyAppConfig',
+    'spotify_analyzer',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -52,8 +53,9 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'django_injector.inject_request_middleware',
-    'django_injector.middleware.InjectorMiddleware',
+    #'django_injector.inject_request_middleware',
+    #'django_injector.middleware.InjectorMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = "server.urls"
@@ -73,8 +75,8 @@ TEMPLATES = [
         },
     },
 ]
-
-WSGI_APPLICATION = "server.wsgi.application"
+#remove for now
+#WSGI_APPLICATION = "server.wsgi.application"
 
 
 # Database
@@ -104,13 +106,13 @@ LOGGING = {
     },
     'handlers': {
         'file': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.FileHandler',
             'filename': 'debug.log',
             'formatter': 'verbose',
         },
         'console': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.StreamHandler',
             'formatter': 'verbose',
         },
@@ -118,8 +120,13 @@ LOGGING = {
     'loggers': {
         'django': {
             'handlers': ['file'],
-            'level': 'DEBUG',
+            'level': 'INFO',
             'propagate': True,
+        },
+        'django.server': {
+            'level': 'WARNING',  # This will filter out the auto-reload logs
+            'handlers': ['console'],
+            'propagate': False,
         },
         'spotify_analyzer': {
             'handlers': ['file', 'console'],
@@ -172,3 +179,7 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # or the port your Next.js app is running on
+]

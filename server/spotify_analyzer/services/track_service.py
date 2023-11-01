@@ -30,9 +30,7 @@ from..util import log_error,log_error_dependency
 from ..models import Track
 from .service_dtos import TrackData
 
-
-
-@singleton
+#@singleton
 class TrackService:
     """Provides services for managing tracks in the database.
 

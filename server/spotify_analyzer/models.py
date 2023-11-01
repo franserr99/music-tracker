@@ -100,7 +100,7 @@ class History(models.Model):
         """
         constraints = [
             models.UniqueConstraint(fields=
-                                    ['user_id', 'relative_term', 'track_uri', 'date_recorded'],
+                                    ['user', 'relative_term', 'track', 'date_recorded'],
                                     name='unique_history')
         ]
         db_table = 'History'
