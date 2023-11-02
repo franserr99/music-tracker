@@ -11,6 +11,7 @@ from .services.track_service import TrackService
 from .services.user_service import UserService
 from .models import Track, User, History, Playlist, TrackFeatures
 
+
 class Config(Module):
     @singleton
     @provider

@@ -3,10 +3,12 @@
 from rest_framework import serializers
 
 from .models import TrackFeatures, Track, History, User, Playlist
+
+
 class TrackFeaturesSerializer(serializers.ModelSerializer):
     """
     Serializer for the TrackFeatures model.
-    
+
     Example input and output:
     {
         "track": "related_track_uri",
@@ -23,7 +25,8 @@ class TrackFeaturesSerializer(serializers.ModelSerializer):
         "tempo": 120.0
     }
     """
-    # TODO: when this serializer is nested i want to pop the track field off it, it would create
+    # TODO: when this serializer is nested i want to pop the track field off 
+    # it, it would create
     #       a bunch of duplicate data
     # def __init__(self, *args, **kwargs):
     #     super(TrackFeaturesSerializer, self).__init__(*args, **kwargs)
@@ -33,7 +36,8 @@ class TrackFeaturesSerializer(serializers.ModelSerializer):
     #     features = instance.features
 
     #     # Use a separate serializer instance for the nested data
-    #     features_serializer = TrackFeaturesSerializer(features, context={'parent': self})
+    #     features_serializer = TrackFeaturesSerializer(features,
+    #       context={'parent': self})
 
     #     # Replace the 'features' field with the serialized data
     #     rep['features'] = features_serializer.data
@@ -48,10 +52,11 @@ class TrackFeaturesSerializer(serializers.ModelSerializer):
         model = TrackFeatures
         fields = '__all__'
 
+
 class TrackSerializer(serializers.ModelSerializer):
     """
     Serializer for the Track model.
-    
+
     Example input and output:
     {
         "uri": "track_uri_1",
@@ -62,18 +67,22 @@ class TrackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Track
         fields = '__all__'
+
+
 class TrackWithFeaturesSerializer(serializers.ModelSerializer):
-    
+
     """
     Serializer for combining the Track and TrackFeatures models.
 
     When you get a Track object and pass it to the serializer, it will use the 
-    nested serializer (TrackFeaturesSerializer) to serialize the associted TrackFeatures 
-    object (defined by the one to one in the models)
+    nested serializer (TrackFeaturesSerializer) to serialize 
+    the associted TrackFeatures object 
+    (defined by the one to one in the models)
 
-    It will look for the features attribute in the Track object, it comes from the related_name
+    It will look for the features attribute in the Track object, 
+    it comes from the related_name
     in the one to one relationship in the model.
-    
+
     Example output:
     {
         "uri": "track_uri_1",
@@ -95,18 +104,21 @@ class TrackWithFeaturesSerializer(serializers.ModelSerializer):
     }
     """
     features = TrackFeaturesSerializer(source='features', read_only=True)
-    
+
     class Meta:
         model = Track
         fields = ['uri', 'track_name', 'track_artists', 'features']
+
+
 class LikedTrackSerializer(serializers.Serializer):
     user = serializers.CharField()
     track = serializers.CharField()
 
+
 class HistorySerializer(serializers.ModelSerializer):
     """
     Serializer for the History model.
-    
+
     Example input and output:
     {
         "user": "user_id_1",
@@ -118,10 +130,12 @@ class HistorySerializer(serializers.ModelSerializer):
     class Meta:
         model = History
         fields = '__all__'
+
+
 class UserWithTracksSerializer(serializers.ModelSerializer):
     """
     Serializer for the User model that also includes the user's liked tracks.
-    
+
     Example output:
     {
         "id": "user_id_1",
@@ -141,14 +155,16 @@ class UserWithTracksSerializer(serializers.ModelSerializer):
     }
     """
     liked_tracks = TrackSerializer(many=True, read_only=True)
+
     class Meta:
         model = User
         fields = ['id', 'liked_tracks']
 
+
 class UserSerializer(serializers.ModelSerializer):
     """
     Serializer for the basic fields of the User model.
-    
+
     Example input and output:
     {
         "id": "user_id_1"
@@ -159,12 +175,11 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['id']
 
 
-
 class PlaylistWithUsersAndTracksSerializer(serializers.ModelSerializer):
     """
     Serializer for outputting detailed information about a Playlist, 
     including the tracks in it and the users who have liked it.
-    
+
     Example output:
     {
         "playlist_id": "some_unique_id",
@@ -199,16 +214,18 @@ class PlaylistWithUsersAndTracksSerializer(serializers.ModelSerializer):
     """
     tracks = TrackSerializer(many=True, read_only=True)
     liked_by = UserSerializer(many=True, read_only=True)
+
     class Meta:
         model = Playlist
         fields = '__all__'
-#for when you only want to output the data for the tracks in the playlist
+# for when you only want to output the data for the tracks in the playlist
 
 
 class PlaylistWithTracksSerializer(serializers.ModelSerializer):
     """
-    Serializer for outputting information about a Playlist including the tracks in it.
-    
+    Serializer for outputting information about a 
+    Playlist including the tracks in it.
+
     Example output:
     {
         "playlist_id": "some_unique_id",
@@ -229,15 +246,18 @@ class PlaylistWithTracksSerializer(serializers.ModelSerializer):
     }
     """
     tracks = TrackSerializer(many=True, read_only=True)
+
     class Meta:
         model = Playlist
         fields = '__all__'
 
 # you might get or recieve data in that form using this serializer
+
+
 class PlaylistSerializer(serializers.ModelSerializer):
     """
     Serializer for handling input and basic output for the Playlist model.
-    
+
     Example input and output:
     {
         "playlist_id": "some_unique_id",
@@ -246,7 +266,9 @@ class PlaylistSerializer(serializers.ModelSerializer):
     }
     """
     # pylint: disable=no-member
-    tracks = serializers.PrimaryKeyRelatedField(many=True, queryset=Track.objects.all())
+    tracks = serializers.PrimaryKeyRelatedField(
+        many=True, queryset=Track.objects.all())
+
     class Meta:
         model = Playlist
         fields = '__all__'

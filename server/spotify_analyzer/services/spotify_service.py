@@ -24,6 +24,7 @@ class SpotifyService:
     """
 
     def __init__(self, authorization_code=None):
+
         self.oauth = SpotifyOAuth(scope=sp_utility.scope)
         if authorization_code:
             token_info = self.oauth.get_access_token(code=authorization_code)
@@ -94,5 +95,3 @@ class SpotifyService:
             else:
                 if (playlist['owner']['id'] != self.client.me()['id']):
                     playlist_idx.append(playlist['id'])
-    # def get_user_token():
-    #    pass

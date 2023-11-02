@@ -7,8 +7,11 @@ from rest_framework.generics import RetrieveAPIView, ListCreateAPIView
 
 from ..models import Playlist
 from ..serializers import PlaylistWithTracksSerializer, PlaylistSerializer
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class PlaylistListView(ListCreateAPIView):
     # Specify the serializer for Playlist
     serializer_class = PlaylistSerializer
@@ -25,6 +28,7 @@ class PlaylistListView(ListCreateAPIView):
         serializer.save(user_id=user_id)
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class PlaylistTracksRetrieveView(RetrieveAPIView):
 
     queryset = Playlist.objects.all()

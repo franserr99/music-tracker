@@ -15,11 +15,14 @@ Functions:
 
 from rest_framework.generics import ListCreateAPIView
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 
 from ..serializers import TrackSerializer
 from ..models import Track
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class TrackListCreate(ListCreateAPIView):
     queryset = Track.objects.all()  # Adjust the queryset to your needs
     serializer_class = TrackSerializer
@@ -30,10 +33,11 @@ class TrackListCreate(ListCreateAPIView):
     #     serializer.save()
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class TrackRetrieveUpdateDestroy(RetrieveUpdateDestroyAPIView):
     queryset = Track.objects.all()  # Adjust the queryset to your needs
     serializer_class = TrackSerializer
-    lookup_field = 'track_uri'  # The field in the URL to look up by
+    lookup_field = 'uri'  # The field in the URL to look up by
 
     # # If you have additional logic for the PUT or DELETE methods,
     #  you can override methods like:

@@ -16,3 +16,819 @@ INFO 2023-11-01 20:05:33,535 autoreload autoreload.py 266 /Users/franserr/Docume
 INFO 2023-11-01 20:05:33,535 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/track_service.py changed, reloading.
 INFO 2023-11-01 20:05:34,486 autoreload autoreload.py 668 Watching for file changes with StatReloader
 INFO 2023-11-01 20:05:34,486 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 00:59:39,952 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 00:59:39,952 autoreload autoreload.py 668 Watching for file changes with StatReloader
+WARNING 2023-11-02 01:01:03,830 log log.py 241 Not Found: /tracks/
+WARNING 2023-11-02 01:01:03,830 log log.py 241 Not Found: /tracks/
+INFO 2023-11-02 01:07:28,095 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/server/urls.py changed, reloading.
+INFO 2023-11-02 01:07:28,095 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/server/urls.py changed, reloading.
+INFO 2023-11-02 01:07:45,881 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:07:45,881 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:08:33,714 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:08:33,714 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:10:35,289 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:10:35,289 autoreload autoreload.py 668 Watching for file changes with StatReloader
+WARNING 2023-11-02 01:10:41,730 log log.py 241 Forbidden (CSRF cookie not set.): /tracks/
+WARNING 2023-11-02 01:10:41,730 log log.py 241 Forbidden (CSRF cookie not set.): /tracks/
+INFO 2023-11-02 01:13:23,828 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/server/settings.py changed, reloading.
+INFO 2023-11-02 01:13:23,828 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/server/settings.py changed, reloading.
+INFO 2023-11-02 01:13:25,347 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:13:25,347 autoreload autoreload.py 668 Watching for file changes with StatReloader
+WARNING 2023-11-02 01:13:31,860 log log.py 241 Forbidden (CSRF cookie not set.): /tracks/
+WARNING 2023-11-02 01:13:31,860 log log.py 241 Forbidden (CSRF cookie not set.): /tracks/
+WARNING 2023-11-02 01:13:37,563 log log.py 241 Forbidden (CSRF cookie not set.): /tracks/
+WARNING 2023-11-02 01:13:37,563 log log.py 241 Forbidden (CSRF cookie not set.): /tracks/
+INFO 2023-11-02 01:13:53,592 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:13:53,592 autoreload autoreload.py 668 Watching for file changes with StatReloader
+WARNING 2023-11-02 01:13:56,476 log log.py 241 Forbidden (CSRF cookie not set.): /tracks/
+WARNING 2023-11-02 01:13:56,476 log log.py 241 Forbidden (CSRF cookie not set.): /tracks/
+INFO 2023-11-02 01:15:25,146 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/server/settings.py changed, reloading.
+INFO 2023-11-02 01:15:25,146 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/server/settings.py changed, reloading.
+INFO 2023-11-02 01:16:51,124 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:16:51,124 autoreload autoreload.py 668 Watching for file changes with StatReloader
+WARNING 2023-11-02 01:16:55,178 log log.py 241 Forbidden (CSRF cookie not set.): /tracks/
+WARNING 2023-11-02 01:16:55,178 log log.py 241 Forbidden (CSRF cookie not set.): /tracks/
+INFO 2023-11-02 01:22:57,677 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:22:57,677 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:22:58,804 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:22:58,804 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:23:00,087 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:23:00,087 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:23:00,904 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:23:00,904 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:23:02,189 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:23:02,189 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:23:03,024 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:23:03,024 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:27:02,616 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:27:02,616 autoreload autoreload.py 668 Watching for file changes with StatReloader
+WARNING 2023-11-02 01:27:11,308 log log.py 241 Not Found: /favicon.ico
+WARNING 2023-11-02 01:27:11,308 log log.py 241 Not Found: /favicon.ico
+INFO 2023-11-02 01:52:52,883 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/track_views.py changed, reloading.
+INFO 2023-11-02 01:52:52,883 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/track_views.py changed, reloading.
+INFO 2023-11-02 01:52:53,957 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:52:53,957 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:52:56,205 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py changed, reloading.
+INFO 2023-11-02 01:52:56,205 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py changed, reloading.
+INFO 2023-11-02 01:52:57,020 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:52:57,020 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:53:28,466 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:53:28,466 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:53:39,896 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:53:39,896 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:53:40,783 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:53:40,783 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:53:44,044 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:53:44,044 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:53:44,901 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:53:44,901 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:53:48,170 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:53:48,170 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:53:49,052 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:53:49,052 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:53:51,311 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:53:51,311 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:53:52,156 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:53:52,156 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:54:56,963 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:54:56,963 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:54:58,016 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:54:58,016 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:55:01,272 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:55:01,272 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 01:55:02,195 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:55:02,195 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:55:07,355 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 01:55:07,355 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:11:01,007 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:11:01,007 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:11:02,127 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:11:02,127 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:11:13,564 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:11:13,564 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:11:14,593 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:11:14,593 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:11:17,854 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:11:17,854 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:11:18,743 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:11:18,743 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:11:19,967 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:11:19,967 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:11:20,847 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:11:20,847 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:11:22,078 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:11:22,078 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:11:22,936 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:11:22,936 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:11:24,177 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:11:24,177 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:11:24,988 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:11:24,988 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:11:29,269 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:11:29,269 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:11:30,110 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:11:30,110 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:11:33,190 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:11:33,190 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:17:25,547 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/server/settings.py changed, reloading.
+INFO 2023-11-02 03:17:25,547 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/server/settings.py changed, reloading.
+INFO 2023-11-02 03:17:31,271 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:17:31,271 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:17:42,563 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/server/settings.py changed, reloading.
+INFO 2023-11-02 03:17:42,563 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/server/settings.py changed, reloading.
+INFO 2023-11-02 03:17:43,490 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:17:43,490 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:20:10,711 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py changed, reloading.
+INFO 2023-11-02 03:20:10,711 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py changed, reloading.
+INFO 2023-11-02 03:20:11,630 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:20:11,630 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:21:53,849 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/user_views.py changed, reloading.
+INFO 2023-11-02 03:21:53,849 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/user_views.py changed, reloading.
+INFO 2023-11-02 03:21:54,745 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:21:54,745 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-02 03:23:00,777 log log.py 241 Internal Server Error: /tracks/6kLCHFM39wkFjOuyPGLGeQ/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 282, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 96, in get_object
+    obj = get_object_or_404(queryset, **filter_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 19, in get_object_or_404
+    return _get_object_or_404(queryset, *filter_args, **filter_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1426, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1236, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'track_uri' into field. Choices are: features, included_in_playlists, liked_by_users, track_artists, track_name, uri, user_history
+ERROR 2023-11-02 03:23:00,777 log log.py 241 Internal Server Error: /tracks/6kLCHFM39wkFjOuyPGLGeQ/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 282, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 96, in get_object
+    obj = get_object_or_404(queryset, **filter_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 19, in get_object_or_404
+    return _get_object_or_404(queryset, *filter_args, **filter_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1426, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1236, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'track_uri' into field. Choices are: features, included_in_playlists, liked_by_users, track_artists, track_name, uri, user_history
+ERROR 2023-11-02 03:26:16,532 log log.py 241 Internal Server Error: /tracks/6kLCHFM39wkFjOuyPGLGeQ/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 282, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 96, in get_object
+    obj = get_object_or_404(queryset, **filter_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 19, in get_object_or_404
+    return _get_object_or_404(queryset, *filter_args, **filter_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1426, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1236, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'track_uri' into field. Choices are: features, included_in_playlists, liked_by_users, track_artists, track_name, uri, user_history
+ERROR 2023-11-02 03:26:16,532 log log.py 241 Internal Server Error: /tracks/6kLCHFM39wkFjOuyPGLGeQ/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 282, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 96, in get_object
+    obj = get_object_or_404(queryset, **filter_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 19, in get_object_or_404
+    return _get_object_or_404(queryset, *filter_args, **filter_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1426, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1236, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'track_uri' into field. Choices are: features, included_in_playlists, liked_by_users, track_artists, track_name, uri, user_history
+INFO 2023-11-02 03:34:11,537 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/track_views.py changed, reloading.
+INFO 2023-11-02 03:34:11,537 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/track_views.py changed, reloading.
+INFO 2023-11-02 03:34:12,651 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:34:12,651 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:34:14,972 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/track_views.py changed, reloading.
+INFO 2023-11-02 03:34:14,972 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/track_views.py changed, reloading.
+INFO 2023-11-02 03:34:15,811 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:34:15,811 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:34:21,738 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:34:21,738 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-02 03:34:52,344 log log.py 241 Internal Server Error: /tracks/6kLCHFM39wkFjOuyPGLGeQ/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 282, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 88, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+AssertionError: Expected view TrackRetrieveUpdateDestroy to be called with a URL keyword argument named "uri". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+ERROR 2023-11-02 03:34:52,344 log log.py 241 Internal Server Error: /tracks/6kLCHFM39wkFjOuyPGLGeQ/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 282, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 88, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+AssertionError: Expected view TrackRetrieveUpdateDestroy to be called with a URL keyword argument named "uri". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+ERROR 2023-11-02 03:35:18,361 log log.py 241 Internal Server Error: /tracks/6kLCHFM39wkFjOuyPGLGeQ/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 282, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 88, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+AssertionError: Expected view TrackRetrieveUpdateDestroy to be called with a URL keyword argument named "uri". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+ERROR 2023-11-02 03:35:18,361 log log.py 241 Internal Server Error: /tracks/6kLCHFM39wkFjOuyPGLGeQ/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 282, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 88, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+AssertionError: Expected view TrackRetrieveUpdateDestroy to be called with a URL keyword argument named "uri". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+ERROR 2023-11-02 03:35:23,392 log log.py 241 Internal Server Error: /tracks/6kLCHFM39wkFjOuyPGLGeQ/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 282, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 88, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+AssertionError: Expected view TrackRetrieveUpdateDestroy to be called with a URL keyword argument named "uri". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+ERROR 2023-11-02 03:35:23,392 log log.py 241 Internal Server Error: /tracks/6kLCHFM39wkFjOuyPGLGeQ/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 282, in get
+    return self.retrieve(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/generics.py", line 88, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+AssertionError: Expected view TrackRetrieveUpdateDestroy to be called with a URL keyword argument named "uri". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+INFO 2023-11-02 03:36:40,735 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:36:40,735 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:36:42,186 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:36:42,186 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:37:47,636 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/user_views.py changed, reloading.
+INFO 2023-11-02 03:37:47,636 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/user_views.py changed, reloading.
+INFO 2023-11-02 03:37:48,726 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:37:48,726 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:50:13,767 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:50:13,767 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:50:14,890 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:50:14,890 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:50:20,257 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:50:20,257 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:50:21,132 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:50:21,132 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:52:10,669 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:52:10,669 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:52:11,097 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:52:11,097 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:52:17,325 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:52:17,325 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:52:18,117 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:52:18,117 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:53:01,660 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:53:01,660 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:53:02,542 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:53:02,542 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:53:12,046 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:53:12,046 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:53:12,914 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:53:12,914 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:53:17,306 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:53:17,306 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:53:18,128 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:53:18,128 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:53:24,573 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:53:24,573 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:53:25,467 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:53:25,467 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:53:43,215 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:53:43,215 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:53:44,105 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:53:44,105 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:53:47,452 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:53:47,452 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:53:48,327 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:53:48,327 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:53:55,781 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:53:55,781 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:53:56,630 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:53:56,630 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:54:10,257 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:54:10,257 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:54:11,139 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:54:11,139 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:54:16,547 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:54:16,547 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:54:17,387 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:54:17,387 autoreload autoreload.py 668 Watching for file changes with StatReloader
+WARNING 2023-11-02 03:55:26,742 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 03:55:26,742 log log.py 241 Method Not Allowed: /tracks/features/
+INFO 2023-11-02 03:55:40,034 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/track_features_views.py changed, reloading.
+INFO 2023-11-02 03:55:40,034 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/track_features_views.py changed, reloading.
+INFO 2023-11-02 03:55:40,921 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:55:40,921 autoreload autoreload.py 668 Watching for file changes with StatReloader
+WARNING 2023-11-02 03:56:02,502 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 03:56:02,502 log log.py 241 Method Not Allowed: /tracks/features/
+INFO 2023-11-02 03:56:23,669 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:56:23,669 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 03:56:24,557 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 03:56:24,557 autoreload autoreload.py 668 Watching for file changes with StatReloader
+WARNING 2023-11-02 03:56:27,176 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 03:56:27,176 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 03:56:42,812 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 03:56:42,812 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 03:56:47,196 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 03:56:47,196 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 03:56:57,002 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 03:56:57,002 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 04:00:02,737 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 04:00:02,737 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 04:01:51,856 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 04:01:51,856 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 04:01:53,259 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 04:01:53,259 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 04:06:41,050 log log.py 241 Not Found: /tracks/features/
+WARNING 2023-11-02 04:06:41,050 log log.py 241 Not Found: /tracks/features/
+WARNING 2023-11-02 04:06:54,739 log log.py 241 Not Found: /tracks/features/
+WARNING 2023-11-02 04:06:54,739 log log.py 241 Not Found: /tracks/features/
+WARNING 2023-11-02 04:07:07,306 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 04:07:07,306 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 04:07:11,505 log log.py 241 Not Found: /tracks/features/
+WARNING 2023-11-02 04:07:11,505 log log.py 241 Not Found: /tracks/features/
+INFO 2023-11-02 04:14:16,090 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 04:14:16,090 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 04:14:17,236 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 04:14:17,236 autoreload autoreload.py 668 Watching for file changes with StatReloader
+WARNING 2023-11-02 04:14:23,234 log log.py 241 Not Found: /tracks/features/
+WARNING 2023-11-02 04:14:23,234 log log.py 241 Not Found: /tracks/features/
+WARNING 2023-11-02 04:14:24,285 log log.py 241 Not Found: /tracks/features/
+WARNING 2023-11-02 04:14:24,285 log log.py 241 Not Found: /tracks/features/
+WARNING 2023-11-02 04:14:26,881 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 04:14:26,881 log log.py 241 Method Not Allowed: /tracks/features/
+ERROR 2023-11-02 04:17:55,063 log log.py 241 Internal Server Error: /tracks/features
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/middleware/common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/tracks/features/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2023-11-02 04:17:55,063 log log.py 241 Internal Server Error: /tracks/features
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/middleware/common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/tracks/features/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+WARNING 2023-11-02 04:18:21,803 log log.py 241 Method Not Allowed: /tracks/features/
+WARNING 2023-11-02 04:18:21,803 log log.py 241 Method Not Allowed: /tracks/features/
+INFO 2023-11-02 04:19:49,861 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 04:19:49,861 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 04:19:50,912 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 04:19:50,912 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 04:19:55,286 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 04:19:55,286 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 04:19:56,195 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 04:19:56,195 autoreload autoreload.py 668 Watching for file changes with StatReloader
+WARNING 2023-11-02 04:20:07,866 log log.py 241 Bad Request: /tracks/features/
+WARNING 2023-11-02 04:20:07,866 log log.py 241 Bad Request: /tracks/features/
+INFO 2023-11-02 04:21:46,855 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 04:21:46,855 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/urls.py changed, reloading.
+INFO 2023-11-02 04:21:47,945 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 04:21:47,945 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 04:22:53,105 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py changed, reloading.
+INFO 2023-11-02 04:22:53,105 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py changed, reloading.
+INFO 2023-11-02 04:22:54,163 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 04:22:54,163 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 04:23:00,587 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py changed, reloading.
+INFO 2023-11-02 04:23:00,587 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py changed, reloading.
+INFO 2023-11-02 04:23:01,447 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 04:23:01,447 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-02 04:23:33,058 log log.py 241 Internal Server Error: /spotify/auth-code/
+ERROR 2023-11-02 04:23:33,058 log log.py 241 Internal Server Error: /spotify/auth-code/
+INFO 2023-11-02 04:28:22,750 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify_service.py changed, reloading.
+INFO 2023-11-02 04:28:22,750 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify_service.py changed, reloading.
+INFO 2023-11-02 04:28:23,971 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-02 04:28:23,971 autoreload autoreload.py 668 Watching for file changes with StatReloader

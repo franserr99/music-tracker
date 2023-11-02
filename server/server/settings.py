@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'django_injector',
-    'spotify_analyzer',
+    #'spotify_analyzer',
+    'spotify_analyzer.apps.SpotifyAnalyzerConfig',
     'rest_framework',
     'corsheaders',
 ]
@@ -183,3 +184,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # or the port your Next.js app is running on
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
+}

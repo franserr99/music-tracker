@@ -14,13 +14,15 @@ Classes:
     - Playlist: Represents a Spotify playlist.
 """
 from django.db import models
-#spotify track feature
-#get description of features here:
-#https://developer.spotify.com/documentation/web-api/reference/get-audio-features
+# spotify track feature
+# get description of features here:
+# https://developer.spotify.com/documentation/web-api/reference/get-audio-features
+
+
 class TrackFeatures(models.Model):
     """
-    This class represents various features of a track in the Spotify application.
-    
+    This class represents various features of a track in Spotify.
+
     Attributes:
         - track: Foreign key linking to the corresponding Track model.
         - danceability: Indicates how suitable a track is for dancing.
@@ -28,7 +30,7 @@ class TrackFeatures(models.Model):
         ...
     """
     track = models.OneToOneField(
-        'Track', 
+        'Track',
         on_delete=models.CASCADE,
         related_name='features',
         primary_key=True
@@ -44,15 +46,18 @@ class TrackFeatures(models.Model):
     liveness = models.FloatField()
     valence = models.FloatField()
     tempo = models.FloatField()
+
     class Meta:
         """
         Meta class for TrackFeatures.
-        
+
         Attributes:
             db_table: Specifies the name of the database table.
         """
-        db_table='TrackFeatures'
-#spotify track
+        db_table = 'TrackFeatures'
+# spotify track
+
+
 class Track(models.Model):
     """
     This class represents a Track in the Spotify application.
@@ -65,17 +70,20 @@ class Track(models.Model):
     uri = models.CharField(max_length=100, primary_key=True, unique=True)
     track_name = models.CharField(max_length=100)
     track_artists = models.CharField(max_length=100)
+
     class Meta:
         """
         Meta class for Track.
-        
+
         Attributes:
             db_table: Specifies the name of the database table.
         """
-        db_table='Track'
+        db_table = 'Track'
 
-#tracks/records when a user listened to a given song
-#use: collecting alot of listening data
+# tracks/records when a user listened to a given song
+# use: collecting alot of listening data
+
+
 class History(models.Model):
     """
     This class is used for collecting a lot of listening data from users.
@@ -86,25 +94,30 @@ class History(models.Model):
         - relative_term: Some sort of term to relate to.
         - track_uri: The URI of the track in the history.
     """
-    user = models.ForeignKey('User', on_delete=models.CASCADE, related_name='listening_history')  
+    user = models.ForeignKey(
+        'User', on_delete=models.CASCADE, related_name='listening_history')
     date_recorded = models.DateTimeField()
     relative_term = models.CharField(max_length=30)
-    track = models.ForeignKey('Track', on_delete=models.CASCADE, related_name='user_history') 
+    track = models.ForeignKey(
+        'Track', on_delete=models.CASCADE, related_name='user_history')
+
     class Meta:
         """
         Meta class for History.
-        
+
         Attributes:
             db_table: Specifies the name of the database table.
             constraints: Specifies database constraints.
         """
         constraints = [
-            models.UniqueConstraint(fields=
-                                    ['user', 'relative_term', 'track', 'date_recorded'],
+            models.UniqueConstraint(fields=['user', 'relative_term',
+                                            'track', 'date_recorded'],
                                     name='unique_history')
         ]
         db_table = 'History'
-#representing the spotify user
+# representing the spotify user
+
+
 class User(models.Model):
     """
     This class represents a Spotify user.
@@ -114,16 +127,22 @@ class User(models.Model):
         - liked_tracks: The tracks that the user has liked.
     """
     id = models.CharField(max_length=50, unique=True, primary_key=True)
-    liked_tracks=models.ManyToManyField('Track',related_name='liked_by_users')
+    liked_tracks = models.ManyToManyField(
+        'Track', related_name='liked_by_users')
+
     class Meta:
         """
         Meta class for User.
-        
+
         Attributes:
             db_table: Specifies the name of the database table.
         """
         db_table = 'User'
-#single user creates a playlist, multiple users can like it, contains multiple tracks
+# single user creates a playlist,
+#  multiple users can like it,
+# contains multiple tracks
+
+
 class Playlist(models.Model):
     """
     This class represents a playlist in the Spotify application.
@@ -134,14 +153,18 @@ class Playlist(models.Model):
         - liked_by: The users who have liked the playlist.
         - tracks: The tracks included in the playlist.
     """
-    playlist_id = models.CharField(max_length=50, unique=True,primary_key=True)  
-    created_by=models.ForeignKey('User', related_name='playlists_created', on_delete=models.CASCADE)
-    liked_by = models.ManyToManyField('User', related_name='playlists_added')  
-    tracks = models.ManyToManyField('Track', related_name='included_in_playlists') 
+    playlist_id = models.CharField(
+        max_length=50, unique=True, primary_key=True)
+    created_by = models.ForeignKey(
+        'User', related_name='playlists_created', on_delete=models.CASCADE)
+    liked_by = models.ManyToManyField('User', related_name='playlists_added')
+    tracks = models.ManyToManyField(
+        'Track', related_name='included_in_playlists')
+
     class Meta:
         """
         Meta class for Playlist.
-        
+
         Attributes:
             db_table: Specifies the name of the database table.
         """
