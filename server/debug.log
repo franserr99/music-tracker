@@ -832,3 +832,217 @@ INFO 2023-11-02 04:28:22,750 autoreload autoreload.py 266 /Users/franserr/Docume
 INFO 2023-11-02 04:28:22,750 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify_service.py changed, reloading.
 INFO 2023-11-02 04:28:23,971 autoreload autoreload.py 668 Watching for file changes with StatReloader
 INFO 2023-11-02 04:28:23,971 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 06:15:38,845 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 06:15:38,845 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-04 06:16:14,063 log log.py 241 Internal Server Error: /spotify/auth-code/
+ERROR 2023-11-04 06:16:14,063 log log.py 241 Internal Server Error: /spotify/auth-code/
+ERROR 2023-11-04 06:17:29,764 log log.py 241 Internal Server Error: /spotify/auth-code/
+ERROR 2023-11-04 06:17:29,764 log log.py 241 Internal Server Error: /spotify/auth-code/
+ERROR 2023-11-04 06:18:56,181 log log.py 241 Internal Server Error: /spotify/auth-code/
+ERROR 2023-11-04 06:18:56,181 log log.py 241 Internal Server Error: /spotify/auth-code/
+ERROR 2023-11-04 06:20:22,010 log log.py 241 Internal Server Error: /spotify/auth-code/
+ERROR 2023-11-04 06:20:22,010 log log.py 241 Internal Server Error: /spotify/auth-code/
+ERROR 2023-11-04 06:30:29,489 log log.py 241 Internal Server Error: /spotify/auth-code/
+ERROR 2023-11-04 06:30:29,489 log log.py 241 Internal Server Error: /spotify/auth-code/
+ERROR 2023-11-04 06:43:12,312 log log.py 241 Internal Server Error: /spotify/auth-code/
+ERROR 2023-11-04 06:43:12,312 log log.py 241 Internal Server Error: /spotify/auth-code/
+INFO 2023-11-04 08:09:40,393 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:09:40,393 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:10:36,221 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:10:36,221 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:31:10,935 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py changed, reloading.
+INFO 2023-11-04 08:31:10,935 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py changed, reloading.
+INFO 2023-11-04 08:31:12,076 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:31:12,076 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:31:20,557 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:31:20,557 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:31:21,592 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:31:21,592 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:31:25,961 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:31:25,961 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:31:26,821 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:31:26,821 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:34:49,960 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:34:49,960 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:34:50,990 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:34:50,990 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:34:54,348 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:34:54,348 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:34:55,238 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:34:55,238 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:34:57,578 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:34:57,578 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:34:58,421 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:34:58,421 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:35:07,964 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:35:07,964 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:35:08,818 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:35:08,818 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:35:19,342 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:35:19,342 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:35:20,192 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:35:20,192 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:35:24,559 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:35:24,559 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:35:25,438 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:35:25,438 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:35:28,788 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:35:28,788 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:35:29,672 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:35:29,672 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:35:34,063 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:35:34,063 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:35:35,035 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:35:35,035 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:35:45,635 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:35:45,635 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:35:46,523 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:35:46,523 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:35:49,887 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:35:49,887 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:35:50,742 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:35:50,742 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:35:59,238 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:35:59,238 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:36:00,107 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:36:00,107 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:36:02,438 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:36:02,438 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:36:03,296 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:36:03,296 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:36:06,637 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:36:06,637 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:36:07,466 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:36:07,466 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:36:14,919 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:36:14,919 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:36:15,797 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:36:15,797 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:36:20,153 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:36:20,153 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:36:21,019 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:36:21,019 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 08:59:59,601 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 08:59:59,601 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:00:00,764 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:00:00,764 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:00:11,299 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:00:11,299 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:00:12,194 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:00:12,194 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:00:17,609 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:00:17,609 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:00:18,450 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:00:18,450 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:00:19,746 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:00:19,746 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:00:20,596 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:00:20,596 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:00:21,886 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:00:21,886 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:00:22,726 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:00:22,726 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:00,734 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:00,734 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:01,254 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:01,254 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:09,520 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:09,520 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:10,336 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:10,336 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:11,635 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:11,635 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:12,527 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:12,527 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:19,982 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:19,982 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:20,816 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:20,816 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:25,178 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:25,178 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:26,046 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:26,046 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:28,363 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:28,363 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:29,201 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:29,201 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:42,813 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:42,813 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:43,285 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:43,285 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:47,501 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:47,501 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:48,285 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:48,285 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:51,638 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:51,638 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:52,489 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:52,489 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:53,800 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:53,800 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:02:54,721 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:02:54,721 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:03:00,125 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:03:00,125 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:03:00,616 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:03:00,616 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:03:04,836 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:03:04,836 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:03:05,644 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:03:05,644 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:03:28,583 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:03:28,583 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:03:29,482 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:03:29,482 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:03:48,249 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:03:48,249 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:03:49,130 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:03:49,130 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:03:50,421 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:03:50,421 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:03:51,288 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:03:51,288 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:03:52,629 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:03:52,629 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:03:53,497 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:03:53,497 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:03:57,850 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:03:57,850 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:03:58,765 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:03:58,765 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:04:04,173 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:04:04,173 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:04:05,039 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:04:05,039 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:04:08,368 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:04:08,368 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:04:09,199 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:04:09,199 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:04:30,094 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:04:30,094 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:04:30,966 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:04:30,966 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:04:41,518 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:04:41,518 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:04:42,408 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:04:42,408 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:07:25,312 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:07:25,312 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:07:26,190 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:07:26,190 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:07:27,479 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:07:27,479 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:07:28,309 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:07:28,309 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:07:29,653 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:07:29,653 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:07:30,550 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:07:30,550 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:08:22,291 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:08:22,291 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 09:08:23,204 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:08:23,204 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:10:19,127 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/models.py changed, reloading.
+INFO 2023-11-04 09:10:19,127 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/models.py changed, reloading.
+INFO 2023-11-04 09:10:20,372 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 09:10:20,372 autoreload autoreload.py 668 Watching for file changes with StatReloader

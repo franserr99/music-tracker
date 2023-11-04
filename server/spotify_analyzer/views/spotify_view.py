@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
 import logging
-from ..services.spotify_service import SpotifyService  
+from ..services.spotify.spotify_service import SpotifyService  
 # ,# SpotifyAuthException
 
 # Configure logginglogger = logging.getLogger(__name__)

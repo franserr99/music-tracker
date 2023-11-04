@@ -1,7 +1,7 @@
 import spotipy
 import requests
 from spotipy.oauth2 import SpotifyOAuth
-from . import sp_utility
+from .services.spotify import sp_utility
 
 
 def main(both=False, user=True):

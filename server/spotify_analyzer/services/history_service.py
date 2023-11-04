@@ -12,8 +12,9 @@ from django.db import IntegrityError, DatabaseError, OperationalError
 
 from ..models import History
 from .service_dtos import HistoryData
-from .user_service import  UserService
+from .user_service import UserService
 from .track_service import TrackService
+
 
 class HistoryService:
     """_summary_
@@ -22,11 +23,13 @@ class HistoryService:
         _type_: _description_
     """
     @inject
-    def __init__(self, history_model: History,user_service:UserService,track_service: TrackService,logger: logging.Logger):
+    def __init__(self, history_model: History, user_service: UserService,
+                 track_service: TrackService, logger: logging.Logger):
         self.history_model = history_model
-        self.logger=logger
-        self.user_service=user_service
-        self.track_service=track_service
+        self.logger = logger
+        self.user_service = user_service
+        self.track_service = track_service
+
     def create_listening_history(self, history_data: HistoryData):
         """_summary_
 
@@ -47,16 +50,17 @@ class HistoryService:
             try:
                 return self.history_model.objects.create(**history_data)
             except (IntegrityError, ValidationError,
-                     DatabaseError, TypeError, ValueError) as e:
-                self.logger.exception(f"An error occurred while creating a history listening record: {e}")
+                    DatabaseError, TypeError, ValueError) as e:
+                self.logger.exception(
+                    f"An error occurred while creating a history listening record: {e}")
                 return None
         else:
-            self.logger.error(f"Could not find instances for User ID {user_id} or Track URI {track_uri}")
+            self.logger.error(f"Could not find instances for User ID {
+                              user_id} or Track URI {track_uri}")
             return None
 
-
-    #pass the data object, need alot more fields from it
-    def get_history(self,history_data:HistoryData )->Optional[History]:
+    # pass the data object, need alot more fields from it
+    def get_history(self, history_data: HistoryData) -> Optional[History]:
         """_summary_
 
         Args:
@@ -65,7 +69,7 @@ class HistoryService:
         Returns:
             Optional[History]: _description_
         """
-        
+
         user_id = history_data.get('user_id')
         track_uri = history_data.get('track_uri')
 
@@ -73,42 +77,47 @@ class HistoryService:
         user_instance = self.user_service.get_user(id=user_id)
         track_instance = self.track_service.get_track(track_uri=track_uri)
 
-        payload=history_data.copy()
+        payload = history_data.copy()
         if user_instance and track_instance:
             # repplace the id's w the instances
             payload['user'] = user_instance
             payload['track'] = track_instance
-            #tuple is returned, first elem is the record and second one is the flag denoting if it was present to begin with
+            # tuple is returned, first elem is the record and second one is the flag denoting if it was present to begin with
             try:
 
                 return self.history_model.objects.get_or_create()[0]
             except self.history_model.DoesNotExist:
                 self.logger.exception("An exception occured in get_history:")
-    def update_history(self , updated_history_data:HistoryData, prev_history_data:HistoryData):
+
+    def update_history(self, updated_history_data: HistoryData, prev_history_data: HistoryData):
         """_summary_
 
         Args:
             updated_history_data (HistoryData): _description_
             prev_history_data (HistoryData): _description_
         """
-        history=self.get_history(history_data=prev_history_data)
-        if(history):
+        history = self.get_history(history_data=prev_history_data)
+        if (history):
             for key, value in updated_history_data.items():
                 setattr(history, key, value)
             history.save()
         else:
-            self.logger.warning("History record does not exist. Check for race conditions or validate your input sources.")
-    def delete_history(self, history_data:HistoryData):
+            self.logger.warning(
+                "History record does not exist. Check for race conditions or validate your input sources.")
+
+    def delete_history(self, history_data: HistoryData):
         """_summary_
 
         Args:
             history_data (HistoryData): _description_
         """
-        history=self.get_history(history_data=history_data)
-        if(history is not None):
+        history = self.get_history(history_data=history_data)
+        if (history is not None):
             history.delete()
         else:
-            self.logger.warning("History record does not exist. Check for race conditions or validate your input sources.")
+            self.logger.warning(
+                "History record does not exist. Check for race conditions or validate your input sources.")
+
     def get_all_users_histories(self, user_id):
         """_summary_
 

@@ -1,6 +1,6 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-from server.spotify_analyzer import sp_utility
+from server.spotify_analyzer.services.spotify import sp_utility
 
 
 def monthly_tracks():

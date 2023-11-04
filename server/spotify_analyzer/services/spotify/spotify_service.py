@@ -1,8 +1,11 @@
 # from django.conf import settings
 from spotipy.oauth2 import SpotifyOAuth
-from .. import sp_utility
+from . import sp_utility
 import spotipy
-
+from ..user_service import UserService
+import requests
+from base64 import b64encode
+from ..service_dtos import UserTokenInfo,UserData
 
 class SpotifyService:
     """_summary_
@@ -23,15 +26,73 @@ class SpotifyService:
 
     """
 
-    def __init__(self, authorization_code=None):
-
-        self.oauth = SpotifyOAuth(scope=sp_utility.scope)
+    def __init__(self, user_service: UserService, authorization_code=None):
+        # i need to set some of these things as enviormental variables
+        # before i try to run these
+        # i need my client id etc to be there
+        # self.oauth = SpotifyOAuth(scope=sp_utility.scope)
+        self.user_service=user_service
         if authorization_code:
-            token_info = self.oauth.get_access_token(code=authorization_code)
-            self.access_token = token_info['access_token']
-        self.client = spotipy.Spotify(
-            auth=self.access_token if authorization_code else None)
+            # token_info = self.oauth.get_access_token(code=authorization_code)
+            # self.access_token = token_info['access_token']
+            self.accessToken = getAccessToken()
+            self.client = spotipy.Spotify(auth=self.access_token)
 
+            pass
+        else:
+            raise Exception
+        
+    def getAccessAndRefreshToken(self,authorization_code):
+        # retrieval logic
+        client_id = '4cbf19a57d8a45248430ffe0a199b9fd',
+        client_secret = 'e88c052b9ae04c48b804aa7e6893c988',
+        body = {
+            'grant_type': 'authorization_code',
+            'code': str(authorization_code),
+            'redirect_uri': 'http://localhost:3000/auth/callback'
+        }
+        encoded_credentials = b64encode(f'{client_id}:{client_secret}'
+                                        .encode('utf-8')).decode('utf-8')
+        headers = {
+            'content-type': 'application/x-www-form-urlencoded',
+            'Authorization': f'Basic {encoded_credentials}'
+
+        }
+        token_info = requests.get(url='https://accounts.spotify.com/api/token',
+                                  data=body, headers=headers).json()
+        accessToken = token_info['access_token']
+        refreshToken = token_info['refresh_token']
+        token_dict = UserTokenInfo(refresh_token=refreshToken,
+                                   access_token=accessToken)
+        user_data=UserData()
+        self.user_service.create_user()
+        self.user_service.add_user_tokens()
+        SpotifyService.saveAccessToken(accessToken)
+        SpotifyService.saveRefreshToken(refreshToken)
+    
+        return accessToken, refreshToken
+
+    def getAccessToken(self):
+        # check if current access token is expired 
+        # return it if valid
+
+
+        # else fetch the refresh token 
+        # if refresh token does not exist, call getAccessAndRefreshToken
+
+        # get the access token using the refresh token and return it
+        pass
+
+    def saveAccessToken(self):
+        pass
+
+    def saveRefreshToken(self):
+
+        pass
+
+    def isAccessTokenExpired(token: str, auth: spotipy.SpotifyOAuth):
+        return auth.is_token_expired(token)
+    
     def get_user_created_playlists(self):
         """"""
         return self._begin_build(user_flag=True, with_audio=True)

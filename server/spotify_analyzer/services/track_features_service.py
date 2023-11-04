@@ -12,7 +12,7 @@ from django.db import IntegrityError, DatabaseError, OperationalError
 from ..models import TrackFeatures
 from .service_dtos import TrackFeaturesData
 from .track_service import TrackService
-from ..util import log_error,log_error_dependency
+from ..util import log_error, log_error_dependency
 
 
 class TrackFeaturesService:
@@ -44,13 +44,14 @@ class TrackFeaturesService:
             data_copy['track_uri'] = track_instance
             try:
                 self.track_features_model.objects.create(**data_copy)
-            except (IntegrityError,ValidationError,
-                DatabaseError,TypeError,ValueError) as e:
-                self.logger.exception(f"An error occurred while creating a track's features : {e}")
+            except (IntegrityError, ValidationError,
+                    DatabaseError, TypeError, ValueError) as e:
+                self.logger.exception(
+                    f"An error occurred while creating a track's features: {e}")
                 return None
         else:
             log_error_dependency(logger=self.logger,
-                                 caller="create_track_features()",entity="Track")
+                                 caller="create_track_features()", entity="Track")
     # identifiable by uri so only use it
 
     def get_track_features(self, track_uri: str):
@@ -69,13 +70,15 @@ class TrackFeaturesService:
                 return self.track_features_model.objects.get(track=track_instance)
             except self.track_features_model.DoesNotExist:
                 self.logger.exception(
-                "An exception occured in get_track_features:")
-                log_error(logger=self.logger,entity="TrackFeatures",identifier=track_uri)
+                    "An exception occured in get_track_features:")
+                log_error(logger=self.logger, entity="TrackFeatures",
+                          identifier=track_uri)
                 return None
         else:
             log_error_dependency(logger=self.logger,
-                                caller="get_track_features()",entity="Track")
+                                 caller="get_track_features()", entity="Track")
             return None
+
     def update_track_features(self, track_uri: str, track_features_data: TrackFeaturesData):
         """Update the features of a track.
 
@@ -89,13 +92,14 @@ class TrackFeaturesService:
                 setattr(track_feature, key, value)
             try:
                 track_feature.save()
-            except (IntegrityError,ValidationError,
-                    OperationalError,DatabaseError) as e:
-                self.logger.exception(f"An error occurred while updating a track's feature: {e}")
+            except (IntegrityError, ValidationError,
+                    OperationalError, DatabaseError) as e:
+                self.logger.exception(
+                    f"An error occurred while updating a track's feature: {e}")
                 return None
         else:
             log_error_dependency(logger=self.logger,
-                                caller="update_track_features()",entity="Track")
+                                 caller="update_track_features()", entity="Track")
             return None
 
     def delete_track_features(self, track_uri: str):
@@ -108,12 +112,13 @@ class TrackFeaturesService:
         if track_feature:
             try:
                 track_feature.delete()
-            except (IntegrityError,OperationalError,DatabaseError) as e:
-                self.logger.exception(f"An error occurred while deleting a track's features: {e}")
+            except (IntegrityError, OperationalError, DatabaseError) as e:
+                self.logger.exception(
+                    f"An error occurred while deleting a track's features: {e}")
                 return None
         else:
             log_error_dependency(logger=self.logger,
-                                caller="update_track_features()",entity="Track")
+                                 caller="update_track_features()", entity="Track")
             return None
 
     def get_all_tracks_features(self):
@@ -125,5 +130,6 @@ class TrackFeaturesService:
         try:
             return self.track_features_model.objects.all()
         except (OperationalError, DatabaseError) as e:
-            self.logger.exception(f"An error occurred while fetching all track's features: {e}")
+            self.logger.exception(
+                f"An error occurred while fetching all track's features: {e}")
             return None

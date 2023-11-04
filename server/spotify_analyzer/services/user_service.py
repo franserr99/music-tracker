@@ -31,45 +31,49 @@ Note:
 from typing import List, Optional
 import logging
 
-from injector import inject,singleton
+from injector import inject, singleton
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DatabaseError, OperationalError
 
 from ..models import User
-from .service_dtos import UserData
+from .service_dtos import UserData,UserTokenInfo
 from ..util import log_error, log_error_dependency
 
 
 @singleton
 class UserService:
     """Service class to manage CRUD operations for User entities.
-    
+
     Attributes:
         user_model: A model class representing a user.
         logger: A logging.Logger instance for logging information.
     """
     @inject
-    def __init__(self, user_model: User,logger: logging.Logger):
+    def __init__(self, user_model: User, logger: logging.Logger):
         """Initializes UserService with the given user model and logger."""
         self.user_model = user_model
-        self.logger=logger
-    def create_user(self, user_data:dict)->User:
+        self.logger = logger
+
+    def create_user(self, user_data: dict) -> User:
         """Creates a new user.
 
         Args:
             user_data (dict): Dictionary containing data to create a new user
         Returns:
-            Optional[User]: The User object if created successfully, None otherwise.
+            Optional[User]: 
+                The User object if created successfully None otherwise
         """
         try:
             return self.user_model.objects.create(**user_data)
-        except (IntegrityError,ValidationError,
-                DatabaseError,TypeError,ValueError) as e:
-            #logger will display more info about the error
-            #calling code will know something went wrong, but not the context
-            self.logger.exception(f"An error occurred while creating a user: {e}")
+        except (IntegrityError, ValidationError,
+                DatabaseError, TypeError, ValueError) as e:
+            # logger will display more info about the error
+            # calling code will know something went wrong, but not the context
+            self.logger.exception(
+                f"An error occurred while creating a user: {e}")
             return None
-    def get_user(self, user_id)->Optional[User]:
+
+    def get_user(self, user_id) -> Optional[User]:
         """Fetches a user by their ID.
 
         Args:
@@ -82,42 +86,66 @@ class UserService:
             return self.user_model.objects.get(user_id=user_id)
         except self.user_model.DoesNotExist:
             self.logger.exception("An exception occured in get_user:")
-            log_error(logger=self.logger,entity="User",identifier=user_id)
+            log_error(logger=self.logger, entity="User", identifier=user_id)
             return None
-    def update_user(self,user_id, user_data:UserData):
+
+    def update_user(self, user_id, user_data: UserData):
         """Updates an existing user.
 
         Args:
             user_id: The ID of the user to update.
             user_data (dict): Dictionary containing new data for the user.
         """
-        user=self.get_user(user_id=user_id)
+        user = self.get_user(user_id=user_id)
         if user:
             for key, value in user_data.items():
-                setattr(user,key,value)
+                setattr(user, key, value)
             try:
                 user.save()
-            except (IntegrityError,ValidationError,
-                    OperationalError,DatabaseError) as e:
-                self.logger.exception(f"An error occurred while updating a user: {e}")
+            except (IntegrityError, ValidationError,
+                    OperationalError, DatabaseError) as e:
+                self.logger.exception(
+                    f"An error occurred while updating a user: {e}")
                 return None
         else:
-            log_error_dependency(logger=self.logger,caller="update_user()",entity="User")
+            log_error_dependency(logger=self.logger,
+                                 caller="update_user()", entity="User")
+            
+    def add_user_tokens(self, user_id, token_info: UserTokenInfo):
+        user = self.get_user(user_id=user_id)
+        if user:
+            for key, value in token_info.items():
+                setattr(user, key, value)
+            try:
+                user.save()
+            except (IntegrityError, ValidationError,
+                    OperationalError, DatabaseError) as e:
+                self.logger.exception(
+                    f"An error occurred while adding token info to a user: {e}")
+                return None
+        else:
+            log_error_dependency(logger=self.logger,
+                                 caller="update_user()", entity="User")
+
+
     def delete_user(self, user_id):
         """Deletes a user.
 
         Args:
             user_id: The ID of the user to delete.
         """
-        user=self.get_user(user_id=user_id)
+        user = self.get_user(user_id=user_id)
         if user:
             try:
                 return user.delete()
-            except (IntegrityError,OperationalError,DatabaseError) as e:
-                self.logger.exception(f"An error occurred while deleting a user: {e}")
+            except (IntegrityError, OperationalError, DatabaseError) as e:
+                self.logger.exception(
+                    f"An error occurred while deleting a user: {e}")
                 return None
-        log_error_dependency(logger=self.logger,caller="delete_user()",entity="User")
-    def get_all_users(self)-> Optional[List[User]]:
+        log_error_dependency(logger=self.logger,
+                             caller="delete_user()", entity="User")
+
+    def get_all_users(self) -> Optional[List[User]]:
         """Fetches all users.   
         Returns:
         Returns:
@@ -126,6 +154,6 @@ class UserService:
         try:
             return self.user_model.objects.all()
         except (OperationalError, DatabaseError) as e:
-            self.logger.exception(f"An error occurred while fetching all users: {e}")
+            self.logger.exception(
+                f"An error occurred while fetching all users: {e}")
             return None
-        
