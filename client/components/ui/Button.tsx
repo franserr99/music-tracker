@@ -1,4 +1,5 @@
 // Button.tsx
+'use client';
 interface ButtonProps {
     text: string;
     onClick: () => void; 
