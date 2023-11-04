@@ -127,8 +127,9 @@ class User(models.Model):
         - liked_tracks: The tracks that the user has liked.
     """
     id = models.CharField(max_length=50, unique=True, primary_key=True)
-    refresh_token = models.CharField(max_length=100)
-    access_token = models.CharField(max_length=100)
+    user_name = models.CharField(max_length=100, null=True)
+    refresh_token = models.CharField(max_length=250, null=True)
+    access_token = models.CharField(max_length=250, null=True)
     liked_tracks = models.ManyToManyField(
         'Track', related_name='liked_by_users')
 

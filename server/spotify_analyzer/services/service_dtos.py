@@ -33,7 +33,7 @@ class HistoryData(TypedDict):
 
 
 class UserData(TypedDict):
-    user_id: str
+    id: str
 
 
 class UserTokenInfo (TypedDict):

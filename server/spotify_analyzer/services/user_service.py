@@ -1,46 +1,16 @@
-""" UserService Module
-
-This module contains the UserService class that provides CRUD operations
-for managing User entities. The class relies on dependency injection to 
-receive a user model and a logging instance for operation and debugging.
-
-Classes:
-    UserService: Manages CRUD operations for User entities.
-
-Exceptions:
-    User.DoesNotExist: Raised when a requested user does not exist.
-    User.MultipleObjectsReturned: Raised when more than one user exists for a given ID.
-
-Attributes:
-    None
-
-Example:
-    from UserService import UserService
-
-    user_service = UserService(user_model, logger)
-    user_service.create_user({"name": "John", "email": "john@example.com"})
-    user = user_service.get_user(user_id=1)
-    user_service.update_user(user_id=1, {"name": "John Smith"})
-    user_service.delete_user(user_id=1)
-
-    I am going to wire the service to the view CBV through injecting it via a wrapper function 
-Note:
-    Make sure to handle the exceptions raised by the service methods in the client code.
-
-"""
 from typing import List, Optional
 import logging
 
-from injector import inject, singleton
+from injector import inject  # , singleton
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DatabaseError, OperationalError
 
 from ..models import User
-from .service_dtos import UserData,UserTokenInfo
-from ..util import log_error, log_error_dependency
+from .service_dtos import UserData
+from ..util import log_error_dependency
 
 
-@singleton
+# @singleton
 class UserService:
     """Service class to manage CRUD operations for User entities.
 
@@ -63,15 +33,21 @@ class UserService:
             Optional[User]: 
                 The User object if created successfully None otherwise
         """
-        try:
-            return self.user_model.objects.create(**user_data)
-        except (IntegrityError, ValidationError,
-                DatabaseError, TypeError, ValueError) as e:
-            # logger will display more info about the error
-            # calling code will know something went wrong, but not the context
-            self.logger.exception(
-                f"An error occurred while creating a user: {e}")
-            return None
+        
+        user = self.get_user(user_id=user_data['id'])
+        if user is None:
+            try:
+                return self.user_model.objects.create(**user_data)
+            except (IntegrityError, ValidationError,
+                    DatabaseError, TypeError, ValueError) as e:
+                # logger will display more info about the error
+                # calling code will know something went wrong,
+                #  but not the context
+                self.logger.exception(
+                    f"An error occurred while creating a user: {e}")
+                return None
+        else:
+            return user
 
     def get_user(self, user_id) -> Optional[User]:
         """Fetches a user by their ID.
@@ -83,10 +59,10 @@ class UserService:
             Optional[User]: The User object if found, None otherwise.
         """
         try:
-            return self.user_model.objects.get(user_id=user_id)
+            return self.user_model.objects.get(id=user_id)
         except self.user_model.DoesNotExist:
-            self.logger.exception("An exception occured in get_user:")
-            log_error(logger=self.logger, entity="User", identifier=user_id)
+            self.logger.info("User does not exist")
+            # log_error(logger=self.logger, entity="User", identifier=user_id)
             return None
 
     def update_user(self, user_id, user_data: UserData):
@@ -110,23 +86,23 @@ class UserService:
         else:
             log_error_dependency(logger=self.logger,
                                  caller="update_user()", entity="User")
-            
-    def add_user_tokens(self, user_id, token_info: UserTokenInfo):
+        
+    def add_token(self, user_id, token, access=True):
+        print(token)
         user = self.get_user(user_id=user_id)
-        if user:
-            for key, value in token_info.items():
-                setattr(user, key, value)
+        if user is not None:
+            if access:
+                user.access_token = token
+            else:
+                user.refresh_token = token
             try:
+                print("saving the token now")
                 user.save()
             except (IntegrityError, ValidationError,
                     OperationalError, DatabaseError) as e:
                 self.logger.exception(
-                    f"An error occurred while adding token info to a user: {e}")
-                return None
-        else:
-            log_error_dependency(logger=self.logger,
-                                 caller="update_user()", entity="User")
-
+                    f"An error occurred while adding token info to a user: {e}"
+                    )
 
     def delete_user(self, user_id):
         """Deletes a user.
@@ -149,7 +125,8 @@ class UserService:
         """Fetches all users.   
         Returns:
         Returns:
-            QuerySet: A QuerySet containing all track features or None if an error occurs.
+            QuerySet:
+            A QuerySet containing all track features or None if error occurs.
         """
         try:
             return self.user_model.objects.all()
