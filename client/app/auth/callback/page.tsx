@@ -1,70 +1,51 @@
 'use client';
+
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useSearchParams,useRouter } from 'next/navigation';
 import axios,{ AxiosError, AxiosResponse } from 'axios';
-/**
- * Represents a successful response from the Spotify Auth API.
- */
-interface SuccessResponse {
-    message: string;
-}
-/**
- * Represents an error response from the Spotify Auth API.
- */
-interface ErrorResponse {
-    error: string;
-}
-/**
- * Represents a response from the Spotify Auth API,
- * which could either be a success or an error.
- */
+
+interface SuccessResponse {message: string}
+interface ErrorResponse {error: string}
 type SpotifyAuthResponse = SuccessResponse | ErrorResponse;
 
-/**
- * The Callback component handles the OAuth callback from Spotify.
- * 
- * executes after spotify redirects to us
- * 
- * ex: http://example.com/callback?code=1234
- */
+
 
 const Callback = () => {
-    // Get the Next.js router object to access query parameters.
-    const router = useRouter();
-  
-    // Use the useEffect hook to execute logic when the component mounts or updates.
+    //i think the router is more about navigation rather than the path
+    //they created new methods for the paths. not the same as for the page directory i was used to
+    // const router = useRouter();
+    const searchParams=useSearchParams();
+    const router=useRouter();
     useEffect(() => {
-      // Destructure the 'code' from the query parameters.
-      const { code } = router.query;
-  
-      // If there's a code present, proceed to validate it.
+      const code=searchParams.get('code')
+      // if it exists, process it
       if (code) {
-        // Make a POST request to validate the authorization code.
+        // backend expects a post
         axios.post('http://localhost:8000/spotify/auth-code/', {
           code: code
-        })
-        // Handle the Axios response.
-        .then((response: AxiosResponse<SpotifyAuthResponse>) => {
-          // Check if the response is a success message.
+        }).then((response: AxiosResponse<SpotifyAuthResponse>) => {
+          //was a success
           if ('message' in response.data) {
-            // Navigate to the dashboard page.
+            //go to dashboard
             router.push('/dashboard');
           }
-          // Check if the response is an error message.
+          // failed, log the error
           else if ('error' in response.data) {
             // Log the error for debugging.
             console.error(response.data.error);
+            router.push('/dashboard');
           }
         })
-        // Handle any errors that occur during the Axios request.
+        // errors during request itself
         .catch((error) => {
           console.error(error);
+          router.push('/dashboard');
         });
       }
-    // Specify router.query as the dependency for the useEffect hook.
-    }, [router.query]);
+    // execute when the query object changes
+    }, [searchParams]);
   
-    // Display a message while the user is being authenticated.
+    // let user know we are authenticating for now
     return <div>Authenticating...</div>;
   };
   

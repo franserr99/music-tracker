@@ -1,5 +1,5 @@
+'use client';
 import Button from "../../components/ui/Button";
-
 //var client_secret = 'e88c052b9ae04c48b804aa7e6893c988'; // Your secret
 const HomePage : React.FC=()=>{
 
