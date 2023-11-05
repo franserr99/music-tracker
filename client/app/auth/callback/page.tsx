@@ -22,7 +22,7 @@ const Callback = () => {
       if (code) {
         // backend expects a post
         axios.post('http://localhost:8000/spotify/auth-code/', {
-          code: code
+          code: code, user_id:"franserr"
         }).then((response: AxiosResponse<SpotifyAuthResponse>) => {
           //was a success
           if ('message' in response.data) {
