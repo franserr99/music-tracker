@@ -55,7 +55,25 @@ class TrackFeatures(models.Model):
             db_table: Specifies the name of the database table.
         """
         db_table = 'TrackFeatures'
+
+
 # spotify track
+class Artist (models.Model):
+    uri = models.CharField(max_length=100, primary_key=True)
+    name = models.CharField(max_length=70)
+    genres = models.ManyToManyField('Genre', related_name='member_artists')
+
+
+class Genre(models.Model):
+    name = models.CharField(max_length=120, primary_key=True)
+    
+
+class Image(models.Model):
+    url = models.TextField(primary_key=True)
+    height = models.IntegerField()
+    width = models.IntegerField()
+    artist = models.ForeignKey(Artist, on_delete=models.CASCADE,
+                               related_name='images')
 
 
 class Track(models.Model):
@@ -69,7 +87,8 @@ class Track(models.Model):
     """
     uri = models.CharField(max_length=100, primary_key=True, unique=True)
     track_name = models.CharField(max_length=100)
-    track_artists = models.CharField(max_length=100)
+    track_artists = models.ManyToManyField('Artist',
+                                           related_name='artist_catalogue')
 
     class Meta:
         """
