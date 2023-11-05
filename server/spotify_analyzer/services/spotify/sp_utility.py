@@ -27,7 +27,7 @@ def setup():
         os.environ["SPOTIPY_CLIENT_SECRET"]
         os.environ['SPOTIPY_CLIENT_ID']
         os.environ["SPOTIPY_REDIRECT_URI"]
-    except:
+    except Exception:
         print("one of these were not set as an enviormental variable")
         # use this instead of exit() bc it speaks to interpreter
         sys.exit(1)

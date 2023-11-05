@@ -1,5 +1,4 @@
 # from django.conf import settings
-from . import sp_utility
 import spotipy
 from ..user_service import UserService
 import requests
@@ -8,7 +7,9 @@ from ..service_dtos import UserData
 from rest_framework.exceptions import APIException
 
 import time
-class SpotifyService:
+
+
+class SpotifyTokenHandler:
     """_summary_
     The SpotifyOAuth object manages the OAuth 2.0 Authorization Code Flow.
     It can handle generating the authorization URL, 
@@ -48,7 +49,7 @@ class SpotifyService:
             self.client = spotipy.Spotify(auth=self.accessToken)
             if accessToken is None:
                 raise Exception  # let fe know something went wrong, try again
-        
+
     def getAccessAndRefreshToken(self, authorization_code, user_id: str):
         # retrieval logic
         client_id = '4cbf19a57d8a45248430ffe0a199b9fd'
@@ -84,28 +85,28 @@ class SpotifyService:
             if token_info['error'] == 'invalid_grant':
                 # let the front end know to put them through the process again
                 raise APIException("Bad response when getting access token")
-            
+
     # returns none or later will raise exception,
-    # need to handle it when you call it 
+    # need to handle it when you call it
     def getAccessToken(self, user_id: str, auth_code=None):
         user = self.user_service.get_user(user_id=user_id)
         user_data = UserData(id=user_id)
         if user is None:
             user = self.user_service.create_user(user_data=user_data)
-        
+
         client_id = '4cbf19a57d8a45248430ffe0a199b9fd'
         client_secret = 'e88c052b9ae04c48b804aa7e6893c988'
         redirect_uri = 'http://localhost:3000/auth/callback'
         auth = spotipy.SpotifyOAuth(client_id=client_id,
                                     client_secret=client_secret,
                                     redirect_uri=redirect_uri)
-        
+
         token = user.access_token
         token_info = {'expires_at': user.expires_at}
         if (token):  # some exists
             # but it was expired
             if (user.expires_at is None or self.isAccessTokenExpired(
-             token=token_info, auth=auth)):
+                    token=token_info, auth=auth)):
                 accessToken = self.handleRefreshTokenChecking(user_id)
                 return accessToken
             return token
@@ -117,7 +118,7 @@ class SpotifyService:
             return accessToken
 
     def handleRefreshTokenChecking(self, user_id):
-        # get the refresh token, should be stored 
+        # get the refresh token, should be stored
         # if returns none then let FE know (their problem)
         refresh_token = self.getRefreshToken(user_id)
         if refresh_token is None:
@@ -147,7 +148,7 @@ class SpotifyService:
         print(token_info)
         if (response.ok):
             accessToken = token_info['access_token']
-            if 'refresh_token' in token_info: 
+            if 'refresh_token' in token_info:
                 refreshToken = token_info['refresh_token']
             else:
                 refreshToken = None
@@ -192,67 +193,3 @@ class SpotifyService:
 
     def isAccessTokenExpired(self, token: str, auth: spotipy.SpotifyOAuth):
         return auth.is_token_expired(token)
-    
-    def get_user_created_playlists(self):
-        """"""
-        return self._begin_build(user_flag=True, with_audio=True)
-
-    def get_user_liked_playlists(self):
-        """_summary_
-
-        Returns:
-            _type_: _description_
-        """
-        return self._begin_build(user_flag=False, with_audio=True)
-
-    def get_user_added_created_playlists(self):
-        """_summary_
-
-        Returns:
-            _type_: _description_
-        """
-        user_created_tracks = self._begin_build(
-            user_flag=True, with_audio=True)
-        liked_playlist_tracks = self._begin_build(
-            user_flag=False, with_audio=True)
-        return user_created_tracks, liked_playlist_tracks
-
-    def _begin_build(self, user_flag: bool, with_audio=True):
-        """_summary_
-
-        Args:
-            user_flag (bool): _description_
-            with_audio (bool, optional): _description_. Defaults to True.
-
-        Returns:
-            _type_: _description_
-        """
-        playlists_idx = []
-        playlists = self.client.current_user_playlists()
-
-        self._process_page(playlists=playlists,
-                           user_flag=user_flag, playlist_idx=playlists_idx)
-        # if playlists['next']:
-        #     # token=get_user_token()
-        #     # type=token['token_type']
-        #     # access_token=token['access_token']
-        #     while playlists['next']:
-        #         # headers={ 'Authorization': type+" "+access_token }
-        #         url = playlists['next'],
-        #         # playlists= requests.get(url=url,headers=headers,
-        # timeout=10).json()
-        #         # _process_page(playlists=playlists,user_flag=user_flag,
-        # client=self.client,playlist_idx=playlists_idx)
-        #     # handle pagination
-        df_with_audio = sp_utility.get_tracks(
-            self.client, self.oauth, ("p", playlists_idx), True)
-        return df_with_audio
-
-    def _process_page(self, playlists, user_flag, playlist_idx):
-        for playlist in playlists['items']:
-            if user_flag:
-                if (playlist['owner']['id'] == self.client.me()['id']):
-                    playlist_idx.append(playlist['id'])
-            else:
-                if (playlist['owner']['id'] != self.client.me()['id']):
-                    playlist_idx.append(playlist['id'])

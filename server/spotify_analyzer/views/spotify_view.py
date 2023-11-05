@@ -7,7 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
 import logging
-from ..services.spotify.spotify_service import SpotifyService
+from ..services.spotify.spotify_token_handler import SpotifyTokenHandler
 from ..services.user_service import UserService
 from ..models import User
 # ,# SpotifyAuthException
@@ -31,10 +31,10 @@ class SpotifyAuthCodeView(APIView):
             print(authorization_code)
          
             user_service = UserService(user_model=User, logger=logger)
-            spotify_service = SpotifyService(
+            token_handler = SpotifyTokenHandler(
                 authorization_code=authorization_code,
                 user_service=user_service, user_id=user_id)
-            print(spotify_service)
+            print(token_handler)
         # except SpotifyAuthException as e:
         #     logger.error(f"SpotifyAuthException occurred: {str(e)}")
         #     return Response({'error': 'Authentication failed.'}, 
