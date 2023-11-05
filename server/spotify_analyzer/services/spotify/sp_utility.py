@@ -4,9 +4,10 @@ import sys
 import requests
 import pandas as pd
 from dotenv import load_dotenv
-from spotipy.oauth2 import SpotifyOAuth
+from .spotify_token_handler import SpotifyTokenHandler
+scope = "user-library-read user-read-playback-position user-top-read \
+user-read-recently-played playlist-read-private"
 
-scope = "user-library-read user-read-playback-position user-top-read user-read-recently-played playlist-read-private"
 # TODO
 # def welcome_user(engine: sqlalchemy.engine.Engine, client:spotipy.Spotify):
 #    spotipy_id=client.me()['id']
@@ -33,11 +34,12 @@ def setup():
         sys.exit(1)
 
 
-def get_tracks(client: spotipy.Spotify, oauth: SpotifyOAuth,
+def get_tracks(client: spotipy.Spotify, token_handler: SpotifyTokenHandler,
                source=None, with_audio=True):
+    assert token_handler.accessToken is not None
 
     user_tracks_IDX, user_tracks_names, user_track_artists = process_source(
-        client, oauth, source)
+        client, token_handler, source)
 
     # changing to a df in here
     user_df = pd.DataFrame(
@@ -47,22 +49,23 @@ def get_tracks(client: spotipy.Spotify, oauth: SpotifyOAuth,
     user_df.dropna()
     user_df.reset_index(drop=True, inplace=True)
     if (with_audio):
-        user_df_with_features = get_audio_info(client, oauth, user_df)
+        user_df_with_features = get_audio_feature_df(client, user_df)
         return user_df_with_features
     else:
         return user_df
 
 
-def paginate_results(tracks: dict, idx: list, track_names: list,
-                     artist_names: list, oauth, choice):
+def paginate_results(tracks: dict, idx: list,
+                     track_names: list, artist_names: list,
+                     token_handler: SpotifyTokenHandler, choice):
 
-    token = dict(oauth.get_cached_token())
-    type = token['token_type']
-    access_token = token['access_token']
+    access_token = token_handler.accessToken
+    assert access_token is not None
 
     while (tracks['next']):
         tracks = requests.get(tracks['next'], headers={
-                              'Authorization': type+" "+access_token}).json()
+                              'Authorization': "Bearer"+" "+access_token}
+                              ).json()
         if (choice == "t"):
             more_idx, more_track_names, more_artist_names = get_tracks_info(
                 tracks, "t")
@@ -74,7 +77,8 @@ def paginate_results(tracks: dict, idx: list, track_names: list,
         artist_names.extend(more_artist_names)
 
 
-def process_source(client: spotipy.Spotify, oauth: SpotifyOAuth, source):
+def process_source(client: spotipy.Spotify,
+                   token_handler: SpotifyTokenHandler, source):
     track_idx = []
     track_name = []
     track_artist = []
@@ -94,8 +98,9 @@ def process_source(client: spotipy.Spotify, oauth: SpotifyOAuth, source):
             track_artist.extend(a_name)
             # page if needed
             paginate_results(tracks=tracks, idx=track_idx, 
-                             track_names=track_name, artist_names=track_artist,
-                             oauth=oauth, choice="p")
+                             track_names=track_name,
+                             artist_names=track_artist, 
+                             token_handler=token_handler, choice="p")
             # count check
             count_IDX_after_playlist = len(track_idx)
             count_names_after_playlist = len(track_name)
@@ -111,7 +116,8 @@ def process_source(client: spotipy.Spotify, oauth: SpotifyOAuth, source):
         track_artist.extend(tracks[2])
         if (source[1]['next']):
             paginate_results(source[1], track_idx, track_name,
-                             track_artist, oauth=oauth, choice="t")
+                             track_artist,
+                             token_handler=token_handler, choice="t")
     return track_idx, track_name, track_artist
 
 
@@ -135,8 +141,7 @@ def get_tracks_info(tracks: dict, choice):
     return tracks_URI, tracks_name, artists_name
 
 
-def get_audio_info(client: spotipy.Spotify, 
-                   oauth: SpotifyOAuth, parent_df: pd.DataFrame):
+def get_audio_feature_df(client: spotipy.Spotify, parent_df: pd.DataFrame):
     print(parent_df)
     parent_df.reset_index(inplace=True, drop=True)
     partitioned_list = []

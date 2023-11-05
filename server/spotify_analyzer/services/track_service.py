@@ -29,7 +29,6 @@ from injector import inject
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DatabaseError, OperationalError
 
-from ..util import log_error, log_error_dependency
 
 # @singleton
 
@@ -89,7 +88,6 @@ class TrackService:
             return self.track_model.objects.get(track_uri=track_uri)
         except self.track_model.DoesNotExist:
             self.logger.exception("An exception occured in get_track:")
-            log_error(logger=self.logger, entity="Track", identifier=track_uri)
             return None
 
     def update_track(self, track_uri: str, track_data: TrackData):
@@ -114,10 +112,7 @@ class TrackService:
                 self.logger.exception(
                     f"An error occurred while updating a track: {e}")
                 return None
-        else:
-            log_error_dependency(logger=self.logger,
-                                 caller="update_track()", entity="Track")
-
+        
     def delete_track(self, track_uri: str):
         """Deletes a track by its URI.
 
@@ -135,10 +130,7 @@ class TrackService:
                 self.logger.exception(
                     f"An error occurred while deleting a track: {e}")
                 return None
-        else:
-            log_error_dependency(logger=self.logger,
-                                 caller="delete_track()", entity="Track")
-
+            
     def get_all_tracks(self):
         """Fetches all tracks in the database.
 

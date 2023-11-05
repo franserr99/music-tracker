@@ -5,11 +5,12 @@ from django.urls import include, path
 # from .services.track_features_service import TrackFeaturesService
 # from .services.user_service import UserService
 # from .services.liked_track_service import LikedTrackService
-from .views.spotify_view import SpotifyAuthCodeView
+from .views.spotify_views.spotify_auth_view import SpotifyAuthCodeView
 from .views.user_views import UserListCreate, UserRetrieveUpdateDestroy
 from .views.track_views import TrackListCreate, TrackRetrieveUpdateDestroy
 from .views.track_features_views import TrackFeatureListCreate
 from .views.track_features_views import TrackFeatureRetrieveUpdateDestroy
+from .views.spotify_views.spotify_user_favorites_view import SpotifyFavorites
 
 import logging
 
@@ -31,4 +32,6 @@ urlpatterns = [
           name='track-retrieve-update-destroy'),
      path('spotify/auth-code/', SpotifyAuthCodeView.as_view(),
           name='spotify-auth-code'),
+     path('spotify/users/<str:id>/favorites', SpotifyFavorites.as_view(),
+          name='favorites-dataframe-api')
 ]

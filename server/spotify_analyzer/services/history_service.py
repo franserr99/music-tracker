@@ -8,7 +8,7 @@ import logging
 
 from injector import inject
 from django.core.exceptions import ValidationError
-from django.db import IntegrityError, DatabaseError, OperationalError
+from django.db import IntegrityError, DatabaseError
 
 from ..models import History
 from .service_dtos import HistoryData
@@ -52,7 +52,7 @@ class HistoryService:
             except (IntegrityError, ValidationError,
                     DatabaseError, TypeError, ValueError) as e:
                 self.logger.exception(
-                    f"An error occurred while creating a history listening record: {e}")
+                    f"error occurred while creating a history record: {e}")
                 return None
         else:
             self.logger.error(f"Could not find instances for User ID {
@@ -82,14 +82,17 @@ class HistoryService:
             # repplace the id's w the instances
             payload['user'] = user_instance
             payload['track'] = track_instance
-            # tuple is returned, first elem is the record and second one is the flag denoting if it was present to begin with
+            # tuple is returned:
+            # first elem is the record
+            # second one is the flag denoting if it was present to begin with
             try:
 
                 return self.history_model.objects.get_or_create()[0]
             except self.history_model.DoesNotExist:
                 self.logger.exception("An exception occured in get_history:")
 
-    def update_history(self, updated_history_data: HistoryData, prev_history_data: HistoryData):
+    def update_history(self, updated_history_data: HistoryData,
+                       prev_history_data: HistoryData):
         """_summary_
 
         Args:
@@ -103,7 +106,7 @@ class HistoryService:
             history.save()
         else:
             self.logger.warning(
-                "History record does not exist. Check for race conditions or validate your input sources.")
+                "History record DNE. Check for race conditions or validate.")
 
     def delete_history(self, history_data: HistoryData):
         """_summary_
@@ -116,7 +119,7 @@ class HistoryService:
             history.delete()
         else:
             self.logger.warning(
-                "History record does not exist. Check for race conditions or validate your input sources.")
+                "History record DNE. Check for race conditions or validate.")
 
     def get_all_users_histories(self, user_id):
         """_summary_

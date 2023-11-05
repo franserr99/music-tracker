@@ -10,7 +10,7 @@ Returns:
         Returns a JSON representation of track features or an error message.
 """
 
-from ..serializers import TrackFeaturesSerializer
+from .serializers import TrackFeaturesSerializer
 from ..models import TrackFeatures
 
 

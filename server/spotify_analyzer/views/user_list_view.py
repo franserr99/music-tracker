@@ -1,6 +1,6 @@
 from rest_framework.generics import ListAPIView
 from server.spotify_analyzer.models import User
-from server.spotify_analyzer.serializers import UserSerializer
+from server.spotify_analyzer.views.serializers import UserSerializer
 
 
 class TrackListView(ListAPIView):

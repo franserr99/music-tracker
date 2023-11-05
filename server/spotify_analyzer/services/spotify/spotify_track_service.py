@@ -1,4 +1,4 @@
-import sp_utility
+from . import sp_utility
 import spotipy
 from .spotify_token_handler import SpotifyTokenHandler
 
@@ -9,12 +9,14 @@ class SpotifyTrackService:
         self.client = client
         self.token_handler = token_handler
 
+    # main method #1
     def get_monthly_tracks(self, term="short_term"):
         this_month_tracks = self.begin_build(term="long_term")
         print(this_month_tracks.columns)
         print(this_month_tracks)
         return this_month_tracks
-        
+    
+    # main method #2    
     def get_monthly_artists(self, term="short_term"):
         this_month_tracks = self.begin_build(term="long_term")
         tracks_artists = this_month_tracks.iloc[:, 2]
@@ -22,11 +24,13 @@ class SpotifyTrackService:
         print(top_artists)
         return top_artists
     
+    # common entry point for both main methods
     def begin_build(self, term):
         try:
             # Your Spotify API call logic
             track_dict = self.client.current_user_top_tracks(
                 20, offset=0, time_range=term)
+            
         except Exception as e:
             print("********")
             print(e.response.text)
@@ -34,7 +38,8 @@ class SpotifyTrackService:
             raise e
 
         df_with_audio = sp_utility.get_tracks(
-            client=self.client, source=("t", track_dict), with_audio=True)
+            client=self.client, token_handler=self.token_handler,
+            source=("t", track_dict), with_audio=True)
         
         return df_with_audio
  

@@ -1,6 +1,6 @@
 from rest_framework.generics import ListAPIView
 from ..models import Track
-from ..serializers import TrackSerializer
+from .serializers import TrackSerializer
 
 
 class TrackListView(ListAPIView):

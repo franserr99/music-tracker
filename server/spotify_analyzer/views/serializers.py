@@ -2,7 +2,7 @@
 """
 from rest_framework import serializers
 
-from .models import TrackFeatures, Track, History, User, Playlist
+from ..models import TrackFeatures, Track, History, User, Playlist
 
 
 class TrackFeaturesSerializer(serializers.ModelSerializer):

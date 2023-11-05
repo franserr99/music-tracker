@@ -7,7 +7,6 @@ from django.db import IntegrityError, DatabaseError, OperationalError
 
 from ..models import User
 from .service_dtos import UserData
-from ..util import log_error_dependency
 
 
 # @singleton
@@ -83,9 +82,6 @@ class UserService:
                 self.logger.exception(
                     f"An error occurred while updating a user: {e}")
                 return None
-        else:
-            log_error_dependency(logger=self.logger,
-                                 caller="update_user()", entity="User")
         
     def add_token(self, user_id, token, access=True):
         print(token)
@@ -131,8 +127,6 @@ class UserService:
                 self.logger.exception(
                     f"An error occurred while deleting a user: {e}")
                 return None
-        log_error_dependency(logger=self.logger,
-                             caller="delete_user()", entity="User")
 
     def get_all_users(self) -> Optional[List[User]]:
         """Fetches all users.   

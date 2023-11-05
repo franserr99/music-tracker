@@ -9,7 +9,7 @@ from rest_framework.generics import RetrieveUpdateDestroyAPIView
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
-from ..serializers import UserSerializer
+from .serializers import UserSerializer
 from ..models import User
 
 

@@ -6,7 +6,7 @@ Returns:
 from rest_framework.generics import RetrieveAPIView, ListCreateAPIView
 
 from ..models import Playlist
-from ..serializers import PlaylistWithTracksSerializer, PlaylistSerializer
+from .serializers import PlaylistWithTracksSerializer, PlaylistSerializer
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 

@@ -13,8 +13,7 @@ from ..models import Playlist
 from .user_service import UserService
 from .service_dtos import PlaylistData
 from .track_service import TrackService
-from ..serializers import PlaylistSerializer
-from ..util import log_error
+from ..views.serializers import PlaylistSerializer
 
 
 @singleton
@@ -25,7 +24,8 @@ class PlaylistService:
         _type_: _description_
     """
     @inject
-    def __init__(self, playlist_model: Playlist, track_service: TrackService, user_service: UserService, logger: logging.Logger):
+    def __init__(self, playlist_model: Playlist, track_service: TrackService,
+                 user_service: UserService, logger: logging.Logger):
         self.playlist_model = playlist_model
         self.track_service = track_service
         self.user_service = user_service
@@ -44,8 +44,6 @@ class PlaylistService:
         if user:
             payload['created_by'] = user
             self.playlist_model.objects.create(**payload)
-        else:
-            log_error(logger=self.logger, entity="User", identifier=user_id)
 
     def get_playlist(self, playlist_data: PlaylistData) -> Optional[Playlist]:
         """_summary_
@@ -63,7 +61,6 @@ class PlaylistService:
             if user:
                 payload['user_id'] = user
                 return self.playlist_model.objects.get(**payload)
-            log_error(logger=self.logger, entity="User", identifier=user_id)
         except self.playlist_model.DoesNotExist:
             self.logger.exception("An exception occured in get_playlist:")
         except self.playlist_model.MultipleObjectsReturned:
@@ -77,14 +74,11 @@ class PlaylistService:
             new_data (PlaylistData): _description_
         """
         playlist = self.get_playlist(playlist_data=old_data)
-        playlist_id = old_data['playlist_id']
+        # playlist_id = old_data['playlist_id']
         if (playlist):
             for key, value in new_data.items():
                 setattr(playlist, key, value)
             playlist.save()
-        else:
-            log_error(logger=self.logger, entity="Playlist",
-                      identifier=playlist_id)
 
     def delete_playlist(self, playlist_data: PlaylistData):
         """_summary_
@@ -93,12 +87,9 @@ class PlaylistService:
             playlist_data (PlaylistData): _description_
         """
         playlist = self.get_playlist(playlist_data=playlist_data)
-        playlist_id = playlist['playlist_id']
+        # playlist_id = playlist['playlist_id']
         if (playlist):
             playlist.delete()
-        else:
-            log_error(logger=self.logger, entity="Playlist",
-                      identifier=playlist_id)
 
     def get_user_playlists(self, user_id: str):
         """_summary_
@@ -112,5 +103,3 @@ class PlaylistService:
         user = self.user_service.get_user(user_id=user_id)
         if (user):
             return self.playlist_model.objects.get(user=user)
-        else:
-            log_error(logger=self.logger, entity="User", identifier=user_id)
