@@ -128,6 +128,7 @@ class User(models.Model):
     """
     id = models.CharField(max_length=50, unique=True, primary_key=True)
     user_name = models.CharField(max_length=100, null=True)
+    expires_at = models.IntegerField(null=True)
     refresh_token = models.CharField(max_length=250, null=True)
     access_token = models.CharField(max_length=250, null=True)
     liked_tracks = models.ManyToManyField(

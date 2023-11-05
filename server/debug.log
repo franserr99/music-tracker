@@ -728,3 +728,953 @@ INFO 2023-11-04 22:30:05,725 autoreload autoreload.py 266 /Users/franserr/Docume
 INFO 2023-11-04 22:30:05,725 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
 INFO 2023-11-04 22:30:06,368 autoreload autoreload.py 668 Watching for file changes with StatReloader
 INFO 2023-11-04 22:30:06,368 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 22:53:51,260 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 22:53:51,260 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-04 22:54:02,049 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken()
+                  ^^^^^^^^^^^^^^^^^^^^^
+TypeError: SpotifyService.getAccessToken() missing 1 required positional argument: 'user_id'
+ERROR 2023-11-04 22:54:02,049 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken()
+                  ^^^^^^^^^^^^^^^^^^^^^
+TypeError: SpotifyService.getAccessToken() missing 1 required positional argument: 'user_id'
+INFO 2023-11-04 22:56:39,368 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 22:56:39,368 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 22:56:40,430 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 22:56:40,430 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 22:56:42,754 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 22:56:42,754 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 22:56:43,717 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 22:56:43,717 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-04 22:56:54,545 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken(user_id=user_id,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 107, in getAccessToken
+    if (self.isAccessTokenExpired(token=token, auth=auth)):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 181, in isAccessTokenExpired
+    return auth.is_token_expired(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/spotipy/oauth2.py", line 122, in is_token_expired
+    return token_info["expires_at"] - now < 60
+           ~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+ERROR 2023-11-04 22:56:54,545 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken(user_id=user_id,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 107, in getAccessToken
+    if (self.isAccessTokenExpired(token=token, auth=auth)):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 181, in isAccessTokenExpired
+    return auth.is_token_expired(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/spotipy/oauth2.py", line 122, in is_token_expired
+    return token_info["expires_at"] - now < 60
+           ~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+INFO 2023-11-04 22:58:01,408 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 22:58:01,408 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 22:58:02,552 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 22:58:02,552 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 23:10:03,855 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 23:10:03,855 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-04 23:10:12,623 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken(user_id=user_id,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 110, in getAccessToken
+    if (self.isAccessTokenExpired(token=token_info, auth=auth)):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 189, in isAccessTokenExpired
+    return auth.is_token_expired(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/spotipy/oauth2.py", line 122, in is_token_expired
+    return token_info["expires_at"] - now < 60
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'int'
+ERROR 2023-11-04 23:10:12,623 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken(user_id=user_id,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 110, in getAccessToken
+    if (self.isAccessTokenExpired(token=token_info, auth=auth)):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 189, in isAccessTokenExpired
+    return auth.is_token_expired(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/spotipy/oauth2.py", line 122, in is_token_expired
+    return token_info["expires_at"] - now < 60
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'int'
+INFO 2023-11-04 23:14:08,602 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 23:14:08,602 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 23:14:09,711 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 23:14:09,711 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 23:14:15,101 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 23:14:15,101 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 23:14:15,928 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 23:14:15,928 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-04 23:14:34,502 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken(user_id=user_id,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 113, in getAccessToken
+    accessToken = self.handleRefreshTokenChecking()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 125, in handleRefreshTokenChecking
+    refresh_token = self.getRefreshToken()
+                    ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SpotifyService.getRefreshToken() missing 1 required positional argument: 'user_id'
+ERROR 2023-11-04 23:14:34,502 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken(user_id=user_id,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 113, in getAccessToken
+    accessToken = self.handleRefreshTokenChecking()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 125, in handleRefreshTokenChecking
+    refresh_token = self.getRefreshToken()
+                    ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SpotifyService.getRefreshToken() missing 1 required positional argument: 'user_id'
+INFO 2023-11-04 23:15:19,180 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 23:15:19,180 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 23:15:20,151 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 23:15:20,151 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-04 23:15:29,761 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken(user_id=user_id,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 113, in getAccessToken
+    accessToken = self.handleRefreshTokenChecking(user_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 132, in handleRefreshTokenChecking
+    new_token = self.fetchAccessTokenWithRefreshToken()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SpotifyService.fetchAccessTokenWithRefreshToken() missing 2 required positional arguments: 'token' and 'user_id'
+ERROR 2023-11-04 23:15:29,761 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken(user_id=user_id,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 113, in getAccessToken
+    accessToken = self.handleRefreshTokenChecking(user_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 132, in handleRefreshTokenChecking
+    new_token = self.fetchAccessTokenWithRefreshToken()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SpotifyService.fetchAccessTokenWithRefreshToken() missing 2 required positional arguments: 'token' and 'user_id'
+INFO 2023-11-04 23:16:43,007 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 23:16:43,007 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 23:16:44,107 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 23:16:44,107 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-04 23:16:49,710 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken(user_id=user_id,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 113, in getAccessToken
+    accessToken = self.handleRefreshTokenChecking(user_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 132, in handleRefreshTokenChecking
+    new_token = self.fetchAccessTokenWithRefreshToken(refresh_token,user_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 154, in fetchAccessTokenWithRefreshToken
+    refreshToken = token_info['refresh_token']
+                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'refresh_token'
+ERROR 2023-11-04 23:16:49,710 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken(user_id=user_id,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 113, in getAccessToken
+    accessToken = self.handleRefreshTokenChecking(user_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 132, in handleRefreshTokenChecking
+    new_token = self.fetchAccessTokenWithRefreshToken(refresh_token,user_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 154, in fetchAccessTokenWithRefreshToken
+    refreshToken = token_info['refresh_token']
+                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'refresh_token'
+INFO 2023-11-04 23:17:09,183 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 23:17:09,183 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 23:17:10,184 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 23:17:10,184 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 23:17:13,540 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 23:17:13,540 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 23:17:14,420 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 23:17:14,420 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 23:17:15,725 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 23:17:15,725 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 23:17:16,601 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 23:17:16,601 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 23:20:02,128 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 23:20:02,128 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-04 23:20:02,985 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-04 23:20:02,985 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:38:06,290 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:38:06,290 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:38:07,073 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:38:07,073 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:38:09,273 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:38:09,273 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:38:09,844 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:38:09,844 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:38:12,055 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:38:12,055 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:38:12,603 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:38:12,603 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:38:13,815 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:38:13,815 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:38:14,359 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:38:14,359 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:38:21,689 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:38:21,689 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:38:22,250 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:38:22,250 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:38:25,484 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:38:25,484 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:38:26,065 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:38:26,065 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:38:28,289 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:38:28,289 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:38:28,820 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:38:28,820 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:40:14,898 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:40:14,898 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:40:15,446 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:40:15,446 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:40:18,680 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:40:18,680 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:40:19,222 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:40:19,222 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:40:24,518 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:40:24,518 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:40:25,047 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:40:25,047 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-05 00:42:01,140 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken(user_id=user_id,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 109, in getAccessToken
+    accessToken = self.handleRefreshTokenChecking(user_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 128, in handleRefreshTokenChecking
+    new_token = self.fetchAccessTokenWithRefreshToken(refresh_token,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 152, in fetchAccessTokenWithRefreshToken
+    refreshToken = token_info['refresh_token']
+                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'refresh_token'
+ERROR 2023-11-05 00:42:01,140 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken(user_id=user_id,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 109, in getAccessToken
+    accessToken = self.handleRefreshTokenChecking(user_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 128, in handleRefreshTokenChecking
+    new_token = self.fetchAccessTokenWithRefreshToken(refresh_token,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 152, in fetchAccessTokenWithRefreshToken
+    refreshToken = token_info['refresh_token']
+                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'refresh_token'
+INFO 2023-11-05 00:44:01,074 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:44:01,074 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:44:01,629 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:44:01,629 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:44:12,069 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:44:12,069 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:44:12,605 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:44:12,605 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:44:15,835 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:44:15,835 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:44:16,442 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:44:16,442 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:44:20,724 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:44:20,724 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:44:21,276 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:44:21,276 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:44:31,729 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:44:31,729 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:44:32,252 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:44:32,252 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-05 00:44:49,789 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken(user_id=user_id,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 109, in getAccessToken
+    accessToken = self.handleRefreshTokenChecking(user_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 128, in handleRefreshTokenChecking
+    new_token = self.fetchAccessTokenWithRefreshToken(refresh_token,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 152, in fetchAccessTokenWithRefreshToken
+    refreshToken = token_info['refresh_token']
+                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'refresh_token'
+ERROR 2023-11-05 00:44:49,789 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken(user_id=user_id,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 109, in getAccessToken
+    accessToken = self.handleRefreshTokenChecking(user_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 128, in handleRefreshTokenChecking
+    new_token = self.fetchAccessTokenWithRefreshToken(refresh_token,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 152, in fetchAccessTokenWithRefreshToken
+    refreshToken = token_info['refresh_token']
+                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'refresh_token'
+INFO 2023-11-05 00:47:13,982 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:47:13,982 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:47:14,543 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:47:14,543 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:47:20,828 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:47:20,828 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:47:21,377 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:47:21,377 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:47:45,172 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:47:45,172 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:47:45,710 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:47:45,710 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-05 00:47:52,918 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken(user_id=user_id,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 109, in getAccessToken
+    accessToken = self.handleRefreshTokenChecking(user_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 128, in handleRefreshTokenChecking
+    new_token = self.fetchAccessTokenWithRefreshToken(refresh_token,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 152, in fetchAccessTokenWithRefreshToken
+    if token_info['refresh_token']:
+      ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'refresh_token'
+ERROR 2023-11-05 00:47:52,918 log log.py 241 Internal Server Error: /spotify/auth-code/
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_view.py", line 34, in post
+    spotify_service = SpotifyService(
+                      ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 43, in __init__
+    accessToken = self.getAccessToken(user_id=user_id,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 109, in getAccessToken
+    accessToken = self.handleRefreshTokenChecking(user_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 128, in handleRefreshTokenChecking
+    new_token = self.fetchAccessTokenWithRefreshToken(refresh_token,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py", line 152, in fetchAccessTokenWithRefreshToken
+    if token_info['refresh_token']:
+      ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'refresh_token'
+INFO 2023-11-05 00:49:34,487 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:49:34,487 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:49:35,021 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:49:35,021 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:49:47,470 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:49:47,470 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:49:48,011 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:49:48,011 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:51:05,758 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:51:05,758 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:51:06,094 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:51:06,094 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:52:08,161 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:52:08,161 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:52:08,680 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:52:08,680 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:52:11,909 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:52:11,909 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:52:12,625 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:52:12,625 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:58:05,565 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:58:05,565 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:58:06,102 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:58:06,102 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:58:07,323 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:58:07,323 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:58:07,850 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:58:07,850 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:59:19,059 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:59:19,059 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_service.py changed, reloading.
+INFO 2023-11-05 00:59:19,582 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 00:59:19,582 autoreload autoreload.py 668 Watching for file changes with StatReloader

@@ -103,6 +103,19 @@ class UserService:
                 self.logger.exception(
                     f"An error occurred while adding token info to a user: {e}"
                     )
+                
+    def add_token_metadata(self, user_id, expires_at):
+        user = self.get_user(user_id=user_id)
+        if user is not None:
+            user.expires_at = int(expires_at)
+            try:
+                print("saving the token metadata now")
+                user.save()
+            except (IntegrityError, ValidationError,
+                    OperationalError, DatabaseError) as e:
+                self.logger.exception(
+                    f"An error occurred while adding token metadata: {e}"
+                    )
 
     def delete_user(self, user_id):
         """Deletes a user.
