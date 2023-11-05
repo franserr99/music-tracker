@@ -11,37 +11,45 @@ class SpotifyTrackService:
 
     # main method #1
     def get_monthly_tracks(self, term="short_term"):
-        this_month_tracks = self.begin_build(term="long_term")
+        this_month_tracks = self.begin_build(term=term, type='tracks')
         print(this_month_tracks.columns)
         print(this_month_tracks)
         return this_month_tracks
-    
+
     # main method #2    
     def get_monthly_artists(self, term="short_term"):
-        this_month_tracks = self.begin_build(term="long_term")
-        tracks_artists = this_month_tracks.iloc[:, 2]
-        top_artists = self.top_n_artists(tracks_artists=tracks_artists)
-        print(top_artists)
-        return top_artists
-    
+        this_month_artists = self.begin_build(term=term, type='artists')
+        print(this_month_artists)
+        return this_month_artists
+
     # common entry point for both main methods
-    def begin_build(self, term):
+    def begin_build(self, term, type):
         try:
             # Your Spotify API call logic
-            track_dict = self.client.current_user_top_tracks(
-                20, offset=0, time_range=term)
-            
+            if (type == 'tracks'):
+                dict = self.client.current_user_top_tracks(
+                    20, offset=0, time_range=term)
+                df_with_audio = sp_utility.get_tracks(
+                    client=self.client, token_handler=self.token_handler,
+                    source=("t", dict), with_audio=True)
+                return df_with_audio
+            elif (type == 'artists'):
+                dict = self.client.current_user_top_artists(
+                    20, offset=0, time_range=term)
+                print(dict)
+                artists = []
+                for item in dict['items']:
+                    artist = {'name': item['name'], 'genres': item['genres'], 
+                              'uri': item['uri'], 'images': item['images']}
+                    artists.append(artist)
+                    
+                return artists
+
         except Exception as e:
             print("********")
             print(e.response.text)
             # This will print more details about the error
             raise e
-
-        df_with_audio = sp_utility.get_tracks(
-            client=self.client, token_handler=self.token_handler,
-            source=("t", track_dict), with_audio=True)
-        
-        return df_with_audio
  
     # logic to filter through and pick the top artists
     def top_n_artists(self, tracks_artists):

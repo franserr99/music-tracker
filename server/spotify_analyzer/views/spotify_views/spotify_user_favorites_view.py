@@ -38,9 +38,10 @@ class SpotifyFavorites(APIView):
                 return Response(json_data)
             elif type == 'artists':
                 top_artists = sp_track_service.get_monthly_artists()
-                records = top_artists.to_dict(orient='records')
-                json_data = json.dumps(records)
-                return Response(json_data)
+                # records = top_artists.to_dict(orient='records')
+                # json_data = json.dumps(records)
+
+                return Response(top_artists)
             else:
                 return Response({'error': 'Bad input'},
                                 status=status.HTTP_400_BAD_REQUEST)

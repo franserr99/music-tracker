@@ -1782,3 +1782,397 @@ INFO 2023-11-05 06:34:43,663 autoreload autoreload.py 266 /Users/franserr/Docume
 INFO 2023-11-05 06:34:43,663 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
 INFO 2023-11-05 06:34:44,660 autoreload autoreload.py 668 Watching for file changes with StatReloader
 INFO 2023-11-05 06:34:44,660 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:41:13,129 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:41:13,129 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-05 06:41:24,091 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_views/spotify_user_favorites_view.py", line 41, in post
+    records = top_artists.to_dict(orient='records')
+              ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'to_dict'
+ERROR 2023-11-05 06:41:24,091 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_views/spotify_user_favorites_view.py", line 41, in post
+    records = top_artists.to_dict(orient='records')
+              ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'to_dict'
+INFO 2023-11-05 06:43:38,129 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:43:38,129 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:43:39,016 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:43:39,016 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:45:26,021 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:45:26,021 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:45:26,710 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:45:26,710 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:45:28,911 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:45:28,911 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:45:29,623 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:45:29,623 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:45:36,945 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:45:36,945 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:45:37,819 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:45:37,819 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:45:54,531 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:45:54,531 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:45:55,450 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:45:55,450 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:45:56,743 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:45:56,743 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:45:57,621 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:45:57,621 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:46:10,204 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:46:10,204 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:46:11,187 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:46:11,187 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:46:12,485 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:46:12,485 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:46:13,349 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:46:13,349 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:52:11,330 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:52:11,330 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:52:12,400 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:52:12,400 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:52:18,822 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:52:18,822 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:52:19,727 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:52:19,727 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:53:40,646 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:53:40,646 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:53:41,170 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:53:41,170 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:53:44,374 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:53:44,374 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:53:45,244 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:53:45,244 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:53:48,631 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:53:48,631 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:53:49,540 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:53:49,540 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:55:10,060 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:55:10,060 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:55:10,954 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:55:10,954 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:55:18,408 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:55:18,408 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:55:19,232 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:55:19,232 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:55:21,542 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:55:21,542 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:55:22,442 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:55:22,442 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:55:25,765 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:55:25,765 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:55:26,604 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:55:26,604 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:55:38,146 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:55:38,146 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:55:39,057 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:55:39,057 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:55:42,407 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:55:42,407 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:55:43,440 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:55:43,440 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-05 06:55:52,686 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_views/spotify_user_favorites_view.py", line 41, in post
+    records = top_artists.to_dict(orient='records')
+              ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'to_dict'
+ERROR 2023-11-05 06:55:52,686 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_views/spotify_user_favorites_view.py", line 41, in post
+    records = top_artists.to_dict(orient='records')
+              ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'to_dict'
+INFO 2023-11-05 06:56:27,344 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:56:27,344 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 06:56:28,334 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:56:28,334 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-05 06:56:29,335 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_views/spotify_user_favorites_view.py", line 41, in post
+    records = top_artists.to_dict(orient='records')
+              ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'to_dict'
+ERROR 2023-11-05 06:56:29,335 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_views/spotify_user_favorites_view.py", line 41, in post
+    records = top_artists.to_dict(orient='records')
+              ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'to_dict'
+INFO 2023-11-05 06:57:31,333 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_views/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-05 06:57:31,333 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_views/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-05 06:57:32,679 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 06:57:32,679 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:21:46,206 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:21:46,206 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:21:46,940 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:21:46,940 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:21:49,142 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:21:49,142 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:21:49,638 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:21:49,638 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:21:56,921 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:21:56,921 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:21:57,400 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:21:57,400 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:22:03,648 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:22:03,648 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:22:04,129 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:22:04,129 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:22:20,515 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:22:20,515 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:22:21,425 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:22:21,425 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:22:35,024 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:22:35,024 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:22:35,923 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:22:35,923 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:22:37,233 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:22:37,233 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:22:38,091 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:22:38,091 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:22:41,437 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:22:41,437 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:22:42,278 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:22:42,278 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:22:50,774 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:22:50,774 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:22:51,645 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:22:51,645 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:22:53,977 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:22:53,977 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:22:54,884 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:22:54,884 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:22:56,204 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:22:56,204 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:22:57,067 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:22:57,067 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:01,453 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:01,453 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:02,331 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:02,331 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:06,688 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:06,688 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:07,577 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:07,577 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:08,869 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:08,869 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:09,757 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:09,757 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:11,082 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:11,082 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:11,916 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:11,916 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:13,209 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:13,209 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:14,091 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:14,091 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:18,453 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:18,453 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:19,306 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:19,306 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:29,839 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:29,839 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:30,676 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:30,676 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:32,998 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:32,998 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:33,886 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:33,886 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:39,272 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:39,272 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:40,147 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:40,147 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:56,847 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:56,847 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:23:57,685 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:23:57,685 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:24:07,220 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_views/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-05 07:24:07,220 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify_views/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-05 07:24:08,076 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:24:08,076 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:24:49,704 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:24:49,704 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:24:50,547 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:24:50,547 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:24:51,844 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:24:51,844 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:24:52,686 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:24:52,686 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:25:35,490 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:25:35,490 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:25:36,609 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:25:36,609 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:25:38,158 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:25:38,158 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
+INFO 2023-11-05 07:25:39,769 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 07:25:39,769 autoreload autoreload.py 668 Watching for file changes with StatReloader
