@@ -2226,3 +2226,353 @@ WARNING 2023-11-05 09:10:23,780 log log.py 241 Not Found: /admin/spotify_analyze
 WARNING 2023-11-05 09:10:23,780 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
 WARNING 2023-11-05 09:10:23,781 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
 WARNING 2023-11-05 09:10:23,781 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+INFO 2023-11-06 06:27:35,132 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 06:27:35,132 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:33:43,530 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:33:43,530 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:57:17,137 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:57:17,137 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-06 10:57:43,797 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py", line 43, in post
+    album_service = AlbumService(album_model=Album, logger=logger)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AlbumService.__init__() missing 1 required positional argument: 'track_service'
+ERROR 2023-11-06 10:57:43,797 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py", line 43, in post
+    album_service = AlbumService(album_model=Album, logger=logger)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AlbumService.__init__() missing 1 required positional argument: 'track_service'
+INFO 2023-11-06 10:58:13,560 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:58:13,560 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:58:14,131 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:58:14,131 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:58:16,329 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:58:16,329 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:58:16,832 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:58:16,832 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:58:19,032 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:58:19,032 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:58:19,545 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:58:19,545 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:58:25,798 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:58:25,798 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:58:26,591 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:58:26,591 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:58:34,044 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:58:34,044 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:58:34,886 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:58:34,886 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:58:36,196 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:58:36,196 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:58:37,028 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:58:37,028 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:58:39,351 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:58:39,351 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:58:40,239 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:58:40,239 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:58:41,561 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:58:41,561 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:58:42,442 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:58:42,442 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-06 10:58:44,336 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py", line 46, in post
+    playlist_service = PlaylistService(playlist_model=Playlist,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: PlaylistService.__init__() missing 2 required positional arguments: 'track_service' and 'user_service'
+ERROR 2023-11-06 10:58:44,336 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py", line 46, in post
+    playlist_service = PlaylistService(playlist_model=Playlist,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: PlaylistService.__init__() missing 2 required positional arguments: 'track_service' and 'user_service'
+INFO 2023-11-06 10:59:20,013 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:59:20,013 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:59:20,931 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:59:20,931 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:59:25,332 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:59:25,332 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:59:26,203 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:59:26,203 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:59:36,745 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:59:36,745 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:59:37,613 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:59:37,613 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:59:39,958 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:59:39,958 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:59:40,851 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:59:40,851 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:59:42,175 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:59:42,175 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:59:43,010 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:59:43,010 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:59:49,434 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:59:49,434 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 10:59:50,312 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 10:59:50,312 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-06 11:00:04,075 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py", line 50, in post
+    persistence_service = SpotifyDataPersistence(
+                          ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SpotifyDataPersistence.__init__() missing 1 required positional argument: 'feature_service'
+ERROR 2023-11-06 11:00:04,075 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py", line 50, in post
+    persistence_service = SpotifyDataPersistence(
+                          ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SpotifyDataPersistence.__init__() missing 1 required positional argument: 'feature_service'
+INFO 2023-11-06 11:01:41,702 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 11:01:41,702 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 11:01:42,267 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 11:01:42,267 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 11:01:45,483 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 11:01:45,483 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 11:01:46,326 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 11:01:46,326 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 11:02:55,039 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 11:02:55,039 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-06 11:02:55,878 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 11:02:55,878 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-06 11:03:01,814 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py", line 65, in post
+    dtos, album_tracks = extractor.parseTopTracksResponse(records)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SpotifyDataExtractor.parseTopTracksResponse() takes 0 positional arguments but 1 was given
+ERROR 2023-11-06 11:03:01,814 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py", line 65, in post
+    dtos, album_tracks = extractor.parseTopTracksResponse(records)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SpotifyDataExtractor.parseTopTracksResponse() takes 0 positional arguments but 1 was given
+INFO 2023-11-06 11:03:23,238 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/data_extractor.py changed, reloading.
+INFO 2023-11-06 11:03:23,238 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/data_extractor.py changed, reloading.
+INFO 2023-11-06 11:03:24,107 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-06 11:03:24,107 autoreload autoreload.py 668 Watching for file changes with StatReloader
