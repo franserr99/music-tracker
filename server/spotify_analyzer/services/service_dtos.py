@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import TypedDict
+from typing import List, TypedDict
 # typed dictionaries for use in the service layer
 # here are my data transfer objects
 
@@ -35,12 +35,6 @@ class GenreData(TypedDict):
 # can use for both, we get another dict and place the refernece in there
 
 
-class ImageData(TypedDict):
-    url: str
-    height: int
-    width: int
-
-
 class AlbumData(TypedDict):
     uri: str
 
@@ -68,3 +62,19 @@ class PlaylistData(TypedDict):
 class LikedTrackData(TypedDict):
     user_id: str
     track_uri: str
+
+
+class ImageData(TypedDict):
+    url: str
+    height: int
+    width: int
+
+
+class FavoriteItemsInfo(TypedDict):
+    track_uris: List[str]
+    track_name: List[str]
+    track_artist: List[str]
+    track_album_uri: List[str]
+    track_album_type: List[str]
+    album_num_of_tracks: List[int]
+    album_images: List[ImageData]

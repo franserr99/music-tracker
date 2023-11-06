@@ -39,8 +39,9 @@ class SpotifyTrackService:
                 print(dict)
                 artists = []
                 for item in dict['items']:
-                    artist = {'name': item['name'], 'genres': item['genres'], 
-                              'uri': item['uri'], 'images': item['images']}
+                    artist = {'name': item['name'], 'genres': item['genres'],
+                              'uri': item['uri'], 'images': item['images'],
+                               }
                     artists.append(artist)
                     
                 return artists

@@ -5,6 +5,7 @@ import requests
 import pandas as pd
 from dotenv import load_dotenv
 from .spotify_token_handler import SpotifyTokenHandler
+from ...services.service_dtos import ImageData, FavoriteItemsInfo
 scope = "user-library-read user-read-playback-position user-top-read \
 user-read-recently-played playlist-read-private"
 
@@ -23,7 +24,7 @@ def setup():
         return
     load_dotenv("sp.env")
     try:
-        # load_dotenv should load env var, 
+        # load_dotenv should load env var,
         # now just check they exist in the enviorment
         os.environ["SPOTIPY_CLIENT_SECRET"]
         os.environ['SPOTIPY_CLIENT_ID']
@@ -38,12 +39,12 @@ def get_tracks(client: spotipy.Spotify, token_handler: SpotifyTokenHandler,
                source=None, with_audio=True):
     assert token_handler.accessToken is not None
 
-    user_tracks_IDX, user_tracks_names, user_track_artists = process_source(
+    info = process_source(
         client, token_handler, source)
 
     # changing to a df in here
     user_df = pd.DataFrame(
-        {'id': user_tracks_IDX, 'track name': user_tracks_names,
+        {'uri': info[''], 'track name': user_tracks_names,
          'artist': user_track_artists})
     user_df.drop_duplicates(inplace=True)
     user_df.dropna()
@@ -55,8 +56,7 @@ def get_tracks(client: spotipy.Spotify, token_handler: SpotifyTokenHandler,
         return user_df
 
 
-def paginate_results(tracks: dict, idx: list,
-                     track_names: list, artist_names: list,
+def paginate_results(tracks: dict, info: FavoriteItemsInfo,
                      token_handler: SpotifyTokenHandler, choice):
 
     access_token = token_handler.accessToken
@@ -67,76 +67,68 @@ def paginate_results(tracks: dict, idx: list,
                               'Authorization': "Bearer"+" "+access_token}
                               ).json()
         if (choice == "t"):
-            more_idx, more_track_names, more_artist_names = get_tracks_info(
-                tracks, "t")
+            get_tracks_info(tracks, "t", info)
         elif (choice == "p"):
-            more_idx, more_track_names, more_artist_names = get_tracks_info(
-                tracks, "p")
-        idx.extend(more_idx)
-        track_names.extend(more_track_names)
-        artist_names.extend(more_artist_names)
+            get_tracks_info(tracks, "p", info)
 
 
 def process_source(client: spotipy.Spotify,
                    token_handler: SpotifyTokenHandler, source):
-    track_idx = []
-    track_name = []
-    track_artist = []
+    # init dict with all our arrays
+    info = FavoriteItemsInfo(track_uris=[], track_name=[],
+                             track_artist=[], track_album_uri=[],
+                             track_album_type=[], album_num_of_tracks=[],
+                             album_images=[])
 
     if (source[0] == "p"):
         for id in source[1]:
             # keep track of counts to make sure it lines up later
-            count_IDX = len(track_idx)
-            count_names = len(track_name)
-            count_artists = (len(track_artist))
+            before_counts = get_counts(info)
             # get first page of tracks
             tracks = client.playlist_tracks(id)
-            t_idx, t_name, a_name = get_tracks_info(tracks, "p")
-            # add to our global lists
-            track_idx.extend(t_idx)
-            track_name.extend(t_name)
-            track_artist.extend(a_name)
+            get_tracks_info(tracks, "p", info)
             # page if needed
-            paginate_results(tracks=tracks, idx=track_idx, 
-                             track_names=track_name,
-                             artist_names=track_artist, 
+            paginate_results(tracks, info,
                              token_handler=token_handler, choice="p")
             # count check
-            count_IDX_after_playlist = len(track_idx)
-            count_names_after_playlist = len(track_name)
-            count_artist_after_playlist = len(track_artist)
-            assert (tracks['total'] == (count_IDX_after_playlist-count_IDX) ==
-                    (count_names_after_playlist-count_names) ==
-                    (count_artist_after_playlist-count_artists))
+            after_counts = get_counts(info)
+            assert_count_after_pagination(before_counts, after_counts, 
+                                          tracks['total'])
     elif (source[0] == "t"):
-        tracks = get_tracks_info(source[1], "t")
-        # add to our global lists
-        track_idx.extend(tracks[0])
-        track_name.extend(tracks[1])
-        track_artist.extend(tracks[2])
+        tracks = get_tracks_info(source[1], "t", info)
         if (source[1]['next']):
-            paginate_results(source[1], track_idx, track_name,
-                             track_artist,
+            paginate_results(source[1], info,
                              token_handler=token_handler, choice="t")
-    return track_idx, track_name, track_artist
+    return info
 
 
-def get_tracks_info(tracks: dict, choice):
-    tracks_URI = []
-    tracks_name = []
-    artists_name = []
+def assert_count_after_pagination(before_counts, after_counts, expected_total):
+    for prior_count, after_count in zip(before_counts.values(), after_counts.values()):
+        assert expected_total == after_count-prior_count
+def assert_count_uniformity(count:dict):
+    for 
+
+
+def get_counts(info):
+    counts = []
+    for arr in info.values():
+        counts.append(len(arr))
+    return counts
+
+
+def get_tracks_info(tracks: dict, choice, info: FavoriteItemsInfo):
     for item in tracks['items']:
         if (choice == "p"):
-            tracks_URI.append(item['track']['uri'])
-            tracks_name.append(item['track']['name'])
+            info['track_uris'].append(item['track']['uri'])
+            info['track_name'].append(item['track']['name'])
             # get first artist associated with the song in the json obj
-            artists_name.append(item['track']['artists'][0]['name'])
+            info['track_artist'].append(item['track']['artists'][0]['name'])
         elif (choice == "t"):
             # different json structure
             # this is for top monthly tracks
-            tracks_URI.append(item['uri'])
-            tracks_name.append(item['name'])
-            artists_name.append(item['artists'][0]['name'])
+            info['track_uris'].append(item['uri'])
+            info['track_name'].append(item['name'])
+            info['track_artist'].append(item['artists'][0]['name'])
     assert (len(tracks_URI) == len(tracks_name) == len(artists_name))
     return tracks_URI, tracks_name, artists_name
 
