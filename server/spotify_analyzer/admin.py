@@ -42,8 +42,8 @@ class UserAdmin(admin.ModelAdmin):
 # Register the Playlist model
 @admin.register(Playlist)
 class PlaylistAdmin(admin.ModelAdmin):
-    list_display = ('playlist_id', 'created_by')
-    search_fields = ('playlist_id', 'created_by__id')
+    list_display = ('id', 'created_by')
+    search_fields = ('id', 'created_by__id')
 
 
 @admin.register(Genre)

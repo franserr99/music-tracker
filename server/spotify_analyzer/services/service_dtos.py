@@ -22,7 +22,27 @@ class TrackFeaturesData(TypedDict):
 class TrackData(TypedDict):
     uri: str
     track_name: str
-    track_artists: str
+
+
+class ArtistData(TypedDict):
+    uri: str
+    name: str
+
+
+class GenreData(TypedDict):
+    name: str
+
+# can use for both, we get another dict and place the refernece in there
+
+
+class ImageData(TypedDict):
+    url: str
+    height: int
+    width: int
+
+
+class AlbumData(TypedDict):
+    uri: str
 
 
 class HistoryData(TypedDict):
@@ -43,7 +63,6 @@ class UserTokenInfo (TypedDict):
 
 class PlaylistData(TypedDict):
     playlist_id: str
-    created_by: str
 
 
 class LikedTrackData(TypedDict):

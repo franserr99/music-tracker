@@ -14,6 +14,7 @@ Classes:
     - Playlist: Represents a Spotify playlist.
 """
 from django.db import models
+from django.core.exceptions import ValidationError
 # spotify track feature
 # get description of features here:
 # https://developer.spotify.com/documentation/web-api/reference/get-audio-features
@@ -57,9 +58,14 @@ class TrackFeatures(models.Model):
         db_table = 'TrackFeatures'
 
 
-# spotify track
+class Album(models.Model):
+    uri = models.CharField(max_length=150, primary_key=True)
+    artists = models.ManyToManyField('Artist', related_name='album_catalogue')
+    tracks = models.ManyToManyField('Track', related_name='appears_in')
+
+
 class Artist (models.Model):
-    uri = models.CharField(max_length=100, primary_key=True)
+    uri = models.CharField(max_length=150, primary_key=True)
     name = models.CharField(max_length=70)
     genres = models.ManyToManyField('Genre', related_name='member_artists')
 
@@ -73,9 +79,31 @@ class Image(models.Model):
     height = models.IntegerField()
     width = models.IntegerField()
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE,
-                               related_name='images')
+                               related_name='artist_images',
+                               null=True, blank=True)
+    album = models.ForeignKey(Album, on_delete=models.CASCADE,
+                              related_name='album_images',
+                              null=True, blank=True)
+
+    def clean(self):
+        # Check that the Image instance is linked to
+        #  either an artist or an album, not both.
+        if self.artist_id and self.album_id:
+            raise ValidationError(
+                'Image cannot be linked to an artist && album.'
+            )
+        if not self.artist_id and not self.album_id:
+            raise ValidationError(
+                'An image must be linked to an artist or an album.'
+            )
+
+    def save(self, *args, **kwargs):
+        self.clean()
+        super().save(*args, **kwargs)
 
 
+# the artist image alone is not enough,
+#  i need the album image for context as well
 class Track(models.Model):
     """
     This class represents a Track in the Spotify application.
@@ -88,7 +116,7 @@ class Track(models.Model):
     uri = models.CharField(max_length=100, primary_key=True, unique=True)
     track_name = models.CharField(max_length=100)
     track_artists = models.ManyToManyField('Artist',
-                                           related_name='artist_catalogue')
+                                           related_name='track_catalogue')
 
     class Meta:
         """
@@ -151,7 +179,7 @@ class User(models.Model):
     refresh_token = models.CharField(max_length=250, null=True)
     access_token = models.CharField(max_length=250, null=True)
     liked_tracks = models.ManyToManyField(
-        'Track', related_name='liked_by_users')
+        'Track', related_name='users_liked')
 
     class Meta:
         """
@@ -176,13 +204,13 @@ class Playlist(models.Model):
         - liked_by: The users who have liked the playlist.
         - tracks: The tracks included in the playlist.
     """
-    playlist_id = models.CharField(
-        max_length=50, unique=True, primary_key=True)
+    id = models.CharField(
+        max_length=100, unique=True, primary_key=True)
     created_by = models.ForeignKey(
-        'User', related_name='playlists_created', on_delete=models.CASCADE)
-    liked_by = models.ManyToManyField('User', related_name='playlists_added')
+        'User', related_name='my_playlists', on_delete=models.CASCADE)
+    liked_by = models.ManyToManyField('User', related_name='liked_playlists')
     tracks = models.ManyToManyField(
-        'Track', related_name='included_in_playlists')
+        'Track', related_name='playlist_appearances')
 
     class Meta:
         """

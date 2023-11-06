@@ -2176,3 +2176,53 @@ INFO 2023-11-05 07:25:38,158 autoreload autoreload.py 266 /Users/franserr/Docume
 INFO 2023-11-05 07:25:38,158 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/spotify_track_service.py changed, reloading.
 INFO 2023-11-05 07:25:39,769 autoreload autoreload.py 668 Watching for file changes with StatReloader
 INFO 2023-11-05 07:25:39,769 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 09:09:19,235 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-05 09:09:19,235 autoreload autoreload.py 668 Watching for file changes with StatReloader
+WARNING 2023-11-05 09:09:32,320 log log.py 241 Not Found: /img/icon-changelink.svg
+WARNING 2023-11-05 09:09:32,320 log log.py 241 Not Found: /img/icon-changelink.svg
+WARNING 2023-11-05 09:09:32,321 log log.py 241 Not Found: /img/icon-addlink.svg
+WARNING 2023-11-05 09:09:32,321 log log.py 241 Not Found: /img/icon-addlink.svg
+WARNING 2023-11-05 09:09:32,351 log log.py 241 Not Found: /favicon.ico
+WARNING 2023-11-05 09:09:32,351 log log.py 241 Not Found: /favicon.ico
+WARNING 2023-11-05 09:09:37,994 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:09:37,994 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:09:37,996 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:09:37,996 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:09:38,003 log log.py 241 Not Found: /favicon.ico
+WARNING 2023-11-05 09:09:38,003 log log.py 241 Not Found: /favicon.ico
+WARNING 2023-11-05 09:09:49,564 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:09:49,564 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:09:49,566 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:09:49,566 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:09:52,773 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:09:52,773 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:09:52,775 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:09:52,775 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:09:55,113 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:09:55,113 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:09:55,115 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:09:55,115 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:10:06,998 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:10:06,998 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:10:07,000 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:10:07,000 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:10:10,080 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:10:10,080 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:10:10,082 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:10:10,082 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:10:11,337 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:10:11,337 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:10:11,339 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:10:11,339 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:10:12,713 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:10:12,713 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:10:12,715 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:10:12,715 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:10:22,266 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:10:22,266 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:10:22,269 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:10:22,269 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:10:23,780 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:10:23,780 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-05 09:10:23,781 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-05 09:10:23,781 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
