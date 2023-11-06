@@ -8,7 +8,7 @@ from django.utils.decorators import method_decorator
 
 import logging
 from ...services.spotify.spotify_token_handler import SpotifyTokenHandler
-from ...services.user_service import UserService
+from ...services.core.user_service import UserService
 from ...models import User
 # ,# SpotifyAuthException
 

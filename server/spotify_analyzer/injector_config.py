@@ -7,8 +7,8 @@ import logging
 
 from injector import Module, provider, singleton
 from django.apps import apps
-from .services.track_service import TrackService
-from .services.user_service import UserService
+from .services.core.track_service import TrackService
+from .services.core.user_service import UserService
 from .models import Track, User, History, Playlist, TrackFeatures
 
 

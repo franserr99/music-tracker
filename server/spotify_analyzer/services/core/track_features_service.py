@@ -9,8 +9,8 @@ from injector import inject
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DatabaseError, OperationalError
 
-from ..models import TrackFeatures
-from .service_dtos import TrackFeaturesData
+from ...models import TrackFeatures
+from ..service_dtos import TrackFeaturesData
 from .track_service import TrackService
 
 

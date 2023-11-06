@@ -6,7 +6,7 @@ import logging
 
 from injector import inject
 
-from .service_dtos import LikedTrackData
+from ..service_dtos import LikedTrackData
 from .track_service import TrackService
 from .user_service import UserService
 

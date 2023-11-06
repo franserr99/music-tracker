@@ -4,15 +4,15 @@
     Returns:
         _type_: _description_
 """
-from typing import List
+
 from typing import Optional
 import logging
 
 # from injector import inject
 
-from ..models import Playlist
+from ...models import Playlist
 from .user_service import UserService
-from .service_dtos import PlaylistData
+from ..service_dtos import PlaylistData
 from .track_service import TrackService
 
 
@@ -41,23 +41,16 @@ class PlaylistService:
                 return self.playlist_model.objects.create(**payload)
         except Exception:
             self.logger.info("Error when trying to create the playlist")
-    def bulk_create_playlists(self, playlist_dtos: List[PlaylistData]):
-        playlist_data = []
+    # def bulk_create_playlists(self, playlist_dtos: List[PlaylistData]):
+    #     playlist_data = []
 
-        for dto in playlist_dtos:
-            payload = dto.copy()
-            user_id = dto['user_id']
-            user = self.user_service.get_user(user_id=user_id)
-            if (user):
-                payload['user_id']:
-
-
-
-
-        
-
-        playlist_instances = [Playlist(**)]
-
+    #     for dto in playlist_dtos:
+    #         payload = dto.copy()
+    #         user_id = dto['user_id']
+    #         user = self.user_service.get_user(user_id=user_id)
+    #         if (user):
+    #             payload['user_id']:
+    #     playlist_instances = [Playlist(**)]
 
     def get_playlist(self, playlist_id) -> Optional[Playlist]:
         try:

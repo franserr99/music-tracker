@@ -1,6 +1,6 @@
 # from django.conf import settings
 import spotipy
-from ..user_service import UserService
+from ..core.user_service import UserService
 import requests
 # from base64 import b64encode
 from ..service_dtos import UserData

@@ -20,8 +20,8 @@ Usage:
     track_service.delete_track(track_uri)
     track_service.get_all_tracks()
 """
-from .service_dtos import TrackData
-from ..models import Track
+from ..service_dtos import TrackData
+from ...models import Track
 from typing import Optional
 import logging
 

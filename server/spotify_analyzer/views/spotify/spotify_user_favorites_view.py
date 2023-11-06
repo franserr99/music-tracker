@@ -9,9 +9,9 @@ from django.utils.decorators import method_decorator
 import logging
 import json
 from ...services.spotify.spotify_token_handler import SpotifyTokenHandler
-from ...services.user_service import UserService
+from ...services.core.user_service import UserService
 from ...models import User
-from ...services.spotify.spotify_track_service import SpotifyTrackService
+from ...services.spotify.retrieval.spotify_track_service import SpotifyTrackService
 
 app_name = 'spotify_analyzer'
 logger = logging.getLogger(app_name)

@@ -24,6 +24,7 @@ class TrackData(TypedDict):
     track_name: str
 
 
+
 class ArtistData(TypedDict):
     uri: str
     name: str

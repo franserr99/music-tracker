@@ -2,8 +2,8 @@ import logging
 from typing import Optional
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DatabaseError, OperationalError
-from .service_dtos import ArtistData
-from ..models import Artist
+from ..service_dtos import ArtistData
+from ...models import Artist
 
 app_name = 'spotify_analyzer'
 logger = logging.getLogger(app_name)

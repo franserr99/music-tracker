@@ -10,8 +10,8 @@ Returns:
         Returns a JSON representation of track features or an error message.
 """
 
-from .serializers import TrackFeaturesSerializer
-from ..models import TrackFeatures
+from ..serializers import TrackFeaturesSerializer
+from ...models import TrackFeatures
 
 
 from rest_framework.generics import ListCreateAPIView

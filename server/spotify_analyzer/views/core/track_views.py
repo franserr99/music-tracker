@@ -18,8 +18,8 @@ from rest_framework.generics import RetrieveUpdateDestroyAPIView
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
-from .serializers import TrackSerializer
-from ..models import Track
+from ..serializers import TrackSerializer
+from ...models import Track
 
 
 @method_decorator(csrf_exempt, name='dispatch')

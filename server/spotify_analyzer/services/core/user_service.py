@@ -5,8 +5,8 @@ from injector import inject  # , singleton
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DatabaseError, OperationalError
 
-from ..models import User
-from .service_dtos import UserData
+from ...models import User
+from ..service_dtos import UserData
 
 
 # @singleton

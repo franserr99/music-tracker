@@ -2,12 +2,9 @@ import logging
 from typing import Optional
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DatabaseError, OperationalError
-from .service_dtos import AlbumData
+from ..service_dtos import AlbumData
 from .track_service import TrackService
-from ..models import Album
-
-app_name = 'spotify_analyzer'
-logger = logging.getLogger(app_name)
+from ...models import Album
 
 
 class AlbumService:

@@ -1,6 +1,6 @@
 import sp_utility
 import spotipy
-from .spotify_token_handler import SpotifyTokenHandler
+from ..spotify_token_handler import SpotifyTokenHandler
 
 
 class SpotifyPlaylistService:
