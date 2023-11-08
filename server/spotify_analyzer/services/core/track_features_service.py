@@ -46,7 +46,10 @@ class TrackFeaturesService:
             data_copy = track_features_data.copy()
             data_copy['track_uri'] = track_instance
             try:
-                self.track_features_model.objects.create(**data_copy)
+
+                features, created = self.track_features_model.objects.get_or_create(
+                    **data_copy)
+                return features
             except (IntegrityError, ValidationError,
                     DatabaseError, TypeError, ValueError) as e:
                 self.logger.exception(

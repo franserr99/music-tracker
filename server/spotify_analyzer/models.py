@@ -92,10 +92,10 @@ class Image(models.Model):
             raise ValidationError(
                 'Image cannot be linked to an artist && album.'
             )
-        if not self.artist_id and not self.album_id:
-            raise ValidationError(
-                'An image must be linked to an artist or an album.'
-            )
+        # if not self.artist_id and not self.album_id:
+        #     raise ValidationError(
+        #         'An image must be linked to an artist or an album.'
+        #     )
 
     def save(self, *args, **kwargs):
         self.clean()

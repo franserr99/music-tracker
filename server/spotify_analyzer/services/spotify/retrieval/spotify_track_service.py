@@ -1,6 +1,8 @@
+from typing import Union
 from .. import sp_utility
 import spotipy
 from ..spotify_token_handler import SpotifyTokenHandler
+from ...service_dtos import FavoriteTracksInfo, PlaylistsInfo
 
 
 class SpotifyTrackService:
@@ -12,27 +14,28 @@ class SpotifyTrackService:
     # main method #1
     def get_monthly_tracks(self, term="short_term"):
         this_month_tracks = self.begin_build(term=term, type='tracks')
-        print(this_month_tracks.columns)
-        print(this_month_tracks)
+        # print(this_month_tracks.columns)
+        # print(this_month_tracks)
         return this_month_tracks
 
-    # main method #2    
+    # main method #2
     def get_monthly_artists(self, term="short_term"):
         this_month_artists = self.begin_build(term=term, type='artists')
         print(this_month_artists)
         return this_month_artists
 
     # common entry point for both main methods
-    def begin_build(self, term, type):
+    def begin_build(self, term, type) -> Union[FavoriteTracksInfo,
+                                               PlaylistsInfo]:
         try:
             # Your Spotify API call logic
             if (type == 'tracks'):
                 dict = self.client.current_user_top_tracks(
                     20, offset=0, time_range=term)
-                df_with_audio = sp_utility.get_tracks(
+                info = sp_utility.get_tracks_df(
                     client=self.client, token_handler=self.token_handler,
                     source=("t", dict), with_audio=True)
-                return df_with_audio
+                return info
             elif (type == 'artists'):
                 dict = self.client.current_user_top_artists(
                     20, offset=0, time_range=term)
@@ -40,18 +43,17 @@ class SpotifyTrackService:
                 artists = []
                 for item in dict['items']:
                     artist = {'name': item['name'], 'genres': item['genres'],
-                              'uri': item['uri'], 'images': item['images'],
-                               }
+                              'uri': item['uri'], 'images': item['images']}
                     artists.append(artist)
-                    
+
                 return artists
 
         except Exception as e:
             print("********")
-            print(e.response.text)
+            # print(e.response.text)
             # This will print more details about the error
             raise e
- 
+
     # logic to filter through and pick the top artists
     def top_n_artists(self, tracks_artists):
         # filter the songs by artists
@@ -115,4 +117,3 @@ class SpotifyTrackService:
                 track_idx.append(track)
                 track_artists.append(term[2][i])
                 track_names.append(term[1][i])
-

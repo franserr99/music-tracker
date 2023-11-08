@@ -64,7 +64,9 @@ class TrackService:
         """
 
         try:
-            return self.track_model.objects.create(**track_data)
+            track, created = self.track_model.objects.get_or_create(
+                **track_data)
+            return track
         except (IntegrityError, ValidationError,
                 DatabaseError, TypeError, ValueError) as e:
             # logger will display more info about the error
@@ -112,7 +114,7 @@ class TrackService:
                 self.logger.exception(
                     f"An error occurred while updating a track: {e}")
                 return None
-        
+
     def delete_track(self, track_uri: str):
         """Deletes a track by its URI.
 
@@ -130,7 +132,7 @@ class TrackService:
                 self.logger.exception(
                     f"An error occurred while deleting a track: {e}")
                 return None
-            
+
     def get_all_tracks(self):
         """Fetches all tracks in the database.
 

@@ -11,11 +11,13 @@ from typing import List
 from ..core.user_service import UserService
 from ..core.track_service import TrackService
 from ..core.album_service import AlbumService
+from ..core.image_service import ImageService
 from ..core.artist_service import ArtistService
+from ..core.genre_service import GenreService
 from ..core.playlist_service import PlaylistService
 from ..core.track_features_service import TrackFeaturesService
 from ..service_dtos import TrackData, ArtistData, PlaylistData, AlbumData, \
-    TrackFeaturesData
+    TrackFeaturesData, ImageData, GenreData
 
 app_name = 'spotify_analyzer'
 logger = logging.getLogger(app_name)
@@ -26,7 +28,8 @@ class SpotifyDataPersistence:
     def __init__(self, track_service: TrackService, user_service: UserService,
                  album_service: AlbumService, artist_service: ArtistService,
                  playlist_service: PlaylistService,
-                 feature_service: TrackFeaturesService):
+                 feature_service: TrackFeaturesService,
+                 image_service: ImageService, genre_service: GenreService):
         # save all references, pass what is needed to the others
         # for now we will keep them here, if i dont have a need for then
         # then we will only keep ref in the objects that need it
@@ -43,6 +46,49 @@ class SpotifyDataPersistence:
             playlist_service)
         self.album = SpotifyAlbumPersistence(album_service)
         self.artist = SpotifyArtistPersistence(artist_service)
+        self.image = ImagePersistence(image_service)
+        self.genre = GenrePersistence(genre_service)
+
+
+class GenrePersistence:
+    def __init__(self, genre_service: GenreService):
+        self.genre_service = genre_service
+
+    def add_genre_to_library(self, genre: GenreData):
+        self.genre_service.create_genre(genre)
+
+    def add_genres_to_library(self, genres: List[GenreData]):
+        for genre in genres:
+            self.add_genre_to_library(genre)
+
+
+class ImagePersistence:
+    def __init__(self, image_service: ImageService):
+        self.image_serivce = image_service
+
+    def add_image_to_library(self, image: ImageData):
+        self.image_serivce.create_image(image_data=image)
+
+    def add_images_to_library(self, images: List[ImageData]):
+        for image in images:
+            self.add_image_to_library(image)
+
+    def link_image_to_album(self, image: ImageData, album_uri: str):
+        pass
+
+    def link_image_to_artist(self, image: ImageData, artist_uri: str):
+        pass
+
+    def link_images_to_albums(self, images: List[ImageData],
+                              album_uris: List[str]):
+        assert len(images) == len(album_uris)
+        for image, album_uri in zip(images, album_uris):
+            self.link_image_to_album(image, album_uri)
+    def link_images_to_artists(self, images: List[ImageData],
+                               artist_uris: List[str]):
+        assert len(images) == len(artist_uris)
+        for image, artist_uri in zip(images, artist_uris):
+            self.link_image_to_album(image, artist_uri)
 
 
 class SpotifyTrackPersistence:

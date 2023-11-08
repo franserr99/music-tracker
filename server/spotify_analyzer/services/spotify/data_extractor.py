@@ -1,5 +1,7 @@
 from typing import List
 from ..service_dtos import TrackData
+
+
 class SpotifyDataExtractor:
 
     @staticmethod
