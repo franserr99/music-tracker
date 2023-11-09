@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Track, TrackFeatures, History, User, Playlist
-from .models import Genre, Image, Artist
+from .models import Genre, Image, Artist, Album
 
 
 # Register the Track model
@@ -8,8 +8,8 @@ from .models import Genre, Image, Artist
 class TrackAdmin(admin.ModelAdmin):
     list_display = ('uri', 'track_name', 'get_artists')
     # Allows searching by artist name
-    search_fields = ('uri', 'track_name', 'track_artists__name')  
-    
+    search_fields = ('uri', 'track_name', 'track_artists__name')
+
     def get_artists(self, obj):
         # This method fetches all related artists
         # and joins their names into a single string.
@@ -55,7 +55,7 @@ class GenreAdmin(admin.ModelAdmin):
 @admin.register(Artist)
 class ArtistAdmin(admin.ModelAdmin):
     list_display = ('uri', 'name', 'get_genres')
-    search_fields = ('uri', 'name', 'genres__name')  
+    search_fields = ('uri', 'name', 'genres__name')
     # Allows searching by genre name
 
     def get_genres(self, obj):
@@ -65,9 +65,21 @@ class ArtistAdmin(admin.ModelAdmin):
 
 @admin.register(Image)
 class ImageAdmin(admin.ModelAdmin):
-    list_display = ('url', 'artist_name', 'height', 'width')
-    search_fields = ('url', 'artist__name')  # Allows searching by artist name
+    list_display = ('url', 'height', 'width', 'artist',
+                    'album')  # Fields to display
+    search_fields = ('artist__name', 'album__name')  # Fields to search
+    list_filter = ('artist', 'album')  # Filters to be added in the sidebar
 
-    def artist_name(self, obj):
-        return obj.artist.name
-    artist_name.short_description = 'Artist Name'
+    # def artist_name(self, obj):
+    #     return obj.artist.name
+    # artist_name.short_description = 'Artist Name'
+
+
+@admin.register(Album)
+class AlbumAdmin(admin.ModelAdmin):
+    # Fields to display in the list view
+    list_display = ('uri', 'name', 'album_type', 'total_tracks', 'url')
+    # Fields to search in the admin
+    search_fields = ('name', 'artists__name', 'tracks__name')
+    # A nicer widget for ManyToMany fields
+    filter_horizontal = ('artists', 'tracks')

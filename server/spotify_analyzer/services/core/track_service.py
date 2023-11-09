@@ -22,6 +22,7 @@ Usage:
 """
 from ..service_dtos import TrackData
 from ...models import Track
+from .artist_service import ArtistService
 from typing import Optional
 import logging
 
@@ -41,7 +42,8 @@ class TrackService:
     It interacts with the Track model to perform CRUD operations.
     """
     @inject
-    def __init__(self, track_model: Track, logger: logging.Logger):
+    def __init__(self, track_model: Track, logger: logging.Logger,
+                 artist_service: ArtistService):
         """Initializes the TrackService with a track model and logger.
 
         Args:
@@ -51,6 +53,7 @@ class TrackService:
         """
         self.track_model = track_model
         self.logger = logger
+        self.artist_service = artist_service
 
     def create_track(self, track_data: TrackData):
         """Creates a new track in the database.
@@ -146,3 +149,9 @@ class TrackService:
             self.logger.exception(
                 f"An error occurred while fetching all tracks: {e}")
             return None
+
+    def add_artist_to_track(self, track_uri, artist_uri):
+        track = self.get_track(track_uri)
+        artist = self.artist_service.get_artist(artist_uri)
+        if track and artist:
+            track.track_artists.add(artist)

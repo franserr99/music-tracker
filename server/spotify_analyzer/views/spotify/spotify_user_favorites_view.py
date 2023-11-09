@@ -61,12 +61,16 @@ class SpotifyFavorites(APIView):
                 persistence.artist.add_artists_to_library(artists)
                 persistence.album.add_albums_to_library(albums)
 
-                persistence.album.add_tracks_to_albums(tracks)
                 persistence.image.link_images_to_albums(albums)
                 persistence.image.link_images_to_artists(artists)
-                # the next line gets handled when i fix the df part
-                # persistence_service.track.\
-                #     add_features_to_tracks(tracks_features)
+
+                persistence.album.add_tracks_to_albums(tracks)
+                # now you need to add a genre to an artist
+                persistence.artist.add_genres_to_artists(artists)
+                # add artists to an album
+                persistence.album.add_artists_to_albums(albums)
+                # add artists to a track
+                persistence.track.add_artists_to_tracks(tracks)
                 return Response(parsedInfo)
 
             elif type == 'artists':
@@ -91,10 +95,16 @@ class SpotifyFavorites(APIView):
         print(token_handler)
         sp_track_service = SpotifyTrackService(client=token_handler.client,
                                                token_handler=token_handler)
-        track_service = TrackService(track_model=Track, logger=logger)
+
+        genre_service = GenreService(genre_model=Genre, logger=logger)
+        artist_service = ArtistService(
+            artist_model=Artist, logger=logger, genre_service=genre_service)
+        track_service = TrackService(
+            track_model=Track, logger=logger, artist_service=artist_service)
         album_service = AlbumService(album_model=Album, logger=logger,
-                                     track_service=track_service)
-        artist_service = ArtistService(artist_model=Artist, logger=logger)
+                                     track_service=track_service,
+                                     artist_service=artist_service)
+
         playlist_service = PlaylistService(playlist_model=Playlist,
                                            logger=logger,
                                            track_service=track_service,
@@ -105,7 +115,6 @@ class SpotifyFavorites(APIView):
         images_service = ImageService(image_model=Image, logger=logger,
                                       album_service=album_service,
                                       artist_service=artist_service)
-        genre_service = GenreService(genre_model=Genre, logger=logger)
 
         persistence_service = SpotifyDataPersistence(
             track_service=track_service, user_service=user_service,

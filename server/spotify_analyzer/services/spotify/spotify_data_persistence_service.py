@@ -125,6 +125,16 @@ class SpotifyTrackPersistence:
         for features in tracks_features:
             self.add_features_to_track(features)
 
+    def add_artist_to_track(self, artist_uri: str, track_uri: str):
+        self.track_service.add_artist_to_track(track_uri, artist_uri)
+
+    def add_artists_to_tracks(self, tracks: List[FullTrackData]):
+        for track in tracks:
+            track_uri = track['track_uri']
+            artist_uris = track['artist_uri']
+            for artist in artist_uris:
+                self.add_artist_to_track(artist, track_uri)
+
 
 class SpotifyPlaylistPersistence:
 
@@ -169,15 +179,21 @@ class SpotifyAlbumPersistence:
     def add_track_to_album(self, album_uri, track_uri):
         self.album_service.add_track_to_album(album_uri, track_uri)
 
-    # def add_tracks_to_album(self, album_uri: str, tracks_uri: List[str]):
-    #     for uri in tracks_uri:
-    #         self.add_track_to_album(album_uri, uri)
-
     def add_tracks_to_albums(self, tracks_data: List[FullTrackData]):
         for track in tracks_data:
             track_uri = track['track_uri']
             album_uri = track['album_uri']
             self.add_track_to_album(album_uri, track_uri)
+
+    def add_artist_to_album(self, album_uri, artist_uri):
+        self.album_service.add_artist_to_album(album_uri, artist_uri)
+
+    def add_artists_to_albums(self, albums: List[FullAlbumData]):
+        for album in albums:
+            artists = album['artists_uri']
+            album_uri = album['album_uri']
+            for artist in artists:
+                self.add_artist_to_album(album_uri, artist)
 
 
 class SpotifyArtistPersistence:
@@ -193,3 +209,13 @@ class SpotifyArtistPersistence:
                            for artist in artists]
         for artist_dto in base_artist_dto:
             self.add_artist_to_library(artist=artist_dto)
+
+    def add_genre_to_artist(self, genre: str, artist_uri: str):
+        self.artist_service.add_genre_to_artist(artist_uri, genre)
+
+    def add_genres_to_artists(self, artists: List[FullArtistData]):
+        for artist in artists:
+            artist_uri = artist['artist_uri']
+            genres = artist['genres']
+            for genre in genres:
+                self.add_genre_to_artist(genre, artist_uri)

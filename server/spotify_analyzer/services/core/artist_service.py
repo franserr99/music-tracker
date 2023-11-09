@@ -4,6 +4,7 @@ from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DatabaseError, OperationalError
 from ..service_dtos import ArtistData
 from ...models import Artist
+from ..core.genre_service import GenreService
 
 app_name = 'spotify_analyzer'
 logger = logging.getLogger(app_name)
@@ -11,9 +12,11 @@ logger = logging.getLogger(app_name)
 
 class ArtistService:
     # @inject
-    def __init__(self, artist_model: Artist, logger: logging.Logger):
+    def __init__(self, artist_model: Artist, logger: logging.Logger,
+                 genre_service: GenreService):
         self.artist_model = artist_model
         self.logger = logger
+        self.genre_service = genre_service
 
     def create_artist(self, artist_data: ArtistData):
 
@@ -68,3 +71,9 @@ class ArtistService:
             self.logger.exception(
                 f"An error occurred while fetching all artists: {e}")
             return None
+
+    def add_genre_to_artist(self, artist_uri: str, genre: str):
+        genre_instance = self.genre_service.get_genre(genre)
+        artist = self.get_artist(artist_uri)
+        if genre_instance and artist:
+            artist.genres.add(genre_instance)

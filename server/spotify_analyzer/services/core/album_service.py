@@ -4,6 +4,7 @@ from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DatabaseError, OperationalError
 from ..service_dtos import AlbumData
 from .track_service import TrackService
+from .artist_service import ArtistService
 from ...models import Album
 
 
@@ -17,7 +18,7 @@ class AlbumService:
     # @inject
 
     def __init__(self, album_model: Album, logger: logging.Logger,
-                 track_service: TrackService):
+                 track_service: TrackService, artist_service: ArtistService):
         """Initializes the AlbumService with a track model and logger.
 
         Args:
@@ -28,6 +29,7 @@ class AlbumService:
         self.album_model = album_model
         self.logger = logger
         self.track_service = track_service
+        self.artist_service = artist_service
 
     def create_album(self, album_data: AlbumData):
 
@@ -94,6 +96,7 @@ class AlbumService:
                 album.tracks.add(track)
                 album.save()
             else:
+                print(track_uri)
                 self.logger.info("tried getting track when adding to album \
                                  but DNE in db yet. Check for race conditions.\
                                  Caller needs to check if track exsits, \
@@ -105,3 +108,9 @@ class AlbumService:
                                  Caller needs to check if album exsits, \
                                  then add it, not this function's job")
             return False
+
+    def add_artist_to_album(self, album_uri, artist_uri):
+        artist = self.artist_service.get_artist(artist_uri)
+        album = self.get_album(album_uri)
+        if artist and album:
+            album.artists.add(artist)
