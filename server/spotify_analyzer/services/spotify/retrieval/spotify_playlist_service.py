@@ -1,6 +1,7 @@
 import server.spotify_analyzer.services.spotify.utility as utility
 import spotipy
 from ..token_handler import SpotifyTokenHandler
+import requests
 
 
 class SpotifyPlaylistService:
@@ -47,30 +48,35 @@ class SpotifyPlaylistService:
         """
         playlists_idx = []
         playlists = self.client.current_user_playlists()
-
+        playlist_owners = {}
         self._process_page(playlists=playlists,
-                           user_flag=user_flag, playlist_idx=playlists_idx)
-        # if playlists['next']:
-        #     # token=get_user_token()
-        #     # type=token['token_type']
-        #     # access_token=token['access_token']
-        #     while playlists['next']:
-        #         # headers={ 'Authorization': type+" "+access_token }
-        #         url = playlists['next'],
-        #         # playlists= requests.get(url=url,headers=headers,
-        # timeout=10).json()
-        #         # _process_page(playlists=playlists,user_flag=user_flag,
-        # client=self.client,playlist_idx=playlists_idx)
-        #     # handle pagination
-        df_with_audio = utility.get_tracks(
+                           user_flag=user_flag,
+                           playlist_idx=playlists_idx,
+                           playlist_owners=playlist_owners)
+        if playlists['next']:
+            token = self.token_handler.accessToken
+
+            while playlists['next']:
+                headers = {'Authorization': "Bearer"+" "+token}
+                url = playlists['next'],
+                playlists = requests.get(url=url, headers=headers,
+                                         timeout=10).json()
+                self._process_page(playlists=playlists,
+                           user_flag=user_flag,
+                           playlist_idx=playlists_idx,
+                           playlist_owners=playlist_owners)
+        df_with_audio = utility.get_tracks_df(
             self.client, self.oauth, ("p", playlists_idx), True)
         return df_with_audio
 
-    def _process_page(self, playlists, user_flag, playlist_idx):
+    def _process_page(self, playlists, user_flag, playlist_idx, playlist_owners):
         for playlist in playlists['items']:
+            me = self.client.me()['id']
+            owner = playlist['owner']['id']
+            playlist_owners[playlist['id']] = owner
             if user_flag:
-                if (playlist['owner']['id'] == self.client.me()['id']):
+                if (me == owner):
                     playlist_idx.append(playlist['id'])
             else:
-                if (playlist['owner']['id'] != self.client.me()['id']):
+                if (owner != me):
                     playlist_idx.append(playlist['id'])

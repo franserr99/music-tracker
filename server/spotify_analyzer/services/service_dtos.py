@@ -36,12 +36,6 @@ class UserTokenInfo (TypedDict):
     access_token: str
 
 
-class PlaylistData(TypedDict):
-    playlist_id: str
-    owner: str
-    tracks: List[str]
-
-
 class LikedTrackData(TypedDict):
     user_id: str
     track_uri: str
@@ -103,19 +97,14 @@ class FullTrackData(TypedDict):
     album_uri: str
 
 
-# this gets used at the lower levels when we a
-# class FavoriteItemsInfo(TypedDict):
-#     track_uris: List[str]
-#     track_name: List[str]
-#     track_artist: List[List[ArtistData]]
-#     track_album_uri: List[str]
-#     track_album_type: List[str]
-#     album_num_of_tracks: List[int]
-#     album_images: List[List[ImageData]]
+class PlaylistData(TypedDict):
+    playlist_id: str
+    owner: str
+    tracks: List[str]
 
 
 class FavoriteTracksInfo(TypedDict):
-    tracks: Dict[str, FullTrackData]      
+    tracks: Dict[str, FullTrackData]
     albums: Dict[str, FullAlbumData]
     artists: Dict[str, FullArtistData]
     images: Dict[str, ImageData]
@@ -123,10 +112,10 @@ class FavoriteTracksInfo(TypedDict):
 
 
 class PlaylistsInfo(TypedDict):
-    tracks: Dict[str, FullTrackData]      
+    tracks: Dict[str, FullTrackData]
     albums: Dict[str, FullAlbumData]
     artists: Dict[str, FullArtistData]
-    images: List[ImageData]
+    images: Dict[str, ImageData]
     playlists: Dict[str, PlaylistData]
 
 
