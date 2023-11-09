@@ -2702,3 +2702,381 @@ INFO 2023-11-09 04:53:02,022 autoreload autoreload.py 266 /Users/franserr/Docume
 INFO 2023-11-09 04:53:02,022 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
 INFO 2023-11-09 04:53:02,893 autoreload autoreload.py 668 Watching for file changes with StatReloader
 INFO 2023-11-09 04:53:02,893 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:06:18,528 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:06:18,528 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:08:15,176 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-09 06:08:15,176 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py changed, reloading.
+INFO 2023-11-09 06:08:16,201 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:08:16,201 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-09 06:08:29,257 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py", line 69, in post
+    images = list(parsedInfo['images'].values())
+                  ~~~~~~~~~~^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+ERROR 2023-11-09 06:08:29,257 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py", line 69, in post
+    images = list(parsedInfo['images'].values())
+                  ~~~~~~~~~~^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+INFO 2023-11-09 06:09:10,251 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py changed, reloading.
+INFO 2023-11-09 06:09:10,251 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py changed, reloading.
+INFO 2023-11-09 06:09:11,271 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:09:11,271 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-09 06:09:14,230 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py", line 68, in post
+    parsedInfo = sp_track_service.get_monthly_artists()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 23, in get_monthly_artists
+    this_month_artists = self.begin_build(term=term, type='artists')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 52, in begin_build
+    raise e
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 43, in begin_build
+    info = utility.get_artists_df(client=self.client, token_handler=self.token_handler,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: get_artists_df() got an unexpected keyword argument 'artists'
+ERROR 2023-11-09 06:09:14,230 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py", line 68, in post
+    parsedInfo = sp_track_service.get_monthly_artists()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 23, in get_monthly_artists
+    this_month_artists = self.begin_build(term=term, type='artists')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 52, in begin_build
+    raise e
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 43, in begin_build
+    info = utility.get_artists_df(client=self.client, token_handler=self.token_handler,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: get_artists_df() got an unexpected keyword argument 'artists'
+INFO 2023-11-09 06:10:10,305 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py changed, reloading.
+INFO 2023-11-09 06:10:10,305 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py changed, reloading.
+INFO 2023-11-09 06:10:11,237 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:10:11,237 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-09 06:10:12,685 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py", line 68, in post
+    parsedInfo = sp_track_service.get_monthly_artists()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 23, in get_monthly_artists
+    this_month_artists = self.begin_build(term=term, type='artists')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 52, in begin_build
+    raise e
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 43, in begin_build
+    info = utility.get_artists_df(client=self.client, token_handler=self.token_handler,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py", line 71, in get_artists_df
+    process_single_artist(artist, info, missing)
+TypeError: process_single_artist() missing 1 required positional argument: 'entity_artists_uri'
+ERROR 2023-11-09 06:10:12,685 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py", line 68, in post
+    parsedInfo = sp_track_service.get_monthly_artists()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 23, in get_monthly_artists
+    this_month_artists = self.begin_build(term=term, type='artists')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 52, in begin_build
+    raise e
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 43, in begin_build
+    info = utility.get_artists_df(client=self.client, token_handler=self.token_handler,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py", line 71, in get_artists_df
+    process_single_artist(artist, info, missing)
+TypeError: process_single_artist() missing 1 required positional argument: 'entity_artists_uri'
+INFO 2023-11-09 06:11:17,388 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:11:17,388 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:11:18,242 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:11:18,242 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:11:21,590 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:11:21,590 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:11:22,589 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:11:22,589 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:11:24,956 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:11:24,956 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:11:25,945 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:11:25,945 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:11:33,518 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:11:33,518 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:11:34,371 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:11:34,371 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:11:35,674 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:11:35,674 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:11:36,524 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:11:36,524 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:11:37,829 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:11:37,829 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:11:38,718 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:11:38,718 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-09 06:11:41,795 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py", line 68, in post
+    parsedInfo = sp_track_service.get_monthly_artists()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 23, in get_monthly_artists
+    this_month_artists = self.begin_build(term=term, type='artists')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 52, in begin_build
+    raise e
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 43, in begin_build
+    info = utility.get_artists_df(client=self.client, token_handler=self.token_handler,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py", line 71, in get_artists_df
+    process_single_artist(artist, info, missing)
+TypeError: process_single_artist() missing 1 required positional argument: 'entity_artists_uri'
+ERROR 2023-11-09 06:11:41,795 log log.py 241 Internal Server Error: /spotify/users/franserr/favorites
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_user_favorites_view.py", line 68, in post
+    parsedInfo = sp_track_service.get_monthly_artists()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 23, in get_monthly_artists
+    this_month_artists = self.begin_build(term=term, type='artists')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 52, in begin_build
+    raise e
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_favorite_service.py", line 43, in begin_build
+    info = utility.get_artists_df(client=self.client, token_handler=self.token_handler,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py", line 71, in get_artists_df
+    process_single_artist(artist, info, missing)
+TypeError: process_single_artist() missing 1 required positional argument: 'entity_artists_uri'
+INFO 2023-11-09 06:14:00,683 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:14:00,683 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:14:01,730 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:14:01,730 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:14:03,049 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:14:03,049 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:14:03,925 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:14:03,925 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:14:05,239 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:14:05,239 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/utility.py changed, reloading.
+INFO 2023-11-09 06:14:06,185 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-09 06:14:06,185 autoreload autoreload.py 668 Watching for file changes with StatReloader

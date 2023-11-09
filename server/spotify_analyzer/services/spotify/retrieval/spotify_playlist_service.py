@@ -1,6 +1,6 @@
-import sp_utility
+import server.spotify_analyzer.services.spotify.utility as utility
 import spotipy
-from ..spotify_token_handler import SpotifyTokenHandler
+from ..token_handler import SpotifyTokenHandler
 
 
 class SpotifyPlaylistService:
@@ -62,7 +62,7 @@ class SpotifyPlaylistService:
         #         # _process_page(playlists=playlists,user_flag=user_flag,
         # client=self.client,playlist_idx=playlists_idx)
         #     # handle pagination
-        df_with_audio = sp_utility.get_tracks(
+        df_with_audio = utility.get_tracks(
             self.client, self.oauth, ("p", playlists_idx), True)
         return df_with_audio
 

@@ -1,35 +1,34 @@
-from typing import List, Union
+from typing import List, Optional, Union
 import spotipy
 import os
 import sys
 import requests
 import pandas as pd
 from dotenv import load_dotenv
-import requests
-from .spotify_token_handler import SpotifyTokenHandler
-from ...services.service_dtos import FavoriteTracksInfo, PlaylistsInfo
-from ...services.service_dtos import ImageData, FavoriteTracksInfo, \
-    ArtistData, FullAlbumData, FullArtistData, FullTrackData, GenreData
+from .token_handler import SpotifyTokenHandler
+from ..service_dtos import PlaylistsInfo
+from ..service_dtos import ImageData, FavoriteTracksInfo, \
+    FullAlbumData, FullArtistData, FullTrackData, GenreData, FavoriteArtistsInfo
+
+
 scope = "user-library-read user-read-playback-position user-top-read \
 user-read-recently-played playlist-read-private"
-
-
-def setup():
-    if (os.getenv("SPOTIPY_CLIENT_SECRET") and
-        os.getenv("SPOTIPY_CLIENT_ID") and
-            os.getenv("SPOTIPY_REDIRECT_URI")):
-        return
-    load_dotenv("sp.env")
-    try:
-        # load_dotenv should load env var,
-        # now just check they exist in the enviorment
-        os.environ["SPOTIPY_CLIENT_SECRET"]
-        os.environ['SPOTIPY_CLIENT_ID']
-        os.environ["SPOTIPY_REDIRECT_URI"]
-    except Exception:
-        print("one of these were not set as an enviormental variable")
-        # use this instead of exit() bc it speaks to interpreter
-        sys.exit(1)
+# def setup():
+#     if (os.getenv("SPOTIPY_CLIENT_SECRET") and
+#         os.getenv("SPOTIPY_CLIENT_ID") and
+#             os.getenv("SPOTIPY_REDIRECT_URI")):
+#         return
+#     load_dotenv("sp.env")
+#     try:
+#         # load_dotenv should load env var,
+#         # now just check they exist in the enviorment
+#         os.environ["SPOTIPY_CLIENT_SECRET"]
+#         os.environ['SPOTIPY_CLIENT_ID']
+#         os.environ["SPOTIPY_REDIRECT_URI"]
+#     except Exception:
+#         print("one of these were not set as an enviormental variable")
+#         # use this instead of exit() bc it speaks to interpreter
+#         sys.exit(1)
 
 
 def get_missing_artist_info(missing, token_handler: SpotifyTokenHandler,
@@ -44,7 +43,8 @@ def get_missing_artist_info(missing, token_handler: SpotifyTokenHandler,
         get_chunk_of_missing_artists(missing_chunk, token_handler, info)
 
 
-def get_chunk_of_missing_artists(missing_chunk: List[str], token_handler: SpotifyTokenHandler,
+def get_chunk_of_missing_artists(missing_chunk: List[str],
+                                 token_handler: SpotifyTokenHandler,
                                  info: Union[FavoriteTracksInfo, PlaylistsInfo]):
     ids = ','.join(missing_chunk)
     url = f'https://api.spotify.com/v1/artists?ids={ids}'
@@ -58,6 +58,19 @@ def get_chunk_of_missing_artists(missing_chunk: List[str], token_handler: Spotif
             images=artist['images'], info=info)
         info['artists'][uri]['genres'] = genres
         info['artists'][uri]['image_urls'] = images_urls
+
+
+def get_artists_df(client: spotipy.Spotify, token_handler: SpotifyTokenHandler,
+                   response: dict) -> (FavoriteArtistsInfo, List[str]):
+    assert token_handler.accessToken is not None
+    info = FavoriteArtistsInfo(artists={}, images={}, genres={})
+
+    missing = []
+
+    for artist in response['items']:
+        process_single_artist(artist, info, missing)
+    get_missing_artist_info(missing, token_handler, info)
+    return info
 
 
 def get_tracks_df(client: spotipy.Spotify, token_handler: SpotifyTokenHandler,
@@ -112,18 +125,10 @@ def process_source(client: spotipy.Spotify,
     if (source[0] == "p"):
         info = PlaylistsInfo(tracks=[], albums=[], artists=[], playlists=[])
         for id in source[1]:
-            # keep track of counts to make sure it lines up later
-            # before_counts = get_counts(info)
-            # get first page of tracks
             tracks = client.playlist_tracks(id)
             get_tracks_info(tracks, "p", info, token_handler)
-            # page if needed
             paginate_results(tracks, info,
                              token_handler=token_handler, choice="p")
-            # count check
-            # after_counts = get_counts(info)
-            # assert_count_after_pagination(before_counts, after_counts,
-            #   tracks['total'])
     elif (source[0] == "t"):
         info = FavoriteTracksInfo(tracks={}, albums={}, artists={},
                                   images={}, genres={})
@@ -132,31 +137,6 @@ def process_source(client: spotipy.Spotify,
             missing.extend(paginate_results(source[1], info,
                                             token_handler=token_handler, choice="t"))
     return info, missing
-
-
-def assert_count_after_pagination(before_counts: List[int],
-                                  after_counts: List[int],
-                                  expected_total: int):
-    for prior_count, after_count in zip(before_counts,
-                                        after_counts):
-        assert expected_total == after_count-prior_count
-
-
-def assert_count_uniformity(counts: List[int]):
-    if len(counts) > 0:
-        c = counts[0]
-        for count in counts:
-            if count != c:
-                return False
-            else:
-                return True
-
-
-def get_counts(info):
-    counts = []
-    for arr in info.values():
-        counts.append(len(arr))
-    return counts
 
 
 def get_tracks_info(tracks: dict, choice, info: Union[FavoriteTracksInfo,
@@ -187,7 +167,7 @@ def get_tracks_info(tracks: dict, choice, info: Union[FavoriteTracksInfo,
             album_total_tracks = album['total_tracks']
             album_name = album['name']
             album_url = album['external_urls']['spotify']
-            #now go into the nested arrays
+            # now go into the nested arrays
             track_artists_uri, missing1 = get_entity_artists_info(
                 track, info, token_handler)
             missing.extend(missing1)
@@ -210,8 +190,6 @@ def get_tracks_info(tracks: dict, choice, info: Union[FavoriteTracksInfo,
                     artists_uri=album_artists_uri,
                     image_urls=album_image_urls)
     return missing
-    # counts = get_counts(info)
-    # assert_count_uniformity(counts)
 
 
 def process_genres(info: Union[FavoriteTracksInfo, PlaylistsInfo], artist):
@@ -227,37 +205,47 @@ def process_genres(info: Union[FavoriteTracksInfo, PlaylistsInfo], artist):
 
 
 def get_entity_artists_info(entity,
-                            info: Union[FavoriteTracksInfo, PlaylistsInfo],
+                            info: Union[FavoriteTracksInfo, PlaylistsInfo,
+                                        FavoriteArtistsInfo],
                             token_handler: SpotifyTokenHandler):
     entity_artists_uri = []
     missing = []
     for artist in entity['artists']:
-        artist_uri = artist['uri']
-        artist_name = artist['name']
-        entity_artists_uri.append(artist_uri)
-        # some of this info is costly to get, only get it if we dont have it
-        if artist_uri not in info['artists']:
-            genres = process_genres(info, artist)
-
-            if 'images' in artist:
-                images_urls = get_images_from_arr(
-                    images=artist['images'], info=info)
-            else:
-                images_urls = []
-
-            # fetch more data for the artist + get the images
-            if ('images' not in artist or 'genres' not in artist):
-                # the better way to do this is having some global list
-                # that gets passed back up to a higher level so they can add this logic
-                missing.append(artist['id'])
-            info['artists'][artist_uri] = FullArtistData(
-                artist_uri=artist_uri, genres=genres,
-                image_urls=images_urls, name=artist_name)
+        process_single_artist(artist, info, missing, entity_artists_uri)
     return entity_artists_uri, missing
 
 
+def process_single_artist(artist, info: Union[FavoriteTracksInfo,
+                                              PlaylistsInfo,
+                                              FavoriteArtistsInfo],
+                          missing: List[str],
+                          entity_artists_uri: Optional[List[str]] = None):
+    artist_uri = artist['uri']
+    artist_name = artist['name']
+    if (entity_artists_uri):
+        entity_artists_uri.append(artist_uri)
+    # some of this info is costly to get, only get it if we dont have it
+    if artist_uri not in info['artists']:
+        genres = process_genres(info, artist)
+
+        if 'images' in artist:
+            images_urls = get_images_from_arr(
+                images=artist['images'], info=info)
+        else:
+            images_urls = []
+
+        # fetch more data for the artist + get the images
+        if ('images' not in artist or 'genres' not in artist):
+            # the better way to do this is having some global list
+            # that gets passed back up to a higher level so they can add this logic
+            missing.append(artist['id'])
+        info['artists'][artist_uri] = FullArtistData(
+            artist_uri=artist_uri, genres=genres,
+            image_urls=images_urls, name=artist_name)
+
+
 def get_images_from_arr(images, info: Union[FavoriteTracksInfo,
-                                            PlaylistsInfo]):
+                                            PlaylistsInfo, FavoriteArtistsInfo]):
     images_urls = []
     for image in images:
         url = image['url']

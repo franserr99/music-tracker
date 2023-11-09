@@ -19,16 +19,13 @@ from ...services.core.genre_service import GenreService
 
 
 from ...services.core.track_features_service import TrackFeaturesService
-from ...services.spotify.spotify_token_handler import SpotifyTokenHandler
+from ...services.spotify.token_handler import SpotifyTokenHandler
 from ...models import User, Track, Album, Artist, Playlist, TrackFeatures, \
     Image, Genre
-from ...services.spotify.retrieval.spotify_track_service\
+from ...services.spotify.retrieval.spotify_favorite_service\
     import SpotifyTrackService
-from ...services.spotify.spotify_data_persistence_service\
+from ...services.spotify.persistence_service\
     import SpotifyDataPersistence
-from ...services.spotify.data_extractor import \
-    SpotifyDataExtractor as extractor
-
 app_name = 'spotify_analyzer'
 logger = logging.getLogger(app_name)
 
@@ -40,9 +37,9 @@ class SpotifyFavorites(APIView):
         type = request.data.get('type')
         try:
             services = self.init_services(user_id)
+            sp_track_service = services['sp_track_service']
+            persistence = services['persistence_service']
             if type == 'tracks':
-                sp_track_service = services['sp_track_service']
-                persistence = services['persistence_service']
                 parsedInfo = sp_track_service.get_monthly_tracks()
                 # break this code up into a function at some point
                 tracks = list(parsedInfo['tracks'].values())
@@ -50,34 +47,37 @@ class SpotifyFavorites(APIView):
                 albums = list(parsedInfo['albums'].values())
                 images = list(parsedInfo['images'].values())
                 genres = list(parsedInfo['genres'].values())
-
-                # at somepoint i need to handle the user creation from here
-                # instead of handling it in the token handler
-
-                # break this up into a function as well
+                # handle adding base records without fk relationships
                 persistence.genre.add_genres_to_library(genres)
                 persistence.track.add_tracks_to_library(tracks)
                 persistence.image.add_images_to_library(images)
                 persistence.artist.add_artists_to_library(artists)
                 persistence.album.add_albums_to_library(albums)
-
+                # handle foreign key relationships
                 persistence.image.link_images_to_albums(albums)
                 persistence.image.link_images_to_artists(artists)
-
                 persistence.album.add_tracks_to_albums(tracks)
-                # now you need to add a genre to an artist
                 persistence.artist.add_genres_to_artists(artists)
-                # add artists to an album
                 persistence.album.add_artists_to_albums(albums)
-                # add artists to a track
                 persistence.track.add_artists_to_tracks(tracks)
+                # connect this to my old method, it will do the heavy
+                # lifting for getting the audio features
                 return Response(parsedInfo)
 
             elif type == 'artists':
-                top_artists = sp_track_service.get_monthly_artists()
-                extractor.parseTopArtistsResponse(top_artists)
+                parsedInfo = sp_track_service.get_monthly_artists()
+                images = list(parsedInfo['images'].values())
+                genres = list(parsedInfo['genres'].values())
+                artists = list(parsedInfo['artists'].values())
+                # handle adding base records without fk relationships
+                persistence.genre.add_genres_to_library(genres)
+                persistence.image.add_images_to_library(images)
+                persistence.artist.add_artists_to_library(artists)
+                # handle foreign key relationships
+                persistence.image.link_images_to_artists(artists)
+                persistence.artist.add_genres_to_artists(artists)
 
-                return Response(top_artists)
+                return Response(parsedInfo)
             else:
                 return Response({'error': 'Bad input'},
                                 status=status.HTTP_400_BAD_REQUEST)

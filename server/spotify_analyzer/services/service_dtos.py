@@ -128,3 +128,9 @@ class PlaylistsInfo(TypedDict):
     artists: Dict[str, FullArtistData]
     images: List[ImageData]
     playlists: Dict[str, PlaylistData]
+
+
+class FavoriteArtistsInfo(TypedDict):
+    artists: Dict[str, FullArtistData]
+    images: Dict[str, ImageData]
+    genres: Dict[str, GenreData]
