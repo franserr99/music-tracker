@@ -64,8 +64,6 @@ class SpotifyFavorites(APIView):
                 persistence.album.add_tracks_to_albums(tracks)
                 persistence.image.link_images_to_albums(albums)
                 persistence.image.link_images_to_artists(artists)
-                
-
                 # the next line gets handled when i fix the df part
                 # persistence_service.track.\
                 #     add_features_to_tracks(tracks_features)
