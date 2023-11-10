@@ -1,5 +1,5 @@
 from typing import Union
-from .. import utility
+from ....util.parse_results_util import get_tracks, get_artists_df
 import spotipy
 from ..token_handler import SpotifyTokenHandler
 from ...service_dtos import FavoriteTracksInfo, PlaylistsInfo
@@ -32,7 +32,7 @@ class SpotifyTrackService:
             if (type == 'tracks'):
                 dict = self.client.current_user_top_tracks(
                     20, offset=0, time_range=term)
-                info = utility.get_tracks_df(
+                info = get_tracks(
                     client=self.client, token_handler=self.token_handler,
                     source=("t", dict), with_audio=True)
                 return info
@@ -40,8 +40,9 @@ class SpotifyTrackService:
                 dict = self.client.current_user_top_artists(
                     20, offset=0, time_range=term)
                 print(dict)
-                info = utility.get_artists_df(client=self.client, token_handler=self.token_handler, 
-                                              response=dict)
+                info = get_artists_df(client=self.client,
+                                      token_handler=self.token_handler,
+                                      response=dict)
 
                 return info
 

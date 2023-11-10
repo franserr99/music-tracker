@@ -17,7 +17,8 @@ from ..core.genre_service import GenreService
 from ..core.playlist_service import PlaylistService
 from ..core.track_features_service import TrackFeaturesService
 from ..service_dtos import TrackData, ArtistData, PlaylistData, AlbumData, \
-    TrackFeaturesData, ImageData, GenreData, FullTrackData, FullArtistData, FullAlbumData
+    TrackFeaturesData, ImageData, GenreData, FullTrackData, FullArtistData, \
+    FullAlbumData, UserData
 
 app_name = 'spotify_analyzer'
 logger = logging.getLogger(app_name)
@@ -30,16 +31,6 @@ class SpotifyDataPersistence:
                  playlist_service: PlaylistService,
                  feature_service: TrackFeaturesService,
                  image_service: ImageService, genre_service: GenreService):
-        # save all references, pass what is needed to the others
-        # for now we will keep them here, if i dont have a need for then
-        # then we will only keep ref in the objects that need it
-        # self.track_service = track_service
-        # self.user_service = user_service
-        # self.album_service = album_service
-        # self.artist_service = artist_service
-        # self.playlist_service = playlist_service
-        # self.track_feature_service = feature_service
-        # the others
         self.track = SpotifyTrackPersistence(track_service,
                                              feature_service)
         self.playlist = SpotifyPlaylistPersistence(
@@ -48,6 +39,7 @@ class SpotifyDataPersistence:
         self.artist = SpotifyArtistPersistence(artist_service)
         self.image = ImagePersistence(image_service)
         self.genre = GenrePersistence(genre_service)
+        self.user = UserPersistence(user_service)
 
 
 class GenrePersistence:
@@ -60,6 +52,14 @@ class GenrePersistence:
     def add_genres_to_library(self, genres: List[GenreData]):
         for genre in genres:
             self.add_genre_to_library(genre)
+
+
+class UserPersistence:
+    def __init__(self, user_service: UserService):
+        self.user_service = user_service
+
+    def add_user_to_lib(self, user: UserData):
+        self.user_service.create_user(user_data=user)
 
 
 class ImagePersistence:
@@ -75,8 +75,6 @@ class ImagePersistence:
 
     def link_image_to_album(self, image_url: str, album_uri: str):
         self.image_serivce.link_image_to_album(album_uri, image_url)
-
-        pass
 
     def link_image_to_artist(self, image_url: str, artist_uri: str):
         self.image_serivce.link_image_to_artist(artist_uri, image_url)
@@ -142,8 +140,6 @@ class SpotifyPlaylistPersistence:
         self.playlist_service = playlist_service
 
     def add_playlist_to_library(self, playlist: PlaylistData):
-        # make sure ALL your services use the dtos instead of the serializers,
-        # i think some of them might be using serializers
         self.playlist_service.create_playlist(playlist=playlist)
 
     def add_playlists_to_library(self, playlists: List[PlaylistData]):
