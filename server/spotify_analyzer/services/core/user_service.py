@@ -23,7 +23,7 @@ class UserService:
         self.user_model = user_model
         self.logger = logger
 
-    def create_user(self, user_data: dict) -> User:
+    def create_user(self, user_data: UserData) -> User:
         """Creates a new user.
 
         Args:
@@ -33,22 +33,18 @@ class UserService:
                 The User object if created successfully None otherwise
         """
 
-        user = self.get_user(user_id=user_data['id'])
-        if user is None:
-            try:
-                user, created = self.user_model.objects.get_or_create(
-                    **user_data)
-                return user
-            except (IntegrityError, ValidationError,
-                    DatabaseError, TypeError, ValueError) as e:
-                # logger will display more info about the error
-                # calling code will know something went wrong,
-                #  but not the context
-                self.logger.exception(
-                    f"An error occurred while creating a user: {e}")
-                return None
-        else:
+        try:
+            user, created = self.user_model.objects.get_or_create(
+                **user_data)
             return user
+        except (IntegrityError, ValidationError,
+                DatabaseError, TypeError, ValueError) as e:
+            # logger will display more info about the error
+            # calling code will know something went wrong,
+            #  but not the context
+            self.logger.exception(
+                f"An error occurred while creating a user: {e}")
+            return None
 
     def get_user(self, user_id) -> Optional[User]:
         """Fetches a user by their ID.

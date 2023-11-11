@@ -15,15 +15,13 @@ class SpotifyPlaylistService:
         self.client = client
         self.token_handler = token_handler
 
-    def get_user_created_playlists(self, persistence_servi) -> \
-            PlaylistsInfo:
+    def get_user_created_playlists(self) -> PlaylistsInfo:
         info = self._begin_build(user_flag=True, with_audio=True)
         # get_missing_artist_info(missing, self.token_handler, info)
 
         return info
 
-    def get_user_liked_playlists(self) -> \
-            PlaylistsInfo:
+    def get_user_liked_playlists(self) -> PlaylistsInfo:
         info = self._begin_build(
             user_flag=False, with_audio=True)
         # get_missing_artist_info(missing, self.token_handler, info)
@@ -45,6 +43,7 @@ class SpotifyPlaylistService:
                      with_audio=True) -> (PlaylistsInfo, List[str]):
         playlists_idx = []
         playlists = self.client.current_user_playlists()
+        # print(playlists)
         playlist_owners = {}
         self._process_page(playlists=playlists,
                            user_flag=user_flag,

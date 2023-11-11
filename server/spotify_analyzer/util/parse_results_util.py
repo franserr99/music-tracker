@@ -185,9 +185,7 @@ def get_artists_df(client: spotipy.Spotify, token_handler: SpotifyTokenHandler,
                    response: dict) -> Tuple[FavoriteArtistsInfo, List[str]]:
     assert token_handler.accessToken is not None
     info = FavoriteArtistsInfo(artists={}, images={}, genres={})
-
     missing = []
-
     for artist in response['items']:
         process_single_artist(artist, info, missing)
     get_missing_artist_info(missing, token_handler, info)
@@ -212,19 +210,6 @@ def get_tracks(client: spotipy.Spotify,
     get_missing_artist_info(missing, token_handler, info)
     return info
 
-    # changing to a df in here
-    # user_df = pd.DataFrame(
-    #     {'uri': , 'track name': info['track_name'],
-    #      'artist': info['track_artist']})
-    # user_df.drop_duplicates(inplace=True)
-    # user_df.dropna()
-    # user_df.reset_index(drop=True, inplace=True)
-    # if (with_audio):
-    #     user_df_with_features = get_audio_feature_df(client, user_df)
-    #     return user_df_with_features
-    # else:
-    #     return user_df
-
 
 def paginate_results(tracks: dict, info: Union[FavoriteTracksInfo,
                                                PlaylistsInfo],
@@ -247,28 +232,34 @@ def process_source(client: spotipy.Spotify,
                    token_handler: SpotifyTokenHandler,
                    source, playlist_owners) -> \
         Union[FavoriteTracksInfo, PlaylistsInfo]:
-    if (source[0] == "p"):
+    choice = source[0]
+    playlists = source[1]
+    print(playlists)
+    if (choice == "p"):
         info = PlaylistsInfo(tracks={}, albums={},
                              artists={}, playlists={},
                              images={}, users={}, genres={})
-        for id in source[1]:
-            tracks = client.playlist_tracks(id)
+        for playlist_id in playlists:
+            tracks = client.playlist_tracks(playlist_id=playlist_id)
             missing, track_uris = get_tracks_info(
                 tracks, "p", info, token_handler)
-            more_missing, more_track_uris = paginate_results(
-                tracks, info,
-                token_handler=token_handler,
-                choice="p")
-            missing.extend(more_missing)
-            track_uris.extend(more_track_uris)
+            if tracks['next']:
+                more_missing, more_track_uris = paginate_results(
+                    tracks, info,
+                    token_handler=token_handler,
+                    choice="p")
+                missing.extend(more_missing)
+                track_uris.extend(more_track_uris)
             # add the playlists
-            if id not in info['playlists']:
-                info['playlists'][id] = FullPlaylistData(
-                    playlist_id=id, 
-                    created_by=playlist_owners[id],
+            print("id of playlist we might add: ", playlist_id)
+            print("current state of the dict: \n", info['playlists'])
+            if playlist_id not in info['playlists'].keys():
+                info['playlists'][playlist_id] = FullPlaylistData(
+                    playlist_id=playlist_id,
+                    created_by=playlist_owners[playlist_id],
                     tracks=track_uris
-                    )
-            return info, missing
+                )
+        return info, missing
     elif (source[0] == "t"):
         info = FavoriteTracksInfo(tracks={}, albums={}, artists={},
                                   images={}, genres={})

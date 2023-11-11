@@ -752,3 +752,257 @@ WARNING 2023-11-11 04:10:03,968 log log.py 241 Not Found: /admin/spotify_analyze
 WARNING 2023-11-11 04:10:03,968 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
 WARNING 2023-11-11 04:10:03,969 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
 WARNING 2023-11-11 04:10:03,969 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+INFO 2023-11-11 04:11:59,495 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:11:59,495 autoreload autoreload.py 668 Watching for file changes with StatReloader
+WARNING 2023-11-11 04:12:01,268 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 04:12:01,268 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 04:12:01,269 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 04:12:01,269 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+INFO 2023-11-11 04:15:19,067 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/core/user_service.py changed, reloading.
+INFO 2023-11-11 04:15:19,067 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/core/user_service.py changed, reloading.
+INFO 2023-11-11 04:15:19,590 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:15:19,590 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:15:21,813 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/core/user_service.py changed, reloading.
+INFO 2023-11-11 04:15:21,813 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/core/user_service.py changed, reloading.
+INFO 2023-11-11 04:15:22,357 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:15:22,357 autoreload autoreload.py 668 Watching for file changes with StatReloader
+WARNING 2023-11-11 04:16:25,073 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 04:16:25,073 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 04:16:25,075 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 04:16:25,075 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 04:16:27,664 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 04:16:27,664 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 04:16:27,667 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 04:16:27,667 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 04:16:34,705 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 04:16:34,705 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 04:16:34,707 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 04:16:34,707 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+INFO 2023-11-11 04:17:20,432 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/persistence_util.py changed, reloading.
+INFO 2023-11-11 04:17:20,432 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/persistence_util.py changed, reloading.
+INFO 2023-11-11 04:17:20,958 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:17:20,958 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:20:05,080 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py changed, reloading.
+INFO 2023-11-11 04:20:05,080 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py changed, reloading.
+INFO 2023-11-11 04:20:05,736 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:20:05,736 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:22:22,661 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py changed, reloading.
+INFO 2023-11-11 04:22:22,661 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py changed, reloading.
+INFO 2023-11-11 04:22:23,181 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:22:23,181 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:24:19,367 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/persistence_util.py changed, reloading.
+INFO 2023-11-11 04:24:19,367 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/persistence_util.py changed, reloading.
+INFO 2023-11-11 04:24:19,894 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:24:19,894 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:24:56,004 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py changed, reloading.
+INFO 2023-11-11 04:24:56,004 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py changed, reloading.
+INFO 2023-11-11 04:24:56,499 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:24:56,499 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:35:10,465 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py changed, reloading.
+INFO 2023-11-11 04:35:10,465 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py changed, reloading.
+INFO 2023-11-11 04:35:11,076 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:35:11,076 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:35:13,309 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py changed, reloading.
+INFO 2023-11-11 04:35:13,309 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py changed, reloading.
+INFO 2023-11-11 04:35:13,834 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:35:13,834 autoreload autoreload.py 668 Watching for file changes with StatReloader
+WARNING 2023-11-11 04:35:15,431 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 04:35:15,432 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 04:35:15,432 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 04:35:15,431 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+INFO 2023-11-11 04:39:26,438 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2023-11-11 04:39:26,438 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2023-11-11 04:39:26,933 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:39:26,933 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:39:32,234 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py changed, reloading.
+INFO 2023-11-11 04:39:32,234 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py changed, reloading.
+INFO 2023-11-11 04:39:32,748 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:39:32,748 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:41:35,610 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2023-11-11 04:41:35,610 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2023-11-11 04:41:36,125 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:41:36,125 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:42:14,270 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2023-11-11 04:42:14,270 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2023-11-11 04:42:14,799 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:42:14,799 autoreload autoreload.py 668 Watching for file changes with StatReloader
+WARNING 2023-11-11 04:45:18,371 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 04:45:18,371 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 04:45:18,372 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 04:45:18,372 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 04:45:20,570 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 04:45:20,570 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 04:45:20,571 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 04:45:20,571 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+INFO 2023-11-11 04:46:24,599 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2023-11-11 04:46:24,599 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2023-11-11 04:46:25,124 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:46:25,124 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:46:49,967 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py changed, reloading.
+INFO 2023-11-11 04:46:49,967 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py changed, reloading.
+INFO 2023-11-11 04:46:50,476 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:46:50,476 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:48:26,466 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2023-11-11 04:48:26,466 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2023-11-11 04:48:27,062 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:48:27,062 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:50:04,428 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2023-11-11 04:50:04,428 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2023-11-11 04:50:05,070 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:50:05,070 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2023-11-11 04:50:22,441 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py", line 33, in post
+    parsedInfo = sp_playlist_service.get_user_liked_playlists()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py", line 25, in get_user_liked_playlists
+    info = self._begin_build(
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py", line 65, in _begin_build
+    info = get_tracks(
+           ^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py", line 210, in get_tracks
+    info, missing = process_source(
+                    ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py", line 261, in process_source
+    more_missing, more_track_uris = paginate_results(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+ERROR 2023-11-11 04:50:22,441 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py", line 33, in post
+    parsedInfo = sp_playlist_service.get_user_liked_playlists()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py", line 25, in get_user_liked_playlists
+    info = self._begin_build(
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py", line 65, in _begin_build
+    info = get_tracks(
+           ^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py", line 210, in get_tracks
+    info, missing = process_source(
+                    ^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py", line 261, in process_source
+    more_missing, more_track_uris = paginate_results(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+INFO 2023-11-11 04:53:23,904 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2023-11-11 04:53:23,904 autoreload autoreload.py 266 /Users/franserr/Documents/course-work/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2023-11-11 04:53:24,415 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:53:24,415 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:56:20,280 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:56:20,280 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2023-11-11 04:58:14,657 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:14,657 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,037 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,037 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,052 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,052 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,072 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,072 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,074 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,074 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,084 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,084 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,091 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,091 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,105 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,105 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,217 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,217 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,242 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:15,242 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:16,840 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:16,840 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:19,749 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:19,749 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:20,846 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:20,846 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:21,333 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:21,333 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:21,456 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:21,456 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:23,078 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:23,078 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:23,094 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:23,094 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:23,099 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:23,099 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:23,104 album_service album_service.py 42 An error occurred while creating an album:
+INFO 2023-11-11 04:58:23,104 album_service album_service.py 42 An error occurred while creating an album:
+WARNING 2023-11-11 05:00:54,839 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 05:00:54,840 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 05:00:54,840 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 05:00:54,839 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 05:01:07,502 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 05:01:07,502 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 05:01:07,503 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 05:01:07,503 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 05:04:42,944 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 05:04:42,944 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 05:04:42,946 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 05:04:42,946 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 05:05:09,883 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 05:05:09,883 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 05:05:09,885 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 05:05:09,885 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 05:05:45,233 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 05:05:45,233 log log.py 241 Not Found: /admin/spotify_analyzer/img/icon-addlink.svg
+WARNING 2023-11-11 05:05:45,234 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg
+WARNING 2023-11-11 05:05:45,234 log log.py 241 Not Found: /admin/spotify_analyzer/img/tooltag-add.svg

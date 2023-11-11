@@ -25,7 +25,7 @@ class SpotifyPlaylists(APIView):
             if type == 'created':
                 parsedInfo = \
                     sp_playlist_service.get_user_created_playlists()
-                persist_retrived_data(services, parsedInfo)
+                persist_retrived_data(services, parsedInfo, user_id=user_id)
                 # connect this to my old method, it will do the heavy
                 # lifting for getting the audio features
                 return Response(parsedInfo)
