@@ -2,7 +2,7 @@ import logging
 from typing import Optional
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DatabaseError, OperationalError
-from ..service_dtos import ImageData
+from ..dtos.retrieval_dtos import ImageData
 from ...models import Image
 from ..core.album_service import AlbumService
 from ..core.artist_service import ArtistService
@@ -78,6 +78,7 @@ class ImageService:
             if (artist):
                 image.artist = artist
                 image.save()
+
     def link_image_to_album(self, album_uri: str, url: str):
         image = self.get_image(url)
         if (image):
@@ -85,4 +86,3 @@ class ImageService:
             if (album):
                 image.album = album
                 image.save()
-

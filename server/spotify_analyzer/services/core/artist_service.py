@@ -2,7 +2,7 @@ import logging
 from typing import Optional
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DatabaseError, OperationalError
-from ..service_dtos import ArtistData
+from ..dtos.retrieval_dtos import ArtistData
 from ...models import Artist
 from ..core.genre_service import GenreService
 

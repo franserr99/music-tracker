@@ -1,27 +1,28 @@
 
-from typing import List, Optional, Union
+from typing import List, Optional, Tuple, Union
 import requests
 import spotipy
-from ..services.service_dtos import FavoriteArtistsInfo, \
+from ..services.dtos.retrieval_dtos import FavoriteArtistsInfo, \
     FavoriteTracksInfo, PlaylistsInfo, ImageData, FullAlbumData, \
-    FullArtistData, FullTrackData, GenreData, PlaylistData
+    FullArtistData, FullTrackData, GenreData, PlaylistData, UserData, FullPlaylistData
 from ..services.spotify.token_handler import SpotifyTokenHandler
 scope = "user-library-read user-read-playback-position user-top-read \
 user-read-recently-played playlist-read-private"
+# recall that structure is like this:
+# items is a list of track objects
+#       where each track has
+#           a list of artist objects
+#           a list of images
+#           an album object
+#               has a list of artist objects
+#               has a list of images
 
 
 def get_tracks_info(tracks: dict, choice, info: Union[FavoriteTracksInfo,
                                                       PlaylistsInfo],
                     token_handler: SpotifyTokenHandler):
     missing_artist_info = []
-    # recall that structure is like this:
-    # items is a list of track objects
-    #       where each track has
-    #           a list of artist objects
-    #           a list of images
-    #           an album object
-    #               has a list of artist objects
-    #               has a list of images
+
     if (choice == "p"):
         track_uris = []
     for item in tracks['items']:
@@ -44,13 +45,16 @@ def get_tracks_info(tracks: dict, choice, info: Union[FavoriteTracksInfo,
         album_name = album['name']
         album_url = album['external_urls']['spotify']
         # now go into the nested arrays
+
         track_artists_uri, missing1 = get_entity_artists_info(
             track, info, token_handler)
         missing_artist_info.extend(missing1)
+
         album_artists_uri, missing2 = get_entity_artists_info(
             album, info, token_handler)
         missing_artist_info.extend(missing2)
         album_image_urls = get_images_from_arr(album['images'], info)
+        # assert (len(track_artists_uri) != 0)
 
         if track_uri not in info['tracks']:
             info['tracks'][track_uri] = FullTrackData(
@@ -90,7 +94,10 @@ def get_entity_artists_info(entity,
     entity_artists_uri = []
     missing = []
     for artist in entity['artists']:
-        process_single_artist(artist, info, missing, entity_artists_uri)
+        process_single_artist(artist=artist,
+                              info=info,
+                              missing=missing,
+                              entity_artists_uri=entity_artists_uri)
     return entity_artists_uri, missing
 
 
@@ -101,7 +108,8 @@ def process_single_artist(artist, info: Union[FavoriteTracksInfo,
                           entity_artists_uri: Optional[List[str]] = None):
     artist_uri = artist['uri']
     artist_name = artist['name']
-    if (entity_artists_uri):
+
+    if (entity_artists_uri is not None):
         entity_artists_uri.append(artist_uri)
     # some of this info is costly to get, only get it if we dont have it
     if artist_uri not in info['artists']:
@@ -142,7 +150,9 @@ def get_images_from_arr(images, info: Union[FavoriteTracksInfo,
 
 
 def get_missing_artist_info(missing, token_handler: SpotifyTokenHandler,
-                            info: Union[FavoriteTracksInfo, PlaylistsInfo]):
+                            info: Union[FavoriteTracksInfo,
+                                        PlaylistsInfo,
+                                        FavoriteArtistsInfo]):
     # chunk size of 50
     chunk_size = 50
     # loop through the missing in increments of 50
@@ -172,7 +182,7 @@ def get_chunk_of_missing_artists(missing_chunk: List[str],
 
 
 def get_artists_df(client: spotipy.Spotify, token_handler: SpotifyTokenHandler,
-                   response: dict) -> (FavoriteArtistsInfo, List[str]):
+                   response: dict) -> Tuple[FavoriteArtistsInfo, List[str]]:
     assert token_handler.accessToken is not None
     info = FavoriteArtistsInfo(artists={}, images={}, genres={})
 
@@ -184,12 +194,17 @@ def get_artists_df(client: spotipy.Spotify, token_handler: SpotifyTokenHandler,
     return info
 
 
+def get_owner_dtos(owners: dict) -> List[UserData]:
+    unique_owner_ids = list(set(owners.values()))
+    owner_dtos = [UserData(id=id) for id in unique_owner_ids]
+    return owner_dtos
+
+
 def get_tracks(client: spotipy.Spotify,
                token_handler: SpotifyTokenHandler,
                source=None, with_audio=True,
-               playlist_owners=None) -> (Union[FavoriteTracksInfo,
-                                               PlaylistsInfo],
-                                         List[str]):
+               playlist_owners=None) -> Union[FavoriteTracksInfo,
+                                              PlaylistsInfo]:
     assert token_handler.accessToken is not None
 
     info, missing = process_source(
@@ -234,10 +249,10 @@ def process_source(client: spotipy.Spotify,
         Union[FavoriteTracksInfo, PlaylistsInfo]:
     if (source[0] == "p"):
         info = PlaylistsInfo(tracks={}, albums={},
-                             artists={}, playlists={}, images={})
+                             artists={}, playlists={},
+                             images={}, users={}, genres={})
         for id in source[1]:
             tracks = client.playlist_tracks(id)
-            # i need
             missing, track_uris = get_tracks_info(
                 tracks, "p", info, token_handler)
             more_missing, more_track_uris = paginate_results(
@@ -246,10 +261,13 @@ def process_source(client: spotipy.Spotify,
                 choice="p")
             missing.extend(more_missing)
             track_uris.extend(more_track_uris)
+            # add the playlists
             if id not in info['playlists']:
-                info['playlists'][id] = PlaylistData(
-                    playlist_id=id, owner=playlist_owners[id],
-                    tracks=track_uris)
+                info['playlists'][id] = FullPlaylistData(
+                    playlist_id=id, 
+                    created_by=playlist_owners[id],
+                    tracks=track_uris
+                    )
             return info, missing
     elif (source[0] == "t"):
         info = FavoriteTracksInfo(tracks={}, albums={}, artists={},

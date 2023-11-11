@@ -2,10 +2,10 @@ from typing import Union
 from ....util.parse_results_util import get_tracks, get_artists_df
 import spotipy
 from ..token_handler import SpotifyTokenHandler
-from ...service_dtos import FavoriteTracksInfo, PlaylistsInfo
+from ...dtos.retrieval_dtos import FavoriteTracksInfo, PlaylistsInfo
 
 
-class SpotifyTrackService:
+class SpotifyFavoritesService:
     def __init__(self, client: spotipy.Spotify,
                  token_handler: SpotifyTokenHandler):
         self.client = client

@@ -20,7 +20,7 @@ Usage:
     track_service.delete_track(track_uri)
     track_service.get_all_tracks()
 """
-from ..service_dtos import TrackData
+from ..dtos.retrieval_dtos import TrackData
 from ...models import Track
 from .artist_service import ArtistService
 from typing import Optional

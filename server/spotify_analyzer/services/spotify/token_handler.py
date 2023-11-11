@@ -3,7 +3,7 @@ import spotipy
 from ..core.user_service import UserService
 import requests
 # from base64 import b64encode
-from ..service_dtos import UserData
+from ..dtos.retrieval_dtos import UserData
 from rest_framework.exceptions import APIException
 
 import time
@@ -35,6 +35,7 @@ class SpotifyTokenHandler:
         # i need my client id etc to be there
         # self.oauth = SpotifyOAuth(scope=sp_utility.scope)
         self.user_service = user_service
+        self.user_id = user_id
         if authorization_code:
             accessToken = self.getAccessToken(user_id=user_id,
                                               auth_code=authorization_code)

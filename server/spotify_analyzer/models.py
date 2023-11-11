@@ -89,21 +89,21 @@ class Image(models.Model):
                               related_name='album_images',
                               null=True, blank=True)
 
-    def clean(self):
-        # Check that the Image instance is linked to
-        #  either an artist or an album, not both.
-        if self.artist_id and self.album_id:
-            raise ValidationError(
-                'Image cannot be linked to an artist && album.'
-            )
-        # if not self.artist_id and not self.album_id:
-        #     raise ValidationError(
-        #         'An image must be linked to an artist or an album.'
-        #     )
+    # def clean(self):
+    #     # Check that the Image instance is linked to
+    #     #  either an artist or an album, not both.
+    #     if self.artist_id and self.album_id:
+    #         raise ValidationError(
+    #             'Image cannot be linked to an artist && album.'
+    #         )
+    #     # if not self.artist_id and not self.album_id:
+    #     #     raise ValidationError(
+    #     #         'An image must be linked to an artist or an album.'
+    #     #     )
 
-    def save(self, *args, **kwargs):
-        self.clean()
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     self.clean()
+    #     super().save(*args, **kwargs)
 
 
 # the artist image alone is not enough,

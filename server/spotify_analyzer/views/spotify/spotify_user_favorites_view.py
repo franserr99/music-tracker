@@ -1,6 +1,5 @@
 import traceback
 import logging
-from typing import TypedDict, Union
 
 from rest_framework import status
 from rest_framework.response import Response
@@ -8,7 +7,8 @@ from rest_framework.views import APIView
 from rest_framework.exceptions import APIException
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
-from ...services.spotify.utility import init_services, persist_retrived_data
+from ...util.services_util import init_services
+from ...util.persistence_util import persist_retrived_data
 
 app_name = 'spotify_analyzer'
 logger = logging.getLogger(app_name)
@@ -21,15 +21,15 @@ class SpotifyFavorites(APIView):
         type = request.data.get('type')
         try:
             services = init_services(user_id, logger)
-            sp_track_service = services['sp_track_service']
+            sp_favorites_service = services['sp_favorites_service']
             if type == 'tracks':
-                parsedInfo = sp_track_service.get_monthly_tracks()
-                persist_retrived_data(services, parsedInfo)
+                parsedInfo = sp_favorites_service.get_monthly_tracks()
+                persist_retrived_data(services, parsedInfo, user_id)
                 # connect this to my old method, it will do the heavy
                 # lifting for getting the audio features
                 return Response(parsedInfo)
             elif type == 'artists':
-                parsedInfo = sp_track_service.get_monthly_artists()
+                parsedInfo = sp_favorites_service.get_monthly_artists()
                 persist_retrived_data(services, parsedInfo)
                 return Response(parsedInfo)
             else:

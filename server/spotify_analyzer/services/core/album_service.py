@@ -2,7 +2,7 @@ import logging
 from typing import Optional
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DatabaseError, OperationalError
-from ..service_dtos import AlbumData
+from ..dtos.retrieval_dtos import AlbumData
 from .track_service import TrackService
 from .artist_service import ArtistService
 from ...models import Album
@@ -38,9 +38,9 @@ class AlbumService:
                 **album_data)
             return album
         except (IntegrityError, ValidationError,
-                DatabaseError, TypeError, ValueError) as e:
-            self.logger.exception(
-                f"An error occurred while creating an album: {e}")
+                DatabaseError, TypeError, ValueError):
+            self.logger.info(
+                "An error occurred while creating an album:")
             return None
 
     def get_album(self, uri: str) -> Optional[Album]:
@@ -49,7 +49,7 @@ class AlbumService:
             # print(self.album_model.objects.get(uri=uri))
             return self.album_model.objects.get(uri=uri)
         except self.album_model.DoesNotExist:
-            self.logger.exception("An exception occured in get_album:")
+            self.logger.info("An exception occured in get_album:")
             return None
 
     def update_album(self, uri: str, album_data: AlbumData):
@@ -62,9 +62,9 @@ class AlbumService:
             try:
                 album.save()
             except (IntegrityError, ValidationError,
-                    OperationalError, DatabaseError) as e:
-                self.logger.exception(
-                    f"An error occurred while updating a album: {e}")
+                    OperationalError, DatabaseError):
+                self.logger.info(
+                    "An error occurred while updating a album:")
                 return None
 
     def delete_album(self, uri: str):
@@ -73,18 +73,18 @@ class AlbumService:
         if album:
             try:
                 album.delete()
-            except (IntegrityError, OperationalError, DatabaseError) as e:
-                self.logger.exception(
-                    f"An error occurred while deleting a track: {e}")
+            except (IntegrityError, OperationalError, DatabaseError):
+                self.logger.info(
+                    "An error occurred while deleting an album:")
                 return None
 
     def get_all_albums(self):
 
         try:
             return self.album_model.objects.all()
-        except (OperationalError, DatabaseError) as e:
-            self.logger.exception(
-                f"An error occurred while fetching all tracks: {e}")
+        except (OperationalError, DatabaseError):
+            self.logger.info(
+                "An error occurred while fetching all tracks:")
             return None
 
     def add_track_to_album(self, album_uri, track_uri) -> bool:
@@ -96,7 +96,6 @@ class AlbumService:
                 album.tracks.add(track)
                 album.save()
             else:
-                print(track_uri)
                 self.logger.info("tried getting track when adding to album \
                                  but DNE in db yet. Check for race conditions.\
                                  Caller needs to check if track exsits, \

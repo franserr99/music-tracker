@@ -8,6 +8,9 @@
 import logging
 from typing import List
 
+from ..dtos.retrieval_dtos import TrackData, ArtistData, PlaylistData, AlbumData, \
+    TrackFeaturesData, ImageData, GenreData, FullTrackData, FullArtistData, \
+    FullAlbumData, UserData, FullPlaylistData
 from ..core.user_service import UserService
 from ..core.track_service import TrackService
 from ..core.album_service import AlbumService
@@ -16,9 +19,7 @@ from ..core.artist_service import ArtistService
 from ..core.genre_service import GenreService
 from ..core.playlist_service import PlaylistService
 from ..core.track_features_service import TrackFeaturesService
-from ..service_dtos import TrackData, ArtistData, PlaylistData, AlbumData, \
-    TrackFeaturesData, ImageData, GenreData, FullTrackData, FullArtistData, \
-    FullAlbumData, UserData
+
 
 app_name = 'spotify_analyzer'
 logger = logging.getLogger(app_name)
@@ -61,6 +62,10 @@ class UserPersistence:
     def add_user_to_lib(self, user: UserData):
         self.user_service.create_user(user_data=user)
 
+    def add_users_to_lib(self, users: List[UserData]):
+        for user in users:
+            self.add_user_to_lib(user)
+
 
 class ImagePersistence:
     def __init__(self, image_service: ImageService):
@@ -78,7 +83,6 @@ class ImagePersistence:
 
     def link_image_to_artist(self, image_url: str, artist_uri: str):
         self.image_serivce.link_image_to_artist(artist_uri, image_url)
-        pass
 
     def link_images_to_albums(self, albums: List[FullAlbumData]):
         for album in albums:
@@ -140,18 +144,37 @@ class SpotifyPlaylistPersistence:
         self.playlist_service = playlist_service
 
     def add_playlist_to_library(self, playlist: PlaylistData):
-        self.playlist_service.create_playlist(playlist=playlist)
+        self.playlist_service.create_playlist(playlist_data=playlist)
 
-    def add_playlists_to_library(self, playlists: List[PlaylistData]):
-        for playlist in playlists:
+    def add_playlists_to_library(self, playlists: List[FullPlaylistData]):
+        playlist_dtos = [PlaylistData(id=playlist['playlist_id'],
+                                      created_by=playlist['created_by']
+                                      ) for playlist in playlists]
+        for playlist in playlist_dtos:
             self.add_playlist_to_library(playlist=playlist)
 
     def add_track_to_playlist(self, playlist_id, track_uri):
         self.playlist_service.add_track_to_playlist(playlist_id, track_uri)
 
-    def add_tracks_to_playlist(self, track_uris: List[str], playlist_id: str):
-        for uri in track_uris:
-            self.add_track_to_playlist(playlist_id, uri)
+    def add_tracks_to_playlist(self,  playlists: List[FullPlaylistData]):
+        for playlist in playlists:
+            playlist_id = playlist['playlist_id']
+            tracks = playlist['tracks']
+            for track in tracks:
+                self.add_track_to_playlist(playlist_id, track)
+
+    def add_likes_playlists(self,  playlists: List[FullPlaylistData],
+                            authorized_user: str):
+        # for playlist_id, user_id in playlist_owners.items():
+        #     if user_id != authorized_user:
+        #         # only like playlists that dont belong to you
+        #         self.playlist_service.like_playlist(playlist_id, user_id)
+        for playlist in playlists:
+            owner = playlist['created_by']
+            playlist_id = playlist['playlist_id']
+            if owner != authorized_user:
+                self.playlist_service.like_playlist(
+                    playlist_id, authorized_user)
 
 
 class SpotifyAlbumPersistence:

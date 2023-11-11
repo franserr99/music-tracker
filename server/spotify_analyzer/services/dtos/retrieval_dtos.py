@@ -2,18 +2,6 @@ from datetime import datetime
 from typing import List, TypedDict, Dict
 # typed dictionaries for use in the service layer
 # here are my data transfer objects
-from ..services.core.user_service import UserService
-from ..services.core.track_service import TrackService
-from ..services.core.album_service import AlbumService
-from ..services.core.artist_service import ArtistService
-from ..services.core.playlist_service import PlaylistService
-from ..services.core.image_service import ImageService
-from ..services.core.genre_service import GenreService
-from ..services.core.track_features_service import TrackFeaturesService
-from ..services.spotify.token_handler import SpotifyTokenHandler
-from ..services.spotify.persistence_service import SpotifyDataPersistence
-from ..services.spotify.retrieval.spotify_favorite_service \
-    import SpotifyTrackService
 
 
 class TrackFeaturesData(TypedDict):
@@ -110,8 +98,13 @@ class FullTrackData(TypedDict):
 
 
 class PlaylistData(TypedDict):
+    id: str
+    created_by: str
+
+
+class FullPlaylistData(TypedDict):
     playlist_id: str
-    owner: str
+    created_by: str
     tracks: List[str]
 
 
@@ -128,26 +121,12 @@ class PlaylistsInfo(TypedDict):
     albums: Dict[str, FullAlbumData]
     artists: Dict[str, FullArtistData]
     images: Dict[str, ImageData]
-    playlists: Dict[str, PlaylistData]
+    playlists: Dict[str, FullPlaylistData]
     users: Dict[str, UserData]
+    genres: Dict[str, GenreData]
 
 
 class FavoriteArtistsInfo(TypedDict):
     artists: Dict[str, FullArtistData]
     images: Dict[str, ImageData]
     genres: Dict[str, GenreData]
-
-
-class Services(TypedDict):
-    user_service: UserService
-    token_handler: SpotifyTokenHandler
-    sp_track_service: SpotifyTrackService
-    track_service: TrackService
-    album_service: AlbumService
-    artist_service: ArtistService
-    playlist_service: PlaylistService
-    feature_service: TrackFeaturesService
-    images_service: ImageService
-    genre_service: GenreService
-
-    persistence_service: SpotifyDataPersistence
