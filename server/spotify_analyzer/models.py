@@ -14,7 +14,7 @@ Classes:
     - Playlist: Represents a Spotify playlist.
 """
 from django.db import models
-from django.core.exceptions import ValidationError
+# from django.core.exceptions import ValidationError
 # spotify track feature
 # get description of features here:
 # https://developer.spotify.com/documentation/web-api/reference/get-audio-features

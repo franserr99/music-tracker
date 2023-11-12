@@ -87,6 +87,14 @@ class AlbumService:
                 "An error occurred while fetching all tracks:")
             return None
 
+    def get_all_identifiers(self):
+        try:
+            return self.album_model.objects.values_list('uri', flat=True)
+        except (OperationalError, DatabaseError):
+            self.logger.info(
+                "An error occurred while fetching all tracks:")
+            return None
+
     def add_track_to_album(self, album_uri, track_uri) -> bool:
         album = self.get_album(uri=album_uri)
 

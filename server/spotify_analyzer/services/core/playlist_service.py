@@ -8,6 +8,8 @@
 from typing import Optional
 import logging
 
+from django.db import DatabaseError, OperationalError
+
 # from injector import inject
 
 from ...models import Playlist
@@ -59,7 +61,20 @@ class PlaylistService:
             return self.playlist_model.objects.get(id=playlist_id)
         except self.playlist_model.DoesNotExist:
             self.logger.info("An exception occured in get_playlist:")
-            return None
+            return
+
+    def get_all_playlists(self):
+        try:
+            return self.playlist_model.objects.all()
+        except (OperationalError, DatabaseError):
+            self.logger.info("trouble getting all playlists")
+
+    def get_all_identifiers(self):
+        try:
+            return list(self.playlist_model.objects.values_list('id',
+                                                                flat=True))
+        except (OperationalError, DatabaseError):
+            self.logger.info("error when getting all idszF")
 
     def update_playlist(self, id: str, new_data: PlaylistData):
         playlist = self.get_playlist(playlist_id=id)

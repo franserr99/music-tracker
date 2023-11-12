@@ -118,6 +118,16 @@ class TrackService:
                     f"An error occurred while updating a track: {e}")
                 return None
 
+    def get_all_identifiers(self):
+        try:
+            # Return a list of URIs directly,
+            #  without loading full track objects
+            return list(self.track_model.objects.values_list('uri', flat=True))
+        except (OperationalError, DatabaseError) as e:
+            self.logger.exception(
+                f"An error occurred while fetching track URIs: {e}")
+            return None
+
     def delete_track(self, track_uri: str):
         """Deletes a track by its URI.
 

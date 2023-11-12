@@ -29,3 +29,10 @@ class Services(TypedDict):
     genre_service: GenreService
 
     persistence_service: SpotifyDataPersistence
+
+
+class CoreServices(TypedDict):
+    track_service: TrackService
+    album_service: AlbumService
+    artist_service: ArtistService
+    playlist_service: PlaylistService

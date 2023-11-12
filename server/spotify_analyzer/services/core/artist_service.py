@@ -72,6 +72,13 @@ class ArtistService:
                 f"An error occurred while fetching all artists: {e}")
             return None
 
+    def get_all_identifiers(self):
+        try:
+            return self.artist_model.objects.values_list('uri', flat=True)
+        except (OperationalError, DatabaseError):
+            self.logger.info(
+                "An error occurred while fetching all artists uris")
+
     def add_genre_to_artist(self, artist_uri: str, genre: str):
         genre_instance = self.genre_service.get_genre(genre)
         artist = self.get_artist(artist_uri)

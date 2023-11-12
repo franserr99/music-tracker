@@ -6,7 +6,7 @@ from rest_framework.views import APIView
 from rest_framework.exceptions import APIException
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
-from ...util.services_util import init_services
+from ...util.services_util import init_all_services
 from ...util.persistence_util import persist_retrived_data
 
 app_name = 'spotify_analyzer'
@@ -20,7 +20,7 @@ class SpotifyPlaylists(APIView):
         type = request.data.get('type')
         # created, liked, all
         try:
-            services = init_services(user_id, logger)
+            services = init_all_services(user_id, logger)
             sp_playlist_service = services['sp_playlist_service']
             if type == 'created':
                 parsedInfo = \

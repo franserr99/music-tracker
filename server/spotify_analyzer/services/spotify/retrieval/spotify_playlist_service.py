@@ -4,7 +4,7 @@ import spotipy
 from ..token_handler import SpotifyTokenHandler
 import requests
 from ...dtos.retrieval_dtos import PlaylistsInfo
-from ....util.parse_results_util import get_missing_artist_info, get_owner_dtos
+from ....util.parse_results_util import get_owner_dtos
 
 
 class SpotifyPlaylistService:
@@ -29,15 +29,12 @@ class SpotifyPlaylistService:
 
     def get_user_added_created_playlists(self) -> (PlaylistsInfo,
                                                    dict, List[str]):
+        info = self._begin_build(
+            user_flag=None, with_audio=True)
+        # get_missing_artist_info(missing, self.token_handler, info)
+        return info
+
         pass
-        # rework this one i think i can process it all in one go
-        # user_created_tracks, missing1 = self._begin_build(
-        #     user_flag=True, with_audio=True)
-        # liked_playlist_tracks, missing2 = self._begin_build(
-        #     user_flag=False, with_audio=True)
-        # return user_created_tracks, \
-        #     liked_playlist_tracks, owners1.extend(
-        #         owners2), missing1.extend(missing2)
 
     def _begin_build(self, user_flag: bool,
                      with_audio=True) -> (PlaylistsInfo, List[str]):
@@ -80,9 +77,11 @@ class SpotifyPlaylistService:
             owner = playlist['owner']['id']
             id = playlist['id']
             playlist_owners[id] = owner
-            if user_flag and me == owner:
+            if (user_flag is None):
+                playlist_idx.append(id)
+            elif user_flag is True and me == owner:
                 # current user is already in system
                 playlist_idx.append(id)
-            elif not user_flag and owner != me:
+            elif user_flag is False and owner != me:
                 # other users, need it for my models
                 playlist_idx.append(id)

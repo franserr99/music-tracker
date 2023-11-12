@@ -4,8 +4,10 @@ import requests
 import spotipy
 from ..services.dtos.retrieval_dtos import FavoriteArtistsInfo, \
     FavoriteTracksInfo, PlaylistsInfo, ImageData, FullAlbumData, \
-    FullArtistData, FullTrackData, GenreData, PlaylistData, UserData, FullPlaylistData
+    FullArtistData, FullTrackData, GenreData, UserData, \
+    FullPlaylistData
 from ..services.spotify.token_handler import SpotifyTokenHandler
+from .redis_util import RedisData, get_data_from_redis, get_redis_instance
 scope = "user-library-read user-read-playback-position user-top-read \
 user-read-recently-played playlist-read-private"
 # recall that structure is like this:
