@@ -1,6 +1,8 @@
 from django.core.management.base import BaseCommand
 from ...util.redis_util import from_db_to_redis, \
     get_redis_instance, get_data_from_redis
+# from ...services.dtos.service_dtos import Services
+# from ...util.services_util import init_core_services
 
 
 class Command(BaseCommand):
@@ -10,6 +12,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         self.stdout.write("Starting to populate Redis cache...")
         success = from_db_to_redis()
+        
         if success:
             self.stdout.write(self.style.SUCCESS(
                 'Successfully populated Redis cache'))

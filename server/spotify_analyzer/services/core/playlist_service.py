@@ -14,7 +14,7 @@ from django.db import DatabaseError, OperationalError
 
 from ...models import Playlist
 from .user_service import UserService
-from ..dtos.retrieval_dtos import PlaylistData
+from ...dtos.retrieval_dtos import PlaylistData
 from .track_service import TrackService
 
 

@@ -3,7 +3,7 @@ import spotipy
 from ..core.user_service import UserService
 import requests
 # from base64 import b64encode
-from ..dtos.retrieval_dtos import UserData
+from ...dtos.retrieval_dtos import UserData
 from rest_framework.exceptions import APIException
 
 import time

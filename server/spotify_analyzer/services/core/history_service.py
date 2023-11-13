@@ -11,7 +11,7 @@ from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DatabaseError
 
 from ...models import History
-from ..dtos.retrieval_dtos import HistoryData
+from ...dtos.retrieval_dtos import HistoryData
 from .user_service import UserService
 from .track_service import TrackService
 

@@ -80,6 +80,6 @@ class AlbumAdmin(admin.ModelAdmin):
     # Fields to display in the list view
     list_display = ('uri', 'name', 'album_type', 'total_tracks', 'url')
     # Fields to search in the admin
-    search_fields = ('name', 'artists__name', 'tracks__name')
+    search_fields = ('name', )
     # A nicer widget for ManyToMany fields
     filter_horizontal = ('artists', 'tracks')

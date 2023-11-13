@@ -8,9 +8,10 @@
 import logging
 from typing import List
 
-from ..dtos.retrieval_dtos import TrackData, ArtistData, PlaylistData, AlbumData, \
-    TrackFeaturesData, ImageData, GenreData, FullTrackData, FullArtistData, \
-    FullAlbumData, UserData, FullPlaylistData
+from ...dtos.retrieval_dtos import TrackData, ArtistData, PlaylistData, \
+        AlbumData, TrackFeaturesData, ImageData, GenreData, \
+        FullTrackData, FullArtistData, FullAlbumData, UserData, \
+        FullPlaylistData
 from ..core.user_service import UserService
 from ..core.track_service import TrackService
 from ..core.album_service import AlbumService

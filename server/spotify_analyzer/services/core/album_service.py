@@ -2,7 +2,7 @@ import logging
 from typing import Optional
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DatabaseError, OperationalError
-from ..dtos.retrieval_dtos import AlbumData
+from ...dtos.retrieval_dtos import AlbumData
 from .track_service import TrackService
 from .artist_service import ArtistService
 from ...models import Album
@@ -39,8 +39,9 @@ class AlbumService:
             return album
         except (IntegrityError, ValidationError,
                 DatabaseError, TypeError, ValueError):
-            self.logger.info(
+            self.logger.exception(
                 "An error occurred while creating an album:")
+            self.logger.info(album_data)
             return None
 
     def get_album(self, uri: str) -> Optional[Album]:

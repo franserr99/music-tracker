@@ -10,10 +10,11 @@ from ..models import User, Track, Album, Artist, Playlist, TrackFeatures, \
     Image, Genre
 from ..services.spotify.retrieval.spotify_favorite_service\
     import SpotifyFavoritesService
+from ..services.spotify.retrieval.spotify_playlist_service\
+    import SpotifyPlaylistService
 from ..services.spotify.persistence_service\
     import SpotifyDataPersistence
-from ..services.dtos.service_dtos import Services, SpotifyPlaylistService, \
-    CoreServices
+from ..dtos.service_dtos import Services, CoreServices
 from ..services.spotify.token_handler import SpotifyTokenHandler
 from ..services.core.track_features_service import TrackFeaturesService
 
@@ -21,14 +22,16 @@ scope = "user-library-read user-read-playback-position user-top-read \
 user-read-recently-played playlist-read-private"
 
 
-def init_all_services(user_id, logger) -> Services:
+def init_all_services(user_id, logger, redis_data) -> Services:
     user_service = UserService(user_model=User, logger=logger)
     token_handler = SpotifyTokenHandler(
         user_service=user_service, user_id=user_id)
     sp_favorites_service = SpotifyFavoritesService(client=token_handler.client,
-                                                   token_handler=token_handler)
+                                                   token_handler=token_handler,
+                                                   redis_data=redis_data)
     sp_playlist_service = SpotifyPlaylistService(client=token_handler.client,
-                                                 token_handler=token_handler)
+                                                 token_handler=token_handler,
+                                                 redis_data=redis_data)
 
     genre_service = GenreService(genre_model=Genre, logger=logger)
     artist_service = ArtistService(

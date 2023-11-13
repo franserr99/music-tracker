@@ -1,6 +1,6 @@
 from typing import Union
-from ..services.dtos.service_dtos import Services
-from ..services.dtos.retrieval_dtos import FavoriteArtistsInfo, \
+from ..dtos.service_dtos import Services
+from ..dtos.retrieval_dtos import FavoriteArtistsInfo, \
     FavoriteTracksInfo, PlaylistsInfo
 
 

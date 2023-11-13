@@ -2,14 +2,16 @@ from typing import Union
 from ....util.parse_results_util import get_tracks, get_artists_df
 import spotipy
 from ..token_handler import SpotifyTokenHandler
-from ...dtos.retrieval_dtos import FavoriteTracksInfo, PlaylistsInfo
+from ....dtos.retrieval_dtos import FavoriteTracksInfo, PlaylistsInfo
+from ....dtos.redis_dtos import RedisData
 
 
 class SpotifyFavoritesService:
     def __init__(self, client: spotipy.Spotify,
-                 token_handler: SpotifyTokenHandler):
+                 token_handler: SpotifyTokenHandler, redis_data: RedisData):
         self.client = client
         self.token_handler = token_handler
+        self.redis_data = redis_data
 
     # main method #1
     def get_monthly_tracks(self, term="short_term"):
@@ -33,7 +35,8 @@ class SpotifyFavoritesService:
                 dict = self.client.current_user_top_tracks(
                     20, offset=0, time_range=term)
                 info = get_tracks(
-                    client=self.client, token_handler=self.token_handler,
+                    client=self.client, redis_data=self.redis_data,
+                    token_handler=self.token_handler,
                     source=("t", dict), with_audio=True)
                 return info
             elif (type == 'artists'):
@@ -42,7 +45,8 @@ class SpotifyFavoritesService:
                 print(dict)
                 info = get_artists_df(client=self.client,
                                       token_handler=self.token_handler,
-                                      response=dict)
+                                      response=dict,
+                                      redis_data=self.redis_data)
 
                 return info
 

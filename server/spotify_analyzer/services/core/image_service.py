@@ -2,7 +2,7 @@ import logging
 from typing import Optional
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, DatabaseError, OperationalError
-from ..dtos.retrieval_dtos import ImageData
+from ...dtos.retrieval_dtos import ImageData
 from ...models import Image
 from ..core.album_service import AlbumService
 from ..core.artist_service import ArtistService

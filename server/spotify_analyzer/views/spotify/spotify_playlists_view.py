@@ -8,6 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from ...util.services_util import init_all_services
 from ...util.persistence_util import persist_retrived_data
+from ...util.redis_util import get_data_from_redis, get_redis_instance
 
 app_name = 'spotify_analyzer'
 logger = logging.getLogger(app_name)
@@ -20,7 +21,8 @@ class SpotifyPlaylists(APIView):
         type = request.data.get('type')
         # created, liked, all
         try:
-            services = init_all_services(user_id, logger)
+            redis_data = get_data_from_redis(get_redis_instance())
+            services = init_all_services(user_id, logger, redis_data)
             sp_playlist_service = services['sp_playlist_service']
             if type == 'created':
                 parsedInfo = \

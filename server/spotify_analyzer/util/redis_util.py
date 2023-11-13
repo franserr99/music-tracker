@@ -1,11 +1,12 @@
 import redis
 import logging
-from typing import List, TypedDict, Set
+from typing import List
 from .services_util import init_core_services
 from ..services.core.track_service import TrackService
 from ..services.core.album_service import AlbumService
 from ..services.core.playlist_service import PlaylistService
 from ..services.core.artist_service import ArtistService
+from ..dtos.redis_dtos import RedisData
 
 
 def get_redis_instance() -> redis.Redis:
@@ -99,10 +100,3 @@ def get_data_from_redis(r: redis.Redis):
         tracks=track_uris, playlists=playlist_ids,
         albums=album_uris, artists=artist_uris
     )
-
-
-class RedisData(TypedDict):
-    tracks: Set[str]
-    playlists: Set[str]
-    albums: Set[str]
-    artists: Set[str]
