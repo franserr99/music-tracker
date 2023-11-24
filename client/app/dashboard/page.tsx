@@ -1,6 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import styles from '../../styles/Dashboard.module.css';
+import WordCloudContainer from '../../components/data-display/genre-display/word-cloud/GenereWordCloudContainer';
+import Playlist from '../../components/data-display/playlists/Playlist';
  // make sure to create the corresponding CSS module
 
 // Dummy data for the graphs
@@ -15,28 +17,10 @@ const Dashboard = () => {
       <Head>
         <title>Dashboard</title>
       </Head>
-
       <h1>Dashboard</h1>
 
-      {/* Dummy graph for Sales */}
-      <div className={styles.graph}>
-        <h2>Sales Over Time</h2>
-        <ul>
-          {data.sales.map((sale, index) => (
-            <li key={index}>{sale}</li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Dummy graph for Expenses */}
-      <div className={styles.graph}>
-        <h2>Expenses Over Time</h2>
-        <ul>
-          {data.expenses.map((expense, index) => (
-            <li key={index}>{expense}</li>
-          ))}
-        </ul>
-      </div>
+      <Playlist/>
+      
 
       {/* More components or graphs can be added here */}
     </div>
