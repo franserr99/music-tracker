@@ -1,14 +1,14 @@
-import BarChart from "./BarGraph";
-
+import GroupBarGraph from './GroupBarGraph'
 async function getData() {
     try {
-        const url = 'http://localhost:8000/stats/playlist/7yBjn2fb4igpGlTUdl5Kxm/'
+        const url = 'http://localhost:8000/stats/playlist/'
         const response = await fetch(url,
             {
                 method: 'POST',
                 cache: 'no-store',
                 body: JSON.stringify({
-                    "type": "wordmap"
+                    "type": "similar-group-bar-chart",
+                    "ids": ["3H95dINDNLwAWTthxtd9Gv", "0g9HrQt3NnQmll6WP0vuIk"]
                 }),
                 headers: {
                     'Content-Type': 'application/json'
@@ -25,17 +25,17 @@ async function getData() {
 
 }
 
-export default async function BarGraphContainer() {
+export default async function SimilarGenresGroupBarGraphContainer() {
 
     // Some dimensions for the word cloud
-    const width = 600;
+    const width = 700;
     const height = 500;
 
     const jsonData = await getData()
     // Render your component with the fetched data
     return (
         <div>
-            {jsonData && <BarChart width={width} height={height} data={jsonData} />}
+            {jsonData && <GroupBarGraph width={width} height={height} data={jsonData} />}
         </div>
     );
 }

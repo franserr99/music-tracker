@@ -1,3 +1,5 @@
+import BarChart from "./BarGraph";
+
 async function getData() {
     try {
         const url = 'http://localhost:8000/stats/playlist/7yBjn2fb4igpGlTUdl5Kxm/'
@@ -26,7 +28,7 @@ async function getData() {
 export default async function BarGraphContainer() {
 
     // Some dimensions for the word cloud
-    const width = 600;
+    const width = 700;
     const height = 500;
 
     const jsonData = await getData()

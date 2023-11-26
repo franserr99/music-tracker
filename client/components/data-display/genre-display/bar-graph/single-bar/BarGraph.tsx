@@ -72,7 +72,7 @@ export default function BarChart({ width, height, data, events = false }: BarCha
       {/* create a rect same dim as the svg */}
       <rect width={width} height={height} fill="url(#teal)" rx={14} />
       {/* group positions the group of bars within the svg */}
-      <Group top={verticalMargin / 2}>
+      <Group top={verticalMargin / 4}>
         {/* iterate over each filtered key/value */}
         {filteredDataEntries.map(([key, value]) => {
           {/* compute the bar width/height and the x/y coordinates for the bar */}
@@ -97,10 +97,11 @@ export default function BarChart({ width, height, data, events = false }: BarCha
               {/* label for the bar */}
               <Text
                 x={barX! + barWidth / 2}
-                y={height - (verticalMargin / 1.5 - 10)} // Adjust this value as needed
+                y={height - (verticalMargin / 1.5 - 5)} // Adjust this value as needed
                 fill="white"
                 textAnchor="middle"
                 verticalAnchor="end"
+                transform={`rotate(-45 ${barX! + barWidth / 2} ${height - (verticalMargin / 1.5 - 10)})`}
               >
                 {key}
               </Text>
