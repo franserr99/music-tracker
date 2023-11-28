@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import styles from '../../styles/Dashboard.module.css';
-import WordCloudContainer from '../../components/data-display/genre-display/word-cloud/GenereWordCloudContainer';
-import Playlist from '../../components/data-display/playlists/Playlist';
+import styles from '../../../../styles/Dashboard.module.css';
+// import WordCloudContainer from '../../../../components/data-display/genre-display/word-cloud/GenereWordCloudContainer';
+import Playlist from '../../../../components/data-display/playlists/Playlist';
  // make sure to create the corresponding CSS module
 
 // Dummy data for the graphs
@@ -10,8 +10,12 @@ const data = {
   sales: [50, 60, 70, 80, 90, 100],
   expenses: [30, 40, 50, 60, 70, 80]
 };
-
-const Dashboard = () => {
+interface PageProps {
+  params: {
+    uid: string;
+  };
+}
+const Page = ({ params }: PageProps) => {
   return (
     <div className={styles.dashboard}>
       <Head>
@@ -19,7 +23,7 @@ const Dashboard = () => {
       </Head>
       <h1>Dashboard</h1>
 
-      <Playlist/>
+      <Playlist user_id={params.uid}/>
       
 
       {/* More components or graphs can be added here */}
@@ -27,4 +31,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Page;

@@ -1,15 +1,19 @@
 import BarGraphContainer from "../genre-display/bar-graph/single-bar/BarGraphContainer";
-import WordCloudContiner from "../genre-display/word-cloud/GenereWordCloudContainer";
+// import WordCloudContiner from "../genre-display/word-cloud/GenereWordCloudContainer";
 import SimilarGenresGroupBarGraphContainer from "../genre-display/bar-graph/group-bar/similar/GroupBarGraphContainer";
 import TopGenresGroupBarGraphContainer from "../genre-display/bar-graph/group-bar/difference/GroupBarGraphContainer";
-
-export default function Playlist() {
+import PlaylistPreview from "./preview/PlaylistPreview";
+import { UserProp } from "./PlaylistDTOs";
+export default function Playlist(prop:UserProp) {
+    console.log("hello")
+    console.log(prop.user_id)
     return (
         <div>
+
+            <PlaylistPreview user_id={prop.user_id}/>
             <h2>
                 Bar Chart For Playlist Genre Frequency
             </h2>
-            <BarGraphContainer/>
             <h2>
                 Group Bar Chart For Genres Playlist Share In Common
             </h2>
