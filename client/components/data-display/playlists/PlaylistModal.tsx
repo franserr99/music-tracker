@@ -1,7 +1,5 @@
-import {useState} from 'react';
+'use client'
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import BarGraphContainer from '../genre-display/bar-graph/single-bar/BarGraphContainer';
 import { ModalProps } from './PlaylistDTOs';
@@ -21,6 +19,7 @@ const style = {
 
 
 export default function BasicModal({ open, handleClose, playlist_id }: ModalProps) {
+    console.log(playlist_id)
 
   return (
     <div>
@@ -28,16 +27,10 @@ export default function BasicModal({ open, handleClose, playlist_id }: ModalProp
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
+        aria-describedby="modal-modal-description">
+
         <Box sx={style}>
           <BarGraphContainer playlist_id={playlist_id}/>
-          {/* <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography> */}
-          {/* <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography> */}
         </Box>
       </Modal>
     </div>

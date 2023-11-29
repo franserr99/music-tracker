@@ -3,6 +3,7 @@ import BarChart from "./BarGraph";
 
 
 export default async function BarGraphContainer(props: {playlist_id:string}) {
+    console.log(props.playlist_id)
 
     // Some dimensions for the word cloud
     const width = 700;
@@ -11,8 +12,8 @@ export default async function BarGraphContainer(props: {playlist_id:string}) {
     const body= {
         'playlist_id':props.playlist_id
     }
-    const response = await fetch('/api/playlist', {
-        method:"POST","cache":"no-cache",body: JSON.stringify({"playlist_id":props.playlist_id})
+    const response = await fetch('http://localhost:3000/api/playlist', { cache:"no-cache",
+        method:"POST",body: JSON.stringify({"playlist_id":props.playlist_id})
     })
     const jsonData = await response.json()
     // Render your component with the fetched data

@@ -1,3 +1,5 @@
+import { NextResponse } from "next/server";
+
 export async function POST(request: Request){
     const body = await request.json()
     const playlist_id = body.playlist_id
@@ -15,7 +17,7 @@ export async function POST(request: Request){
                 }
             });
         const data = await response.json();
-        return new Response(data) as Response;
+        return NextResponse.json(data);
 
     } catch (error) {
         console.error("Error fetching data: ", error);

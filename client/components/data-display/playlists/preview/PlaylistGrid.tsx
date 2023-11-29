@@ -17,15 +17,20 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export const PlaylistGrid: React.FC<{ playlists: PlaylistProp[], images:image_urls }> = ({ playlists, images }) => {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpen = (id:string) => {
+    setActivePlaylistId(id);
+    setOpen(true);
+
+  }
   const handleClose = () => setOpen(false);
+  const [activePlaylistId, setActivePlaylistId] = useState<string|null>(null);
   
 
   const renderPlaylistItem: RenderItemFunction<PlaylistProp> = (p) => (
   <Item>
     <PlaylistPreviewCard name = {p.name} id={p.id} description={p.description}
-     handleOpen={handleOpen} tracks={p.tracks} images={images[p.id]} created_by={p.created_by}/>
-    <BasicModal open={open} handleClose={handleClose} playlist_id={p.id}/>
+     handleOpen={()=>handleOpen(p.id)} tracks={p.tracks} images={images[p.id]} created_by={p.created_by}/>
+    {activePlaylistId === p.id && <BasicModal open={open} handleClose={handleClose} playlist_id={activePlaylistId}/>}
   </Item>
   );
     return <FullWidthGrid items={playlists} renderItem={renderPlaylistItem} />;

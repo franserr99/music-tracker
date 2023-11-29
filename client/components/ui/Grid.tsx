@@ -1,4 +1,5 @@
-import * as React from 'react';
+'use client'
+import {useState}  from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
@@ -7,7 +8,7 @@ import { GenericGridProps } from './uiDTOs';
 
 export default function FullWidthGrid<T,>({ items, renderItem }: GenericGridProps<T>) {
   const initialItemCount = 6; // only show 6 at the start
-  const [displayedItems, setDisplayedItems] = React.useState(initialItemCount);
+  const [displayedItems, setDisplayedItems] = useState(initialItemCount);
 
   // switch between expanded and shortened
   const toggleItemsView = () => {

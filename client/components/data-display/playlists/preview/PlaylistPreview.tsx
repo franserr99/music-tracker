@@ -25,13 +25,8 @@ async function getImages(playlist_ids: string[], token: string) {
             image_urls[id].push({ url: image.url, height: image.height, width: image.width })
         })
     }))
-    console.log(image_urls)
     return image_urls
 }
-
-
-
-
 
 export default async function PlaylistPreview(prop: UserProp) {
     // need a prop
@@ -40,13 +35,10 @@ export default async function PlaylistPreview(prop: UserProp) {
     const accessToken = await response.json();
     const playlist_ids = playlists.map((playlist)=> playlist.id)
     const image_urls = await getImages(playlist_ids, accessToken)
-    console.log(accessToken)
-
 
     return (
         <div>
             {playlists && image_urls && <PlaylistGrid playlists={playlists} images={image_urls}/>}
-
         </div >
     );
 

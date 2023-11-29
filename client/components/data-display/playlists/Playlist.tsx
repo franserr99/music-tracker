@@ -5,8 +5,6 @@ import TopGenresGroupBarGraphContainer from "../genre-display/bar-graph/group-ba
 import PlaylistPreview from "./preview/PlaylistPreview";
 import { UserProp } from "./PlaylistDTOs";
 export default function Playlist(prop:UserProp) {
-    console.log("hello")
-    console.log(prop.user_id)
     return (
         <div>
 
