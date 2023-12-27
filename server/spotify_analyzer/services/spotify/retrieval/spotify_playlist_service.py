@@ -50,10 +50,14 @@ class SpotifyPlaylistService:
         playlists = self.client.current_user_playlists()
         # print(playlists)
         playlist_owners = {}
+        playlist_names = {}
+        playlist_descriptions = {}
         self._process_page(playlists=playlists,
                            user_flag=user_flag,
                            playlist_idx=playlists_idx,
-                           playlist_owners=playlist_owners)
+                           playlist_owners=playlist_owners,
+                           names=playlist_names,
+                           descriptions=playlist_descriptions)
         if playlists['next']:
             token = self.token_handler.accessToken
 
@@ -66,10 +70,13 @@ class SpotifyPlaylistService:
                     playlists=playlists,
                     user_flag=user_flag,
                     playlist_idx=playlists_idx,
-                    playlist_owners=playlist_owners)
+                    playlist_owners=playlist_owners,
+                    names=playlist_names,
+                    descriptions=playlist_descriptions)
         info = get_tracks(
             self.client, self.token_handler, self.redis_data,
-            ("p", playlists_idx), True, playlist_owners
+            ("p", playlists_idx), True, playlist_owners,
+            playlist_names, playlist_descriptions
         )
         if info is None:
             return None
@@ -81,15 +88,24 @@ class SpotifyPlaylistService:
         return info
 
     def _process_page(self, playlists, user_flag,
-                      playlist_idx: List[str], playlist_owners):
+                      playlist_idx: List[str],
+                      playlist_owners, names, descriptions):
         for playlist in playlists['items']:
             me = self.client.me()['id']
             owner = playlist['owner']['id']
             id = playlist['id']
+            playlist_name = playlist['name']
+            if 'description' in playlist:
+                description = playlist['description']
+            else:
+                description = None
             if id not in self.redis_data['playlists']:
                 playlist_owners[id] = owner
+                names[id] = playlist_name
+                descriptions[id] = description
                 if (user_flag is None):
                     playlist_idx.append(id)
+
                 elif user_flag is True and me == owner:
                     # current user is already in system
                     playlist_idx.append(id)

@@ -100,12 +100,16 @@ class FullTrackData(TypedDict):
 class PlaylistData(TypedDict):
     id: str
     created_by: str
+    name: str
+    description: str
 
 
 class FullPlaylistData(TypedDict):
     playlist_id: str
     created_by: str
     tracks: List[str]
+    name: str
+    description: str
 
 
 class FavoriteTracksInfo(TypedDict):

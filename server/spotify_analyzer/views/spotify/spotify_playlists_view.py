@@ -1,6 +1,7 @@
 import traceback
 import logging
 from rest_framework import status
+from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.exceptions import APIException
@@ -16,7 +17,7 @@ logger = logging.getLogger(app_name)
 
 @method_decorator(csrf_exempt, name='dispatch')
 class SpotifyPlaylists(APIView):
-    def post(self, request, id):
+    def post(self, request: Request, id):
         user_id = id
         type = request.data.get('type')
         # created, liked, all
@@ -37,7 +38,7 @@ class SpotifyPlaylists(APIView):
                 return Response(parsedInfo)
             elif type == 'all':
                 parsedInfo = sp_playlist_service. \
-                                get_user_added_created_playlists()
+                    get_user_added_created_playlists()
 
                 pass
             else:

@@ -19,8 +19,9 @@ class PlaylistListView(ListCreateAPIView):
     # query set is the list of elements available for the operation
     def get_queryset(self):
         user_id = self.request.query_params.get('user_id', None)
+        
         if user_id is not None:
-            return Playlist.objects.filter(user_id=user_id)
+            return Playlist.objects.filter(created_by=user_id)
         return Playlist.objects.all()
 
     def perform_create(self, serializer):

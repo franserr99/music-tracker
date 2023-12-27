@@ -77,18 +77,6 @@ class Artist (models.Model):
 class Genre(models.Model):
     name = models.CharField(max_length=120, primary_key=True)
 
-
-class Image(models.Model):
-    url = models.TextField(primary_key=True)
-    height = models.IntegerField()
-    width = models.IntegerField()
-    artist = models.ForeignKey(Artist, on_delete=models.CASCADE,
-                               related_name='artist_images',
-                               null=True, blank=True)
-    album = models.ForeignKey(Album, on_delete=models.CASCADE,
-                              related_name='album_images',
-                              null=True, blank=True)
-
     # def clean(self):
     #     # Check that the Image instance is linked to
     #     #  either an artist or an album, not both.
@@ -215,6 +203,8 @@ class Playlist(models.Model):
     liked_by = models.ManyToManyField('User', related_name='liked_playlists')
     tracks = models.ManyToManyField(
         'Track', related_name='playlist_appearances')
+    name = models.TextField(null=True)
+    description = models.TextField(null=True)
 
     class Meta:
         """
@@ -224,3 +214,18 @@ class Playlist(models.Model):
             db_table: Specifies the name of the database table.
         """
         db_table = 'Playlist'
+
+
+class Image(models.Model):
+    url = models.TextField(primary_key=True)
+    height = models.IntegerField()
+    width = models.IntegerField()
+    artist = models.ForeignKey(Artist, on_delete=models.CASCADE,
+                               related_name='artist_images',
+                               null=True, blank=True)
+    album = models.ForeignKey(Album, on_delete=models.CASCADE,
+                              related_name='album_images',
+                              null=True, blank=True)
+    # playlist = models.ForeignKey(Playlist, on_delete=models.CASCADE,
+    #                           related_name='playlist',
+    #                           null=True, blank=True)

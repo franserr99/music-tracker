@@ -42,7 +42,7 @@ class UserAdmin(admin.ModelAdmin):
 # Register the Playlist model
 @admin.register(Playlist)
 class PlaylistAdmin(admin.ModelAdmin):
-    list_display = ('id', 'created_by')
+    list_display = ('id', 'created_by', 'name', 'description')
     search_fields = ('id', 'created_by__id')
 
 

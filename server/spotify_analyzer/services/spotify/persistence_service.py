@@ -9,9 +9,9 @@ import logging
 from typing import List
 
 from ...dtos.retrieval_dtos import TrackData, ArtistData, PlaylistData, \
-        AlbumData, TrackFeaturesData, ImageData, GenreData, \
-        FullTrackData, FullArtistData, FullAlbumData, UserData, \
-        FullPlaylistData
+    AlbumData, TrackFeaturesData, ImageData, GenreData, \
+    FullTrackData, FullArtistData, FullAlbumData, UserData, \
+    FullPlaylistData
 from ..core.user_service import UserService
 from ..core.track_service import TrackService
 from ..core.album_service import AlbumService
@@ -149,7 +149,9 @@ class SpotifyPlaylistPersistence:
 
     def add_playlists_to_library(self, playlists: List[FullPlaylistData]):
         playlist_dtos = [PlaylistData(id=playlist['playlist_id'],
-                                      created_by=playlist['created_by']
+                                      created_by=playlist['created_by'],
+                                      name=playlist['name'],
+                                      description=playlist['description']
                                       ) for playlist in playlists]
         for playlist in playlist_dtos:
             self.add_playlist_to_library(playlist=playlist)

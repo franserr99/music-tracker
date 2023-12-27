@@ -36,3 +36,10 @@ class CoreServices(TypedDict):
     album_service: AlbumService
     artist_service: ArtistService
     playlist_service: PlaylistService
+
+
+class TokenInfo(TypedDict):
+    refreshToken: str
+    accessToken: str
+    expires_in: int
+    user_id: str

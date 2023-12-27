@@ -15,11 +15,13 @@ user-read-recently-played playlist-read-private"
 def get_tracks(client: spotipy.Spotify,
                token_handler: SpotifyTokenHandler, redis_data: RedisData,
                source=None, with_audio=True,
-               playlist_owners=None) -> Union[FavoriteTracksInfo,
-                                              PlaylistsInfo]:
+               playlist_owners=None,
+               names=None, descriptions=None) -> Union[FavoriteTracksInfo,
+                                                       PlaylistsInfo]:
     assert token_handler.accessToken is not None
     results = process_source(
-        client, token_handler, source, playlist_owners, redis_data)
+        client, token_handler, source, playlist_owners,
+        redis_data, names, descriptions)
     if (results is None):
         print("nothing more to add")
         return None
@@ -32,7 +34,8 @@ def get_tracks(client: spotipy.Spotify,
 def process_source(client: spotipy.Spotify,
                    token_handler: SpotifyTokenHandler,
                    source, playlist_owners,
-                   redis_data: RedisData) -> \
+                   redis_data: RedisData,
+                   names=None, descriptions=None) -> \
         Tuple[Union[FavoriteTracksInfo, PlaylistsInfo], List[str]]:
     choice = source[0]
 
@@ -44,12 +47,14 @@ def process_source(client: spotipy.Spotify,
         info = PlaylistsInfo(tracks={}, albums={},
                              artists={}, playlists={},
                              images={}, users={}, genres={})
-
+        missing = []
         for playlist_id in playlists:
             tracks = client.playlist_tracks(playlist_id=playlist_id)
-            missing, track_uris = get_tracks_info(
+            missing1, track_uris = get_tracks_info(
                 tracks, choice, info, token_handler, redis_data)
             # paginate if needed
+            # print("missing after going through processing", missing)
+            missing.extend(missing1)
             if tracks['next']:
                 more_missing, more_track_uris = paginate_results(
                     tracks, info,
@@ -58,11 +63,13 @@ def process_source(client: spotipy.Spotify,
                 missing.extend(more_missing)
                 track_uris.extend(more_track_uris)
             # add playlist to info we got
+
             if playlist_id not in info['playlists'].keys():
                 info['playlists'][playlist_id] = FullPlaylistData(
                     playlist_id=playlist_id,
                     created_by=playlist_owners[playlist_id],
-                    tracks=track_uris
+                    tracks=track_uris, name=names[playlist_id],
+                    description=descriptions[playlist_id]
                 )
     elif (choice == "t"):
         info = FavoriteTracksInfo(tracks={}, albums={}, artists={},
@@ -109,14 +116,8 @@ def get_tracks_info(tracks: dict, choice: str, info: Union[FavoriteTracksInfo,
                 album_total_tracks = album['total_tracks']
                 album_name = album['name']
                 album_url = album['external_urls']['spotify']
-                print("************************")
-                print("************************")
-                print("************************")
-                print("************************")
-                print(album)
                 album_artists_uri, missing2 = get_entity_artists_info(
                     album, info, token_handler, redis_data)
-                print("here are the album artists:", album_artists_uri)
                 assert (len(album_artists_uri) > 0), \
                     "an album needs to have an artist on it"
                 missing_artist_info.extend(missing2)
@@ -142,6 +143,7 @@ def get_tracks_info(tracks: dict, choice: str, info: Union[FavoriteTracksInfo,
                         album_uri=album_uri)
 
     if choice == "p":
+        # print(missing_artist_info)
         return missing_artist_info, track_uris
     else:
         return missing_artist_info
@@ -188,6 +190,8 @@ def get_entity_artists_info(entity,
     missing = []
     for artist in entity['artists']:
         if artist['uri'] not in info['artists']:
+            # print(artist['name'],
+            #       " not in our info object, going to process it ")
             process_single_artist(artist=artist, redis_data=redis_data,
                                   info=info,
                                   missing=missing,
@@ -209,8 +213,10 @@ def process_single_artist(artist, redis_data: RedisData,
     if (entity_artists_uri is not None):
         entity_artists_uri.append(artist_uri)
     # some of this info is costly to get, only get it if we dont have it
+    # duplicated check but done for other callers
     if artist_uri not in info['artists'] and \
             artist['uri'] not in redis_data['artists']:
+        # print("not in cache and checked again it was not in info dict")
         genres = process_genres(info, artist)
 
         if 'images' in artist:
@@ -224,6 +230,7 @@ def process_single_artist(artist, redis_data: RedisData,
             # the better way to do this is having some global list
             # that gets passed back up to a higher level
             #  so they can add this logic
+            print("getting added to missin, ", artist['id'])
             missing.append(artist['id'])
         info['artists'][artist_uri] = FullArtistData(
             artist_uri=artist_uri, genres=genres,
