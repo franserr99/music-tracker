@@ -3,3 +3,9 @@ export interface GenericGridProps<T> {
   items: T[];
   renderItem: RenderItemFunction<T>;
 }
+
+export interface QuestionAnswer  {
+  question:string,
+  answer:string
+
+}

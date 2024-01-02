@@ -3,10 +3,22 @@ import {signIn, signOut, useSession} from 'next-auth/react'
 
 const NavBar = () => {
     // how we get session on client components
-    const sessionData = useSession()
-    const {data:session} = sessionData
-    if (session) {
-        console.log(sessionData)
+    const {data:session, status} = useSession()
+    if(session === undefined){
+        // session has not been fetched yet
+    }else if(session === null){
+        // failed to retrieve session
+    }else{
+        // session obj
+        console.log(session)
+    }
+
+    if (status === "loading"){
+        // we can show trivia cards on this status
+    } else if(status ==="authenticated"){
+        // 
+    }else {
+        // statis === "unauthenticated"
     }
     return (
         <nav>
@@ -22,7 +34,7 @@ const NavBar = () => {
 
             ) : (
                 <div>
-                    <button onClick={()=>signIn()}>Login/SignUp</button>
+                    <button onClick={()=>signIn('spotify',{callbackUrl:'/dashboard'})}>Login</button>
                 </div>
             )}
         </nav>
