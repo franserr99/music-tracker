@@ -34,7 +34,8 @@ const NavBar = () => {
 
             ) : (
                 <div>
-                    <button onClick={()=>signIn('spotify',{callbackUrl:'/dashboard'})}>Login</button>
+                    
+                    {/* <button onClick={()=>signIn('spotify',{callbackUrl:'/dashboard'})}>Login</button> */}
                 </div>
             )}
         </nav>

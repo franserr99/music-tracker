@@ -5,7 +5,7 @@ export interface GenericGridProps<T> {
 }
 
 export interface QuestionAnswer  {
-  question:string,
+  _id:string,
   answer:string
 
 }

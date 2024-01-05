@@ -8,12 +8,13 @@ import { QuestionAnswer } from "../uiDTOs";
 export default function LoadingScreen(props:{screens:QuestionAnswer[]}) {
     const [currentScreen, setCurrentScreen] = useState(0);
     // need this to reset the cards we got
-    const screens = props.screens as QuestionAnswer[]
+    const screens = props.screens 
 
 
     useEffect(() => {
+        console.log("Current Screen: ", currentScreen);
         // reset the cards when we went over all them
-        if (currentScreen >= screens.length - 1) {
+        if (currentScreen > screens.length - 1) {
             setCurrentScreen(0);
         }
         // change the loading screen after 10 seconds
@@ -27,7 +28,7 @@ export default function LoadingScreen(props:{screens:QuestionAnswer[]}) {
 
     function renderCurrentScreen(){
         const qna =screens[currentScreen];
-        const question = qna.question;
+        const question = qna._id;
         const answer = qna.answer;
         return <TriviaCard question={question} answer={answer}/>
 
