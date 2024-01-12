@@ -2,6 +2,7 @@ import PlaylistPreviewCard from "./PlaylistPreviewCard";
 import { PlaylistProp, image, image_urls, UserProp } from "../PlaylistDTOs"
 import { PlaylistGrid } from "./PlaylistGrid";
 import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 const getPlaylistIDs = async (user_id: string) => {
     const url = 'http://localhost:8000/playlist?user_id=' + user_id
     const response = await fetch(url);
@@ -30,10 +31,10 @@ async function getImages(playlist_ids: string[], token: string) {
 }
 
 export default async function PlaylistPreview(prop: UserProp) {
-    const session = await getServerSession()
+    const session = await getServerSession(authOptions)
 
     // need a prop
-    const playlists = await getPlaylistIDs(session?.user_id);
+    const playlists = await getPlaylistIDs(session?.user_id as string);
     const response = await fetch("http://localhost:8000/users/token/" + prop.user_id, { cache: 'no-cache' });
     const accessToken = await response.json();
     const playlist_ids = playlists.map((playlist) => playlist.id)

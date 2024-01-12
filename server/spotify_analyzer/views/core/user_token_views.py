@@ -25,10 +25,11 @@ class UserTokenView(APIView):
             # then use the user service to get the token
             user_service = UserService(User, logger)
             token_handler = SpotifyTokenHandler(
-                user_service=user_service, user_id=user_id)
-            return Response(token_handler.accessToken)
+                user_service=user_service)
+            
+            return Response(token_handler.getAccessToken(user_id))
 
         except APIException as e:
-            print(traceback.format_exc())
+            # print(traceback.format_exc())
             return Response({'error': e.detail},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)

@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import styles from "../../../styles/Dashboard.module.css"
-import Playlist from '../../components/data-display/playlists/Playlist';
+
+import Playlist from '../../../components/data-display/playlists/Playlist';
 
 interface PageProps {
   params: {
@@ -9,13 +9,15 @@ interface PageProps {
   };
 }
 const Page = ({ params }: PageProps) => {
+  
 
   return (
-    <div className={styles.dashboard}>
+    <div  >
       <Head>
         <title>Dashboard</title>
       </Head>
-      <h1>Dashboard</h1>
+
+      <h1 className='mb-5 text-center'>Dashboard</h1>
 
       <Playlist user_id={params.uid}/>
       

@@ -100,6 +100,8 @@ def get_tracks_info(tracks: dict, choice: str, info: Union[FavoriteTracksInfo,
 
         track_uri = track['uri']
         # get track info
+        # a track might belong to multiple albums do we dont stop the check if 
+        # we already found it in 
         if track_uri is not None and track_uri not in redis_data['tracks']:
             track_name = track['name']
             # handle all info in album obj

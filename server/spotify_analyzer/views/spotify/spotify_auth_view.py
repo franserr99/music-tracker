@@ -13,7 +13,7 @@ from django.utils.decorators import method_decorator
 from ...services.spotify.token_handler import SpotifyTokenHandler
 from ...services.core.user_service import UserService
 from ...models import User
-from ...dtos.service_dtos import TokenInfo
+from ...dtos.token_dtos import TokenInfo
 
 
 app_name = 'spotify_analyzer'
@@ -26,7 +26,8 @@ class SpotifyAuthCodeView(APIView):
         refreshToken = request.data.get('refreshToken')
         accessToken = request.data.get('accessToken')
         user_id = request.data.get('user_id')
-        expires_in = request.data.get('sp_expires_in')
+        expires_in = request.data.get('expires_in')
+        print(request.data)
 
         if not (accessToken and accessToken and user_id):
             return Response({'error': 'Need AccessToken, RefreshToken,\
@@ -45,12 +46,14 @@ class SpotifyAuthCodeView(APIView):
             token_handler.init_user_and_token()
 
         except APIException as e:
-            print(traceback.format_exc())
+            # print(traceback.format_exc())
             # logger.exception(f"An unexpected error occurred: {str(e)}")
             return Response({'error': e.detail},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         except Exception:
+            print(traceback.format_exc())
             return Response({'error': 'Authentication failed.'},
                             status=status.HTTP_400_BAD_REQUEST)
+
         return Response({'message': 'Successfully authenticated'},
                         status=status.HTTP_200_OK)

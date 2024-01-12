@@ -18,7 +18,7 @@ export default function Login() {
     const handleSignIn = async (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault()
         setIsProcessing(true);
-        await signIn('spotify', {callbackUrl:"/", redirect:false})
+        await signIn('spotify', {callbackUrl:`/${session?.user_id}`, redirect:false})
     };
     const fetchData = async()=>{
         const response = await fetch("/api/trivia/qna");
@@ -43,24 +43,23 @@ export default function Login() {
 
 
     return (
-        <div>
+        <div className="flex flex-col grow overscroll-contain items-center justify-center bg-gray-50">
+            {/* here you can you put different images, etc to showcase the kind of data that you can present */}
             {showTrivia && triviaData && <LoadingScreen screens={triviaData} />}
-
             {session ? (
                 
-                <div>
+                <div >
+                    <p className="text-xl mb-4 text-gray-700">Welcome, {session?.user?.name}</p>
                     {/** links unique to being signed in */}
-                    {session?.user?.name}
                     <br />
                     <button onClick={()=>signOut()}>Logout</button>
                 </div>
 
-            ) : (
-                <div>
-                    <Button onClick={handleSignIn} text="Login"/>
+            ) : (!showTrivia)  ? (
+                <div className="shadow-lg p-2 bg-white rounded-lg" >
+                    <Button onClick={handleSignIn} text="Login with Spotify"/>
                 </div>
-            )}
-            
+            ): null}
         </div>
     );
 }

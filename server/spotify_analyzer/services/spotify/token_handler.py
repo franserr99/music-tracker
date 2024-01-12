@@ -1,10 +1,11 @@
 
+from typing import Optional
 import spotipy
 from ..core.user_service import UserService
 import requests
 
 from ...dtos.retrieval_dtos import UserData
-from ...dtos.service_dtos import TokenInfo
+from ...dtos.token_dtos import TokenInfo
 from rest_framework.exceptions import APIException
 
 import time
@@ -28,39 +29,43 @@ class SpotifyTokenHandler:
 
     """
 
-    def __init__(self, user_service: UserService, token_info: TokenInfo):
+    def __init__(self, user_service: UserService,
+                 token_info: Optional[TokenInfo] = None):
         # TODO:i need to set some of these things as enviormental variables
         # before i try to run these
         # i need my client id etc to be there
         self.user_service = user_service
         # self.user_id = user_id
-        self.token_info = token_info
+        if token_info is not None:
+            self.token_info = token_info
     # main function clients will call
     # other functions are more tightly coupled,
     # but you can data prep and pass into them
 
     def init_user_and_token(self):
-        user_id = self.token_info['user_id']
-        refreshToken = self.token_info['refreshToken']
-        accessToken = self.token_info['accessToken']
-        expires_in = self.token_info['expires_in']
+        if hasattr(self, 'token_info'):
 
-        if (refreshToken and accessToken):
-            user = self.user_service.get_user(user_id=user_id)
-            if user is None:
-                user_data = UserData(id=user_id)
-                user = self.user_service.create_user(user_data=user_data)
-            self.accessToken = accessToken
-            # self.client = spotipy.Spotify(auth=self.accessToken)
-            now = int(time.time())
-            expires_at = now + int(expires_in)
-            self.saveTokenInfo(user_id, accessToken, expires_at, refreshToken)
-        else:
-            accessToken = self.getAccessToken(user_id=user_id)
-            self.accessToken = accessToken
-            # self.client = spotipy.Spotify(auth=self.accessToken)
-            if accessToken is None:
-                raise Exception  # let fe know something went wrong, try again
+            user_id = self.token_info['user_id']
+            refreshToken = self.token_info['refreshToken']
+            accessToken = self.token_info['accessToken']
+            expires_in = self.token_info['expires_in']
+
+            if (refreshToken and accessToken):
+                user = self.user_service.get_user(user_id=user_id)
+                if user is None:
+                    user_data = UserData(id=user_id)
+                    user = self.user_service.create_user(user_data=user_data)
+                self.accessToken = accessToken
+                now = int(time.time())
+                expires_at = now + int(expires_in)
+                self.saveTokenInfo(user_id, accessToken,
+                                   expires_at, refreshToken)
+            else:
+                accessToken = self.getAccessToken(user_id=user_id)
+                self.accessToken = accessToken
+                # self.client = spotipy.Spotify(auth=self.accessToken)
+                if accessToken is None:
+                    raise Exception  # let fe know something went wrong, try again
 
     def getAccessToken(self, user_id: str, auth_code=None):
         user = self.user_service.get_user(user_id=user_id)
@@ -112,8 +117,8 @@ class SpotifyTokenHandler:
         url = 'https://accounts.spotify.com/api/token'
         response = requests.post(url=url, data=body, headers=headers)
         token_info = response.json()
-        print("printing the response after using refresh token:")
-        print(token_info)
+        # print("printing the response after using refresh token:")
+        # print(token_info)
         if (response.ok):
             accessToken = token_info['access_token']
             if 'refresh_token' in token_info:
@@ -126,10 +131,9 @@ class SpotifyTokenHandler:
             self.saveTokenInfo(user_id, accessToken, expires_at, refreshToken)
             return accessToken
         else:
-            print("bad response!!!!")
             if token_info['error'] == 'invalid_grant':
                 # let the front end know to put them through the process again
-                raise APIException("Bad response when getting access token")
+                raise APIException("Refresh token probably not valid anymore")
 
     def saveTokenInfo(self, user_id, accessToken, expires_at, refreshToken):
         if (accessToken):

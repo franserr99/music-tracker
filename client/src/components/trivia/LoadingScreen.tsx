@@ -10,7 +10,6 @@ export default function LoadingScreen(props:{screens:QuestionAnswer[]}) {
     // need this to reset the cards we got
     const screens = props.screens 
 
-
     useEffect(() => {
         console.log("Current Screen: ", currentScreen);
         // reset the cards when we went over all them
@@ -33,8 +32,5 @@ export default function LoadingScreen(props:{screens:QuestionAnswer[]}) {
         return <TriviaCard question={question} answer={answer}/>
 
     }
-
-    return <div>{renderCurrentScreen()}</div>;
-
-
+    return renderCurrentScreen();
 }
