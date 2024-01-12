@@ -10,7 +10,6 @@ const getPlaylistIDs = async (user_id: string) => {
     return data
 }
 
-
 async function getImages(playlist_ids: string[], token: string) {
     const image_urls = {} as image_urls
     await Promise.all(playlist_ids.map(async (id) => {
