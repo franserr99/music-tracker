@@ -70,7 +70,7 @@ export default function BarChart({ width, height, data, events = false }: BarCha
     <svg width={width} height={height}>
       <GradientTealBlue id="teal" /> 
       {/* create a rect same dim as the svg */}
-      <rect width={width} height={height} fill="url(#teal)" rx={14} />
+      <rect width={width} height={height} fill="#003f5c" rx={14} />
       {/* group positions the group of bars within the svg */}
       <Group top={verticalMargin / 4}>
         {/* iterate over each filtered key/value */}
@@ -89,7 +89,7 @@ export default function BarChart({ width, height, data, events = false }: BarCha
                 y={barY}
                 width={barWidth}
                 height={barHeight}
-                fill="rgba(23, 233, 217, .5)"
+                fill="rgba(0, 0, 0, .7)"
                 onClick={() => {
                   if (events) alert(`clicked: ${key} - ${value}`);
                 }}
