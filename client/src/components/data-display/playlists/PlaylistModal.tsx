@@ -26,32 +26,36 @@ export default function BasicModal({ open, handleClose, playlist_id }: ModalProp
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   useLayoutEffect(() => {
+    console.log("open is ", open)
+    console.log(containerRef.current)
     const getDimensions = () => {
-      if (open && containerRef.current) {
+      if (containerRef.current && open) {
 
-        setDimensions({
-          width: containerRef.current.offsetWidth,
-          height: containerRef.current.offsetHeight
-        });
+        const newWidth = containerRef.current.offsetWidth;
+        const newHeight = containerRef.current.offsetHeight;
+
+        // Only update state if dimensions have actually changed
+        if (dimensions.width !== newWidth || dimensions.height !== newHeight) {
+          setDimensions({ width: newWidth, height: newHeight });
+        }
       }
     }
+    getDimensions()
 
     window.addEventListener("resize", getDimensions)
-    window.addEventListener("load", getDimensions)
-
+    // window.addEventListener("load", getDimensions)
     console.log("inside of useEffect")
     console.log(dimensions)
-    console.log(containerRef?.current?.offsetWidth,containerRef?.current?.offsetHeight )
+    console.log(containerRef?.current?.offsetWidth, containerRef?.current?.offsetHeight)
 
-    return () => { 
+    return () => {
       window.removeEventListener("resize", getDimensions);
-      window.removeEventListener("load", getDimensions);
-     }
-  }, [containerRef.current, open]);
+      // window.removeEventListener("load", getDimensions);
+    }
+
+  }, [open]);
 
   console.log(dimensions.width, dimensions.height)
-  const width = 700;
-  const height = 500;
 
   return (
     <div >
@@ -61,27 +65,10 @@ export default function BasicModal({ open, handleClose, playlist_id }: ModalProp
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description">
         <Box sx={style} ref={containerRef}>
-          {<BarGraphContainer playlist_id={playlist_id} width={dimensions.width} height={dimensions.height} />}
+          {/* {dimensions.width>0 && dimensions.height>0 && <BarGraphContainer playlist_id={playlist_id} width={dimensions.width} height={dimensions.height} />} */}
+          <BarGraphContainer playlist_id={playlist_id} width={dimensions.width} height={dimensions.height} />
         </Box>
       </Modal>
     </div>
   );
 }
-
-
-// useEffect(() => {
-//   updateDimensions();
-//   window.addEventListener('resize', updateDimensions); // Update on window resize
-
-//   return () => {
-//     window.removeEventListener('resize', updateDimensions); // Clean up listener
-//   };
-// }, []);
-//   useLayoutEffect(() => {
-//     updateDimensions();
-//     window.addEventListener('resize', updateDimensions);
-
-//     return () => {
-//         window.removeEventListener('resize', updateDimensions);
-//     };
-// }, []); // Empty dependency array

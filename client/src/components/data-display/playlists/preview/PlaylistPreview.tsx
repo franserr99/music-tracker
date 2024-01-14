@@ -31,6 +31,7 @@ async function getImages(playlist_ids: string[], token: string) {
 
 export default async function PlaylistPreview(prop: UserProp) {
     const session = await getServerSession(authOptions)
+    console.log(session?.user_id)
 
     // need a prop
     const playlists = await getPlaylistIDs(session?.user_id as string);
