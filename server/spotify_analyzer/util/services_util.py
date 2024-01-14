@@ -17,6 +17,7 @@ from ..services.spotify.persistence_service\
 from ..dtos.service_dtos import Services, CoreServices
 from ..services.spotify.token_handler import SpotifyTokenHandler
 from ..services.core.track_features_service import TrackFeaturesService
+from spotipy import Spotify
 
 scope = "user-library-read user-read-playback-position user-top-read \
 user-read-recently-played playlist-read-private"
@@ -25,11 +26,15 @@ user-read-recently-played playlist-read-private"
 def init_all_services(user_id, logger, redis_data) -> Services:
     user_service = UserService(user_model=User, logger=logger)
     token_handler = SpotifyTokenHandler(
-        user_service=user_service, user_id=user_id)
-    sp_favorites_service = SpotifyFavoritesService(client=token_handler.client,
+        user_service=user_service)
+    
+    accessToken = token_handler.getAccessToken(user_id=user_id)
+    token_handler.accessToken = accessToken
+    sp_client = Spotify(accessToken)
+    sp_favorites_service = SpotifyFavoritesService(client=sp_client,
                                                    token_handler=token_handler,
                                                    redis_data=redis_data)
-    sp_playlist_service = SpotifyPlaylistService(client=token_handler.client,
+    sp_playlist_service = SpotifyPlaylistService(client=sp_client,
                                                  token_handler=token_handler,
                                                  redis_data=redis_data)
 

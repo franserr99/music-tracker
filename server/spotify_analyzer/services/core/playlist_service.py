@@ -16,6 +16,7 @@ from ...models import Playlist
 from .user_service import UserService
 from ...dtos.retrieval_dtos import PlaylistData
 from .track_service import TrackService
+import traceback
 
 
 class PlaylistService:
@@ -43,7 +44,10 @@ class PlaylistService:
                 playlist, created = self.playlist_model.objects.get_or_create(
                     **payload)
                 return playlist
-        except Exception:
+        except Exception as e:
+            # print(e.with_traceback())
+            print(traceback.format_exc())
+
             self.logger.info("Error when trying to create the playlist")
     # def bulk_create_playlists(self, playlist_dtos: List[PlaylistData]):
     #     playlist_data = []

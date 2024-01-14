@@ -274,6 +274,8 @@ def get_chunk_of_missing_artists(missing_chunk: List[str],
                                  token_handler: SpotifyTokenHandler,
                                  info: Union[FavoriteTracksInfo,
                                              PlaylistsInfo]):
+    if len(missing_chunk) == 0:
+        return
     ids = ','.join(missing_chunk)
     url = f'https://api.spotify.com/v1/artists?ids={ids}'
     res = requests.get(url=url, headers={

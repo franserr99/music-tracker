@@ -15,11 +15,11 @@ class PlaylistStats(APIView):
     def post(self, request, id):
         playlist_id = id
         type = request.data.get('type')
+        print("playlist gotten by backend",playlist_id)
         try:
             if type == 'wordmap' or type == 'bar-chart':
                 genre_count = playlist_genres(playlist_id)
                 return Response(genre_count)
-
             else:
                 return Response("More options not implemented yet")
 

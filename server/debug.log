@@ -12848,3 +12848,934 @@ INFO 2023-11-13 02:03:21,770 autoreload autoreload.py 668 Watching for file chan
 INFO 2023-11-13 02:03:21,770 autoreload autoreload.py 668 Watching for file changes with StatReloader
 INFO 2023-11-13 02:03:29,480 user_service user_service.py 61 User does not exist
 INFO 2023-11-13 02:03:29,480 user_service user_service.py 61 User does not exist
+INFO 2024-01-13 07:40:31,498 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 07:40:31,498 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 07:45:08,575 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 07:45:08,575 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 07:46:41,156 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 07:46:41,156 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 07:47:32,124 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 07:47:32,124 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2024-01-13 07:48:32,325 log log.py 241 Internal Server Error: /users/token/franserr/
+ERROR 2024-01-13 07:48:32,325 log log.py 241 Internal Server Error: /users/token/franserr/
+ERROR 2024-01-13 07:48:36,494 log log.py 241 Internal Server Error: /users/token/franserr/
+ERROR 2024-01-13 07:48:36,494 log log.py 241 Internal Server Error: /users/token/franserr/
+ERROR 2024-01-13 07:48:44,999 log log.py 241 Internal Server Error: /users/token/franserr/
+ERROR 2024-01-13 07:48:44,999 log log.py 241 Internal Server Error: /users/token/franserr/
+WARNING 2024-01-13 07:49:13,450 log log.py 241 Not Found: /favicon.ico
+WARNING 2024-01-13 07:49:13,450 log log.py 241 Not Found: /favicon.ico
+ERROR 2024-01-13 07:50:28,381 log log.py 241 Internal Server Error: /users/token/franserr/
+ERROR 2024-01-13 07:50:28,381 log log.py 241 Internal Server Error: /users/token/franserr/
+ERROR 2024-01-13 07:50:55,113 log log.py 241 Internal Server Error: /users/token/franserr/
+ERROR 2024-01-13 07:50:55,113 log log.py 241 Internal Server Error: /users/token/franserr/
+ERROR 2024-01-13 07:51:42,538 log log.py 241 Internal Server Error: /users/token/franserr/
+ERROR 2024-01-13 07:51:42,538 log log.py 241 Internal Server Error: /users/token/franserr/
+ERROR 2024-01-13 07:54:06,838 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py", line 26, in post
+    services = init_all_services(user_id, logger, redis_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py", line 27, in init_all_services
+    token_handler = SpotifyTokenHandler(
+                    ^^^^^^^^^^^^^^^^^^^^
+TypeError: SpotifyTokenHandler.__init__() got an unexpected keyword argument 'user_id'
+ERROR 2024-01-13 07:54:06,838 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py", line 26, in post
+    services = init_all_services(user_id, logger, redis_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py", line 27, in init_all_services
+    token_handler = SpotifyTokenHandler(
+                    ^^^^^^^^^^^^^^^^^^^^
+TypeError: SpotifyTokenHandler.__init__() got an unexpected keyword argument 'user_id'
+ERROR 2024-01-13 07:54:56,646 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py", line 26, in post
+    services = init_all_services(user_id, logger, redis_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py", line 27, in init_all_services
+    token_handler = SpotifyTokenHandler(
+                    ^^^^^^^^^^^^^^^^^^^^
+TypeError: SpotifyTokenHandler.__init__() got an unexpected keyword argument 'user_id'
+ERROR 2024-01-13 07:54:56,646 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py", line 26, in post
+    services = init_all_services(user_id, logger, redis_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py", line 27, in init_all_services
+    token_handler = SpotifyTokenHandler(
+                    ^^^^^^^^^^^^^^^^^^^^
+TypeError: SpotifyTokenHandler.__init__() got an unexpected keyword argument 'user_id'
+INFO 2024-01-13 07:56:37,483 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py changed, reloading.
+INFO 2024-01-13 07:56:37,483 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py changed, reloading.
+INFO 2024-01-13 07:56:38,124 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 07:56:38,124 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2024-01-13 07:56:40,383 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py", line 26, in post
+    services = init_all_services(user_id, logger, redis_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py", line 29, in init_all_services
+    sp_favorites_service = SpotifyFavoritesService(client=token_handler.client,
+                                                          ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SpotifyTokenHandler' object has no attribute 'client'
+ERROR 2024-01-13 07:56:40,383 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py", line 26, in post
+    services = init_all_services(user_id, logger, redis_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py", line 29, in init_all_services
+    sp_favorites_service = SpotifyFavoritesService(client=token_handler.client,
+                                                          ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SpotifyTokenHandler' object has no attribute 'client'
+INFO 2024-01-13 07:58:22,008 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py changed, reloading.
+INFO 2024-01-13 07:58:22,008 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py changed, reloading.
+INFO 2024-01-13 07:58:22,663 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 07:58:22,663 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2024-01-13 07:58:25,427 client client.py 288 HTTP Error for GET to https://api.spotify.com/v1/me/playlists with Params: {'limit': 50, 'offset': 0} returned 401 due to No token provided
+ERROR 2024-01-13 07:58:25,469 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/spotipy/client.py", line 271, in _internal_call
+    response.raise_for_status()
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://api.spotify.com/v1/me/playlists?limit=50&offset=0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py", line 30, in post
+    sp_playlist_service.get_user_created_playlists()
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py", line 22, in get_user_created_playlists
+    info = self._begin_build(user_flag=True, with_audio=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py", line 50, in _begin_build
+    playlists = self.client.current_user_playlists()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/spotipy/client.py", line 637, in current_user_playlists
+    return self._get("me/playlists", limit=limit, offset=offset)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/spotipy/client.py", line 323, in _get
+    return self._internal_call("GET", url, payload, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/spotipy/client.py", line 293, in _internal_call
+    raise SpotifyException(
+spotipy.exceptions.SpotifyException: http status: 401, code:-1 - https://api.spotify.com/v1/me/playlists?limit=50&offset=0:
+ No token provided, reason: None
+ERROR 2024-01-13 07:58:25,469 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/spotipy/client.py", line 271, in _internal_call
+    response.raise_for_status()
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://api.spotify.com/v1/me/playlists?limit=50&offset=0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py", line 30, in post
+    sp_playlist_service.get_user_created_playlists()
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py", line 22, in get_user_created_playlists
+    info = self._begin_build(user_flag=True, with_audio=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py", line 50, in _begin_build
+    playlists = self.client.current_user_playlists()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/spotipy/client.py", line 637, in current_user_playlists
+    return self._get("me/playlists", limit=limit, offset=offset)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/spotipy/client.py", line 323, in _get
+    return self._internal_call("GET", url, payload, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/spotipy/client.py", line 293, in _internal_call
+    raise SpotifyException(
+spotipy.exceptions.SpotifyException: http status: 401, code:-1 - https://api.spotify.com/v1/me/playlists?limit=50&offset=0:
+ No token provided, reason: None
+INFO 2024-01-13 08:01:41,758 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py changed, reloading.
+INFO 2024-01-13 08:01:41,758 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py changed, reloading.
+INFO 2024-01-13 08:01:42,439 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 08:01:42,439 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 08:01:49,903 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py changed, reloading.
+INFO 2024-01-13 08:01:49,903 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py changed, reloading.
+INFO 2024-01-13 08:01:50,561 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 08:01:50,561 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2024-01-13 08:01:57,368 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+ERROR 2024-01-13 08:01:57,368 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+ERROR 2024-01-13 08:03:23,869 log log.py 241 Internal Server Error: /users/token/franserr/
+ERROR 2024-01-13 08:03:23,869 log log.py 241 Internal Server Error: /users/token/franserr/
+ERROR 2024-01-13 08:03:48,825 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py", line 30, in post
+    sp_playlist_service.get_user_created_playlists()
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py", line 22, in get_user_created_playlists
+    info = self._begin_build(user_flag=True, with_audio=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py", line 62, in _begin_build
+    token = self.token_handler.accessToken
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SpotifyTokenHandler' object has no attribute 'accessToken'. Did you mean: 'getAccessToken'?
+ERROR 2024-01-13 08:03:48,825 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py", line 30, in post
+    sp_playlist_service.get_user_created_playlists()
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py", line 22, in get_user_created_playlists
+    info = self._begin_build(user_flag=True, with_audio=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py", line 62, in _begin_build
+    token = self.token_handler.accessToken
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SpotifyTokenHandler' object has no attribute 'accessToken'. Did you mean: 'getAccessToken'?
+INFO 2024-01-13 08:05:57,874 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py changed, reloading.
+INFO 2024-01-13 08:05:57,874 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py changed, reloading.
+INFO 2024-01-13 08:05:58,510 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 08:05:58,510 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 08:06:03,753 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py changed, reloading.
+INFO 2024-01-13 08:06:03,753 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/services_util.py changed, reloading.
+INFO 2024-01-13 08:06:04,281 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 08:06:04,281 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 08:06:40,781 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,781 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,783 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,783 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,785 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,785 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,787 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,787 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,788 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,788 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,790 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,790 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,792 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,792 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,793 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,793 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,795 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,795 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,797 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,797 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,798 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,798 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,800 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,800 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,802 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,802 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,804 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,804 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,806 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,806 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,807 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,807 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,809 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,809 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,811 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:06:40,811 playlist_service playlist_service.py 47 Error when trying to create the playlist
+INFO 2024-01-13 08:11:47,886 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/core/playlist_service.py changed, reloading.
+INFO 2024-01-13 08:11:47,886 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/core/playlist_service.py changed, reloading.
+INFO 2024-01-13 08:11:48,614 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 08:11:48,614 autoreload autoreload.py 668 Watching for file changes with StatReloader
+ERROR 2024-01-13 08:12:23,776 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+spotify_analyzer.models.Playlist.DoesNotExist: Playlist matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: UNIQUE constraint failed: Playlist.id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/core/playlist_service.py", line 43, in create_playlist
+    playlist, created = self.playlist_model.objects.get_or_create(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: UNIQUE constraint failed: Playlist.id
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py", line 31, in post
+    persist_retrived_data(services, parsedInfo, user_id=user_id)
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/persistence_util.py", line 38, in persist_retrived_data
+    persistence.playlist.add_playlists_to_library(playlists)
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/persistence_service.py", line 157, in add_playlists_to_library
+    self.add_playlist_to_library(playlist=playlist)
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/persistence_service.py", line 148, in add_playlist_to_library
+    self.playlist_service.create_playlist(playlist_data=playlist)
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/core/playlist_service.py", line 47, in create_playlist
+    print(e.with_traceback())
+          ^^^^^^^^^^^^^^^^^^
+TypeError: BaseException.with_traceback() takes exactly one argument (0 given)
+ERROR 2024-01-13 08:12:23,776 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+spotify_analyzer.models.Playlist.DoesNotExist: Playlist matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: UNIQUE constraint failed: Playlist.id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/core/playlist_service.py", line 43, in create_playlist
+    playlist, created = self.playlist_model.objects.get_or_create(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: UNIQUE constraint failed: Playlist.id
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py", line 31, in post
+    persist_retrived_data(services, parsedInfo, user_id=user_id)
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/persistence_util.py", line 38, in persist_retrived_data
+    persistence.playlist.add_playlists_to_library(playlists)
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/persistence_service.py", line 157, in add_playlists_to_library
+    self.add_playlist_to_library(playlist=playlist)
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/persistence_service.py", line 148, in add_playlist_to_library
+    self.playlist_service.create_playlist(playlist_data=playlist)
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/core/playlist_service.py", line 47, in create_playlist
+    print(e.with_traceback())
+          ^^^^^^^^^^^^^^^^^^
+TypeError: BaseException.with_traceback() takes exactly one argument (0 given)
+INFO 2024-01-13 08:13:21,528 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/core/playlist_service.py changed, reloading.
+INFO 2024-01-13 08:13:21,528 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/core/playlist_service.py changed, reloading.
+INFO 2024-01-13 08:13:22,227 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 08:13:22,227 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 08:13:30,602 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/core/playlist_service.py changed, reloading.
+INFO 2024-01-13 08:13:30,602 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/core/playlist_service.py changed, reloading.
+INFO 2024-01-13 08:13:31,124 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 08:13:31,124 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 08:14:08,711 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,711 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,714 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,714 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,717 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,717 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,720 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,720 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,724 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,724 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,727 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,727 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,730 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,730 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,733 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,733 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,736 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,736 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,739 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,739 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,743 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,743 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,747 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,747 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,750 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,750 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,753 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,753 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,756 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,756 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,759 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,759 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,762 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,762 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,765 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:14:08,765 playlist_service playlist_service.py 51 Error when trying to create the playlist
+WARNING 2024-01-13 08:14:49,096 log log.py 241 Not Found: /favicon.ico
+WARNING 2024-01-13 08:14:49,096 log log.py 241 Not Found: /favicon.ico
+WARNING 2024-01-13 08:24:23,070 log log.py 241 Not Found: /favicon.ico
+WARNING 2024-01-13 08:24:23,070 log log.py 241 Not Found: /favicon.ico
+INFO 2024-01-13 08:35:27,834 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,834 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,839 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,839 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,842 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,842 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,845 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,845 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,849 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,849 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,853 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,853 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,856 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,856 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,859 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,859 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,862 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,862 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,865 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,865 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,868 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,868 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,871 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,871 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,874 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,874 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,877 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,877 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,880 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,880 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,884 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,884 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,887 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,887 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,890 playlist_service playlist_service.py 51 Error when trying to create the playlist
+INFO 2024-01-13 08:35:27,890 playlist_service playlist_service.py 51 Error when trying to create the playlist
+ERROR 2024-01-13 08:38:37,268 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py", line 30, in post
+    sp_playlist_service.get_user_created_playlists()
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py", line 22, in get_user_created_playlists
+    info = self._begin_build(user_flag=True, with_audio=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py", line 76, in _begin_build
+    info = get_tracks(
+           ^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py", line 30, in get_tracks
+    get_missing_artist_info(missing, token_handler, info)
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py", line 270, in get_missing_artist_info
+    get_chunk_of_missing_artists(missing_chunk, token_handler, info)
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py", line 282, in get_chunk_of_missing_artists
+    for artist in res['artists']:
+                  ~~~^^^^^^^^^^^
+KeyError: 'artists'
+ERROR 2024-01-13 08:38:37,268 log log.py 241 Internal Server Error: /spotify/users/franserr/playlists
+Traceback (most recent call last):
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django_injector/apps.py", line 169, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/franserr/opt/anaconda3/envs/tracker/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/spotify/spotify_playlists_view.py", line 30, in post
+    sp_playlist_service.get_user_created_playlists()
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py", line 22, in get_user_created_playlists
+    info = self._begin_build(user_flag=True, with_audio=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/services/spotify/retrieval/spotify_playlist_service.py", line 76, in _begin_build
+    info = get_tracks(
+           ^^^^^^^^^^^
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py", line 30, in get_tracks
+    get_missing_artist_info(missing, token_handler, info)
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py", line 270, in get_missing_artist_info
+    get_chunk_of_missing_artists(missing_chunk, token_handler, info)
+  File "/Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py", line 282, in get_chunk_of_missing_artists
+    for artist in res['artists']:
+                  ~~~^^^^^^^^^^^
+KeyError: 'artists'
+INFO 2024-01-13 08:40:22,165 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2024-01-13 08:40:22,165 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2024-01-13 08:40:22,879 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 08:40:22,879 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 08:40:26,134 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2024-01-13 08:40:26,134 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/util/parse_results_util.py changed, reloading.
+INFO 2024-01-13 08:40:26,681 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-13 08:40:26,681 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-14 01:06:22,437 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/stats/playlist_stats_view.py changed, reloading.
+INFO 2024-01-14 01:06:22,437 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/stats/playlist_stats_view.py changed, reloading.
+INFO 2024-01-14 01:06:23,106 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-14 01:06:23,106 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-14 01:06:54,204 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/stats/playlist_stats_view.py changed, reloading.
+INFO 2024-01-14 01:06:54,204 autoreload autoreload.py 266 /Users/franserr/Documents/port/new-portfolio/tracker/server/spotify_analyzer/views/stats/playlist_stats_view.py changed, reloading.
+INFO 2024-01-14 01:06:54,872 autoreload autoreload.py 668 Watching for file changes with StatReloader
+INFO 2024-01-14 01:06:54,872 autoreload autoreload.py 668 Watching for file changes with StatReloader
