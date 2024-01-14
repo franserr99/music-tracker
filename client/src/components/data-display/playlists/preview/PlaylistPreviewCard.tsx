@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import { CardActionArea, Checkbox } from '@mui/material';
 import { PlaylistCardProp } from '../PlaylistDTOs';
 
 // test this later
@@ -15,8 +15,8 @@ import { PlaylistCardProp } from '../PlaylistDTOs';
 export default function PlaylistPreviewCard(prop: PlaylistCardProp) {
 
     return (
-        <Card sx={{ maxWidth: 345 }} onClick={prop.handleOpen}>
-          <CardActionArea >
+        <Card sx={{ maxWidth: 345, }} onClick={prop.handleOpen}>
+          <CardActionArea>
             <CardMedia
               component="img"
               height="120"

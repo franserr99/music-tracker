@@ -22,6 +22,7 @@ export type ModalProps = {
     open: boolean;
     handleClose: handleCloseFunction;
     playlist_id:string;
+    name:string;
 }
 export type handleOpenFunction = () =>void;
 

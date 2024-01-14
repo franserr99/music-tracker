@@ -23,16 +23,17 @@ export default function BarChart({ width, height, data, events = false }: BarCha
   // get an arr of the values, spread it over Math.max 
   const maxCount = useMemo(() => Math.max(...Object.values(data)), [data]);
   // define the threshold
-  const threshold = maxCount * 0.1;
+  // play with this number
+  const threshold = maxCount * 0.3;
   // filter the dataEntries to those above the threshold
   const filteredDataEntries = useMemo(() => dataEntries.filter(
                                   ([, value]) => value >= threshold
                                   ), [dataEntries, threshold]);
 
-  const verticalMargin = 120;
+  const verticalMargin = 150;
 
   // bounds
-  const xMax = width;
+  const xMax = width-10;
   const yMax = height - verticalMargin;
 
   // handles scaling for the num of entities we want to visualize
@@ -42,11 +43,12 @@ export default function BarChart({ width, height, data, events = false }: BarCha
     // domain is the set of inputs (category names)
     // range is the amount of visual space alloted for the visualization
       scaleBand<string>({
-        range: [0, xMax],
+        // add to the lower x bound, i want to push elements to the right
+        range: [0+10, xMax],
         round: true,
         // get key arr
         domain: filteredDataEntries.map(([key,]) => key),
-        padding: 0.4,
+        padding: 0.6,
       }),
     [xMax, filteredDataEntries],
   );
@@ -64,6 +66,7 @@ export default function BarChart({ width, height, data, events = false }: BarCha
       }),
     [yMax, filteredDataEntries],
   );
+  const raiseAmount = 15;
   // if width of chart is less than 10 pixels, dont render
   return width < 10 ? null : (
     // svg element
@@ -72,14 +75,14 @@ export default function BarChart({ width, height, data, events = false }: BarCha
       {/* create a rect same dim as the svg */}
       <rect width={width} height={height} fill="#003f5c" rx={14} />
       {/* group positions the group of bars within the svg */}
-      <Group top={verticalMargin / 4}>
+      <Group top={verticalMargin / 6}>
         {/* iterate over each filtered key/value */}
         {filteredDataEntries.map(([key, value]) => {
           {/* compute the bar width/height and the x/y coordinates for the bar */}
           const barWidth = xScale.bandwidth();
           const barHeight = yMax - (yScale(value) ?? 0);
           const barX = xScale(key);
-          const barY = yMax - barHeight;
+          const barY = yMax - barHeight-raiseAmount;
           {/* wrap in a group to contain all graphical elements */}
           return (
             <Group key={`bar-group-${key}`}>
