@@ -3,6 +3,7 @@ import {useState}  from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import { MdExpandMore,MdExpandLess} from "react-icons/md";
 
 import { GenericGridProps } from '../uiDTOs';
 
@@ -20,7 +21,7 @@ export default function FullWidthGrid<T,>({ items, renderItem }: GenericGridProp
   };
 
   // button text depending on if they have expanded or not
-  const buttonText = displayedItems === initialItemCount ? 'See More' : 'Show Less';
+  const buttonText = displayedItems === initialItemCount ? <MdExpandMore size="3em" /> : <MdExpandLess size="3em"/>;
 
   return (
     <Box sx={{ flexGrow: 1 }}>

@@ -2,6 +2,7 @@
 import { signOut, useSession } from 'next-auth/react'
 import { useState } from 'react';
 import { CiMenuBurger } from "react-icons/ci";
+import { IoMenu } from "react-icons/io5";
 import { HiMiniXMark } from "react-icons/hi2";
 
 const Header = () => {
@@ -44,7 +45,7 @@ const Header = () => {
             ) : (
               <div>
                 <button onClick={handleClick}>
-                  <CiMenuBurger size="1.5em" />
+                  <IoMenu size="1.5em" />
                 </button>
               </div>
             )

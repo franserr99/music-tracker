@@ -40,6 +40,8 @@ export default async function PlaylistPreview(prop: UserProp) {
     const playlist_ids = playlists.map((playlist) => playlist.id)
     const image_urls = await getImages(playlist_ids, accessToken)
 
+    
+
     return (
         <div>
             {playlists && image_urls && <PlaylistGrid playlists={playlists} images={image_urls} />}

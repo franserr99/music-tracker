@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import FullWidthGrid from "../../../layout/Grid";
@@ -7,6 +7,7 @@ import { PlaylistCardProp, PlaylistProp, image, image_urls } from "../PlaylistDT
 import { RenderItemFunction } from '../../../uiDTOs';
 import PlaylistPreviewCard from './PlaylistPreviewCard';
 import BasicModal from '../PlaylistModal';
+// import TopGenresGroupBarGraphContainer from "@/com"
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
@@ -24,15 +25,18 @@ export const PlaylistGrid: React.FC<{ playlists: PlaylistProp[], images: image_u
   const [activePlaylistName, setActivePlaylistName] = useState<string | null>(null);
   // handles the modal opening for two playlists 
   const [selectedPlaylists, setSelectedPlaylists] = useState<String[]>([]);
+  // checking real time values 
+  useEffect(() => {
+    console.log(selectedPlaylists);
+  }, [selectedPlaylists])
   const handleSelectionChange = (id: string) => {
     setSelectedPlaylists(prev => {
-      if(prev.includes(id)){
-        return prev.filter(selected=>selected!=id);
-      }else { 
-        return [...prev,id]
+      if (prev.includes(id)) {
+        return prev.filter(selected => selected != id);
+      } else {
+        return [...prev, id]
       }
-    }) 
-    console.log(selectedPlaylists)
+    })
   }
   // these two functions are used to lift modal state up from the child
   const handleOpen = (id: string, name: string) => {
@@ -52,17 +56,23 @@ export const PlaylistGrid: React.FC<{ playlists: PlaylistProp[], images: image_u
         tracks={p.tracks}
         images={images[p.id]}
         created_by={p.created_by}
-        onSelectionChange={()=> handleSelectionChange(p.id)}
+        onSelectionChange={() => handleSelectionChange(p.id)}
         isSelected={selectedPlaylists.includes(p.id)}
       />
-      {activePlaylistId === p.id && activePlaylistName == p.name && 
-          <BasicModal 
-            open={open} 
-            handleClose={handleClose} 
-            playlist_id={activePlaylistId} 
-            name={activePlaylistName} />
-          }
+      {activePlaylistId === p.id && activePlaylistName == p.name &&
+        <BasicModal
+          open={open}
+          handleClose={handleClose}
+          playlist_id={activePlaylistId}
+          name={activePlaylistName} />
+      }
     </Item>
   );
-  return <FullWidthGrid items={playlists} renderItem={renderPlaylistItem} />;
+  return (
+    <div>
+      {/** insert a button that updates a state to show the data and use it */}
+      <FullWidthGrid items={playlists} renderItem={renderPlaylistItem} />
+      {selectedPlaylists.length>=2 && null }
+    </div>);
+
 };
