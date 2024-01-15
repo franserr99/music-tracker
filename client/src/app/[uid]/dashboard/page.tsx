@@ -12,7 +12,7 @@ const Page = ({ params }: PageProps) => {
   
 
   return (
-    <div  >
+    <div className='grow'>
       <Head>
         <title>Dashboard</title>
       </Head>

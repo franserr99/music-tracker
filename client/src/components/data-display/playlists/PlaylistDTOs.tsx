@@ -10,7 +10,9 @@ export interface PlaylistProp {
     name : string;
     description: string;
     created_by:string;
-    images: image[]
+    images: image[];
+    isSelected:boolean;
+    onSelectionChange : Function
 }
 export type image = { 
     url:string;

@@ -9,18 +9,14 @@ export default function Playlist(prop:UserProp) {
         <div>
 
             <PlaylistPreview user_id={prop.user_id}/>
-            <h2>
-                Bar Chart For Playlist Genre Frequency
-            </h2>
-            <h2>
+            {/* <h2>
                 Group Bar Chart For Genres Playlist Share In Common
             </h2>
             <SimilarGenresGroupBarGraphContainer/>
             <h2>
                 Group Bar Chart For Top Genres Each One Has
             </h2>
-            <TopGenresGroupBarGraphContainer/>
-
+            <TopGenresGroupBarGraphContainer/> */}
         </div >
     );
 
